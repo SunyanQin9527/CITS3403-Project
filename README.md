@@ -27,7 +27,7 @@ This is a web-based akari daily game for people to test out their puzzle-solving
 如果拼图错误，则会通知用户。
 成功提交谜题将弹出一个模式，显示您的时间、排行榜上前 5 名的人，以及在社交媒体平台上分享您分数的部分
 
-[...其他内容...]
+
 ### 统计页面
 用户可以查看他们已解决的谜题数量以及平均解决时间。
 
