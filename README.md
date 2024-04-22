@@ -11,7 +11,6 @@ This is a web-based akari daily game for people to test out their puzzle-solving
 
 ## Deployed at
 
-[http://flask-test123456.herokuapp.com](http://flask-test123456.herokuapp.com)
 
 ## Design
 
