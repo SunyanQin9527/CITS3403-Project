@@ -1,14 +1,36 @@
-body, html {
-    background-color: #e1eefb;
+body {
     margin: 0;
     font-family: Arial, sans-serif;
-
 }
+
+/* Specific styles for the home page */
+.homepage {
+    background-color: black; /* Black background for home page */
+}
+
+/* Specific styles for the forum page */
+.forumpage {
+    background-color: rgb(255, 248, 224); /* Grey background for forum page */
+}
+
+
+.profilepage {
+    background-color: rgb(255, 248, 224); /* White background for contact page */
+}
+
+
+/* Specific styles for the contact page */
+.contact {
+    background-color: black; /* White background for contact page */
+}
+
+
+
 
  /*homepage.html*/
  .homepage .container {
     text-align: center;
-    background: white;
+    background: rgb(28, 28, 28);
     padding: 50px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     border-radius: 8px;
@@ -17,9 +39,12 @@ body, html {
  /*homepage.html*/
  .homepage .container h1 {
     font-family: 'Segoe UI', sans-serif; /* Example of a web-safe font */
-    font-size: 40px; /* Example size */
-    color: #1a7ddf; /* Example color */
-    background-color: #ddeffa; /* Light background */
+    font-size: 70px; /* Example size */
+    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-radius: 8px;
+    display: inline-block;
     padding: 10px 20px; /* Some padding around the text */
     display: inline-block; /* Necessary for padding and background */
     text-decoration: none;
@@ -27,84 +52,108 @@ body, html {
 
 
 .homepage .container h2 {
-    font-size: 30px; /* Example size */
-    color: #4CAF50; /* Example color */
+    font-size: 25px; /* Example size */
+    color: #45a049; /* Example color */
     padding: 10px 20px; /* Some padding around the text */
     display: inline-block; /* Necessary for padding and background */
 }
 
 
 
-.about .container {
-   text-align: center;
-   background: white;
-   padding: 50px;
-   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-   border-radius: 8px;
+
+
+.homepage .container1 {
+    text-align: center;
+    background: rgb(28, 28, 28);
+    padding: 50px;
+    border-radius: 8px;
+    margin: 40px auto;
+
+ }
+
+ 
+ .homepage .container1 h1 {
+    font-family: 'Segoe UI', sans-serif; /* Using a web-safe font */
+    font-size: 50px; /* Setting the font size */
+    background: -webkit-linear-gradient(left, #ef9e1c, rgb(16, 176, 16), #1a7ddf, rgb(237, 227, 31));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+
 }
 
 
-.about .container1 {
-    text-align: center;
-    background: white;
-    padding: 50px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    margin: 40px auto;
- }
- 
-
-
- .about .container2 {
-    text-align: center;
-    background: white;
-    padding: 50px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    margin: 40px auto;
- }
-
-
-
-.about h1 {
+.homepage .container1 h2 {
     font-family: 'Segoe UI', sans-serif; /* Using a web-safe font */
-    font-size: 40px; /* Setting the font size */
-    color: #1a7ddf; /* Defining the text color */
+    font-size: 30px; /* Setting the font size */
+    color: rgb(245, 33, 195);
     margin-bottom: 20px;
 
 }
 
 
 
-.about h2 {
-    color: #45a049;
+.homepage .container2 {
+    text-align: center;
+    background: rgb(28, 28, 28);
+    padding: 50px;
+    border-radius: 8px;
+    margin: 40px auto;
+
  }
 
- .about h3 {
+
+.homepage .container2 h2 {
+    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-size: 50px;
+
+ }
+ 
+
+
+ .homepage .container2 h3 {
     font-family: 'Segoe UI', sans-serif; /* Using a web-safe font */
+    font-size: 30px; /* Setting the font size */
     color: #1a7ddf;
-    font-size: 35px;
+    margin-bottom: 20px;
+
+}
+
+
+ .homepage .container3 {
+    text-align: center;
+    background: rgb(28, 28, 28);
+    padding: 50px;
+    border-radius: 8px;
+    margin: 40px auto;
  }
 
 
 
-.about a, 
-.about a:visited, 
-.about a:hover, 
-.about a:active {
-    text-decoration: none; /* Removes underline from links */
-    color: inherit; /* Optional: ensures link color matches text color, not default blue */
+ .homepage .container3 h4 {
+    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Segoe UI', sans-serif; /* Using a web-safe font */
+    font-size: 50px; /* Setting the font size */
+    margin-bottom: 20px;
+
 }
 
 
 
-.about .team-list-item {
-    list-style: none;
+.homepage .container3 p {
+    font-family: 'Segoe UI', sans-serif; /* Using a web-safe font */
+    font-size: 30px; /* Setting the font size */
+    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+
 }
-
-
-
-
 
 
 
@@ -113,7 +162,7 @@ body, html {
     display: flex;                /* Use flexbox for navbar layout */
     align-items: center;          /* Center align the items vertically */
     padding: 0 20px;              /* Add horizontal padding */
-    background-color: #333;       /* Dark background for the navbar */
+    background-color: black;       /* Dark background for the navbar */
 }
 
 /* Style the links inside the navigation bar */
@@ -135,7 +184,7 @@ body, html {
 
 /* Add a color to the active/current link */
 .navbar a.active {
-    background-color: #4CAF50;
+    background-color: #45a049;
     color: white;
 }
 
@@ -158,7 +207,7 @@ body, html {
 
 
 #showLoginModal {
-    background-color: #4CAF50; /* Example background color */
+    background-color: #44bc23; /* Example background color */
     color: white;              /* Text color */
     padding: 10px 20px;        /* Padding around the text */
     border: none;              /* No border */
@@ -178,7 +227,7 @@ body, html {
 
 
 #showSignUpModal {
-    background-color: #4CAF50; /* Example background color */
+    background-color: #44bc23; /* Example background color */
     color: white;              /* Text color */
     padding: 10px 20px;        /* Padding around the text */
     border: none;              /* No border */
@@ -200,9 +249,10 @@ body, html {
 
 .forumpage .forum-content h1  {
     font-family: 'Segoe UI', sans-serif; /* Example of a web-safe font */
-    font-size: 40px; /* Example size */
-    color: #1a7ddf; /* Example color */
-    background-color: #badff7; /* Light background */
+    font-size: 60px; /* Example size */
+    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     padding: 10px 20px; /* Some padding around the text */
     display: inline-block; /* Necessary for padding and background */
     border-radius: 6px;
@@ -213,8 +263,8 @@ body, html {
 .forum-container {
     display: flex;
     padding: 20px;
-}
 
+}
 
 
 .forum-content {
@@ -224,20 +274,54 @@ body, html {
 
 .forum-sidebar {
     width: 200px; 
+    position: relative;
+    display: flex;
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
+    padding: 20px; /* Add some spacing */
 }
+
+
+
+.btn {
+    padding: 5px 30px;
+    border-radius: 5px;
+    background-color: #44bc23; /* Example background color */
+    white-space: nowrap; /* Prevents text from wrapping */
+    position: absolute; /* or relative to the parent's position */
+    right: 20px; /* Increase or adjust as needed to move the button to the left */
+    top: 20px; /* Adjust as needed for vertical positioning */
+
+}
+
+
+.btn:hover {
+    background: -webkit-linear-gradient(left, rgb(70, 189, 15), rgb(162, 248, 26));
+}
+
+
+.forumpage .btn h1 {
+    color: rgb(228, 240, 251);
+    text-decoration: underline;
+    font-size: 30px;
+}
+
+
 
 
 
 .thread-list {
-    background-color: #f4f4f4;
+    background-color: hsl(80, 18%, 93%);
     padding: 10px;
+    border-radius: 6px;
 }
 
 
 .thread {
-    background-color: #fff;
+    background-color: hsl(80, 18%, 93%);
     margin-bottom: 10px;
     padding: 10px;
+
 }
 
 .thread h3 a {
@@ -257,18 +341,6 @@ body, html {
 
 
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.btn:hover {
-    background-color: #50a211;
-}
 
 
 
@@ -453,67 +525,61 @@ input[type="password"] {
 
 
 
-/* Specific styles for the 'Learn More About Us' button with id='learnMoreBtn' */
-#learnMoreBtn {
-    background-color: #57b95b; /* Green background */
-    color: white; /* White text */
-    padding: 15px 32px; /* Top and bottom padding of 15px, left and right padding of 32px */
-    font-size: 20px; /* Set font-size */
-    cursor: pointer; /* Cursor to indicate it's a clickable button */
-    border: none; /* No border */
-    border-radius: 4px; /* Rounded corners */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Adds a shadow for some depth */
-}
-
-/* Change background color on mouse-over for the specific button */
-#learnMoreBtn:hover {
-    background-color: #3fa142; /* A slightly darker green */
-}
-
 
 
 .functionality-container {
     margin: 40px auto;
-    text-align: center;
-    background: white;
+    background: rgb(28, 28, 28);
     padding: 50px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     border-radius: 8px;
-    
+    text-align: center;
 }
+
 
 
 .functionality-container h2 {
+    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 50px;
+}
+
+.functionality-container p {
     color: #57b95b;
-    text-align: center;
     font-size: 30px;
 }
 
-
-/* Styling the container of the list items */
-.features-list {
-    list-style: none; /* Removes default list styling */
-    padding: 0; /* Removes default padding */
+.features-flexbox {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
 }
 
+.feature-box {
+    flex: 1; /* Each box will take up an equal amount of space */
+    margin: 0 10px; /* Space between boxes */
+    padding: 20px;
+    background: rgb(247, 205, 227);
+    border-radius: 5px;
 
-/* Styling each feature as a button */
-.feature-button {
-    background-color: #57b95b; /* Background color for the buttons */
-    color: white; /* Text color for the buttons */
-    margin: 5px ; /* Center each button and add space between */
-    padding: 15px 10px; /* Padding inside each button */
-    width: 300px; /* Fixed width, adjust as needed */
-    border: 1px solid #ccc; /* Border to distinguish the buttons */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
-    cursor: pointer; /* Change cursor to indicate the items are clickable */
+    transition: transform 0.3s ease;
+}
+
+.feature-box h3 {
+    margin: 0;
+    color: #d84bb8;
+    font-size: 30px;
+}
+
+.feature-box p {
+    font-size: 0.95em;
+    color: black;
     font-size: 20px;
 }
 
-/* Hover effect for buttons */
-.feature-button:hover {
-    background-color: #3fa142; /* Lighten the button background on hover */
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 
@@ -521,9 +587,9 @@ input[type="password"] {
 
 /* General styles for the leaderboard container */
 .leaderboard-container {
-    background: white;
+    background: rgb(28, 28, 28);
     padding: 20px;
-    border: 1px solid #ddd;
+
     border-radius: 8px;
     margin-top: 20px;
     text-align: center;
@@ -531,10 +597,21 @@ input[type="password"] {
 
 /* Style for the heading */
 .leaderboard-container h3 {
-    color: #57b95b;
+    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
 }
+
+
+.leaderboard-container p {
+    color: #57b95b;
+    font-size: 30px;
+
+}
+
+
 
 /* Removing default list styles and padding */
 .leaderboard {
@@ -554,17 +631,18 @@ input[type="password"] {
 /* Specific styles for the top three */
 .leaderboard li:nth-child(1), /* First place */
 .leaderboard li.first-place {  /* If you add the class through JS */
-    background: #f7ecaf; /* Gold background */
+    background: -webkit-linear-gradient(left, #ff6648, rgb(240, 136, 67), rgb(252, 248, 2),
+     rgb(85, 225, 104), rgb(162, 216, 241), rgb(72, 72, 233), rgb(226, 57, 226));
 }
 
 .leaderboard li:nth-child(2), /* Second place */
 .leaderboard li.second-place { /* If you add the class through JS */
-    background: #dcffc4; /* Silver background */
+    background: -webkit-linear-gradient(left, rgb(189, 240, 248), rgb(222, 145, 248), #1efdee);
 }
 
 .leaderboard li:nth-child(3), /* Third place */
 .leaderboard li.third-place { /* If you add the class through JS */
-    background: #d9eaff; /* Bronze background */
+    background: -webkit-linear-gradient(left, rgb(179, 245, 195), rgb(231, 249, 188), #bfef96);
 }
 
 /* Optional: Add a subtle box-shadow for each list item for a "raised" effect */
@@ -595,8 +673,10 @@ input[type="password"] {
 
 
 .profilepage .profile-header h2{
-    font-size: 40px; /* Example size */
-    color: #4CAF50; /* Example color */
+    font-size: 60px; /* Example size */
+    background: -webkit-linear-gradient(left, #0b79e7, #b2f90e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 
@@ -635,24 +715,13 @@ input[type="password"] {
 }
 
 
-
-
 .profile-content {
     display: flex;
-    justify-content: space-around;
-    text-align: center;
-    margin: 0 auto;
+    flex-direction: column; /* This will stack the children vertically */
+    align-items: center; /* This will center the items horizontally */
     padding: 10px;
-    max-width: 100%;
-    background: rgb(237, 245, 252);
 }
 
-
-
-.user-info, .user-stats {
-    margin: 10px;
-    color: #171717e3;
-}
 
 .profile-pic {
     width: 150px;
@@ -676,15 +745,29 @@ input[type="password"] {
 }
 
 
+.contact-container .partner-contact h2 {
+    background: -webkit-linear-gradient(left, rgb(252, 248, 2), rgb(226, 57, 226));
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     font-size: 50px;
+}
 
 
 
+.contact-container .partner-contact p {
+    background: -webkit-linear-gradient(left,  #1a7ddf, rgb(245, 33, 195));
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     font-size: 28px;
+}
 
 
 
 /* Style for the titles */
 .contact-container h2 {
-    color: #57b95b; /* Greenish color for the headings */
+    background: -webkit-linear-gradient(left,  #1a7ddf, rgb(12, 233, 30));
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
     margin-bottom: 30px; /* Space above and below the headings */
     font-size: 35px;
 }
@@ -721,7 +804,7 @@ input[type="password"] {
 
 /* Style for the form button */
 .contact-form button {
-    background-color: #5cb85c; /* Green background */
+    background: -webkit-linear-gradient(left,  #1a7ddf, rgb(10, 192, 212));
     color: white; /* White text */
     padding: 10px 15px; /* Padding around the text */
     border: none; /* No border */
@@ -732,7 +815,7 @@ input[type="password"] {
 
 
 .contact-form button:hover {
-    background-color: #45a049; /* Green background */
+    background: -webkit-linear-gradient(left,  #90b9e2, rgb(10, 192, 212));
 }
 
 
@@ -742,6 +825,9 @@ input[type="password"] {
     color: #57b95b;
     font-size: 20px;
 }
+
+
+
 
 
 
