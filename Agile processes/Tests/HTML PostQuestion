@@ -1,1 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People matcher</title>
+    <link rel="stylesheet" href="post-question.css"> <!-- Link to your external CSS file -->
+    
+    <script src="script.js"></script> <!-- If you have JavaScript -->
+</head>
+<body>
+    <!-- Add this inside the <body> tag, ideally right after the opening <body> tag -->
+    <a href="forum.html" id="mainButton">Go Back</a>
 
+    <div class="container">
+        <h1>Having A Question?</h1>
+
+        
+        <h2>Post Your New Discussion Query</h2>
+
+        <form id="newDiscussionForm" action="submit_question.php" method="POST"> <!-- Replace with your submission endpoint -->
+            <label for="discussionTitle">Discussion Title:</label><br>
+            <input type="text" id="discussionTitle" name="discussionTitle" required><br>
+            
+            <label for="discussionContent">Your Question:</label><br>
+            <textarea id="discussionContent" name="discussionContent" rows="4" cols="50" required></textarea><br>
+            
+            <input type="submit" value="Post Question">
+        </form>
+    </div>
+</body>
+</html>
