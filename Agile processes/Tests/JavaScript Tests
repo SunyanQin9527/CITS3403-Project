@@ -1,1 +1,157 @@
+document.addEventListener('DOMContentLoaded', function() {
+
+    function setupModals() {
+        var modals = {
+            'login': document.getElementById('loginModal'),
+            'signup': document.getElementById('signupModal'),
+            'passwordReset': document.getElementById('passwordResetModal')
+        };
+
+        var buttons = {
+            'login': document.getElementById('showLoginModal'),
+            'signup': document.getElementById('showSignUpModal'),
+            'passwordReset': document.getElementById('forgotPasswordLink')
+        };
+
+        var closeIcons = {
+            'login': document.getElementById('closeLogin'),
+            'signup': document.getElementById('closeSignup'),
+            'passwordReset': document.getElementById('closePasswordReset')
+        };
+
+
+        Object.keys(buttons).forEach(function(key) {
+            buttons[key].onclick = function() { modals[key].style.display = "block"; };
+            closeIcons[key].onclick = function() { modals[key].style.display = "none"; };
+        });
+
+        window.onclick = function(event) {
+            Object.values(modals).forEach(function(modal) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            });
+        };
+    }
+
+
+
+
+    // Function to show feature descriptions
+    function showFeatureDescription(featureId) {
+        // Hide all descriptions
+        var descriptions = document.querySelectorAll('.feature-description');
+        descriptions.forEach(function(desc) {
+            desc.style.display = 'none';
+        });
+
+  
+        var descToDisplay = document.getElementById(featureId + 'Desc');
+        descToDisplay.style.display = 'block';
+
+        document.getElementById('featureModal').style.display = "block";
+    }
+
+    // Function to close the feature description modal
+    function closeFeatureDescription() {
+        document.getElementById('featureModal').style.display = "none";
+    }
+
+
+    window.showFeatureDescription = showFeatureDescription;
+    window.closeFeatureDescription = closeFeatureDescription;
+
+
+    window.onclick = function(event) {
+        var modal = document.getElementById('featureModal');
+        if (event.target == modal) {
+            closeFeatureDescription();
+        }
+    }
+
+
+    setupModals();
+    showFeatureDescription();
+});
+
+
+
+
+
+
+// Leaderboard JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // 假设您已经从后端获取了包含用户信息和积分的数组
+    // 并且该数组已经根据积分从高到低排序
+    var leaderboardData = [
+        { name: 'Alice Johnson', score: 1200 },
+        { name: 'Bob Smith', score: 1100 },
+        { name: 'Carol Tan', score: 1050 }
+        // ...其他用户...
+    ];
+
+    // 更新排行榜的函数，只显示前三名
+    function updateTopThree(leaderboardData) {
+        // 获取排行榜的UL元素
+        const leaderboardList = document.getElementById('leaderboardList');
+        // 清空当前列表
+        leaderboardList.innerHTML = '';
+        
+        // 定义排名称号数组
+        const placements = ['1st Place', '2nd Place', '3rd Place'];
+
+        // 只遍历前三名用户
+        leaderboardData.slice(0, 3).forEach((user, index) => {
+            const listItem = document.createElement('li');
+            listItem.className = `leaderboard-entry ${placements[index].toLowerCase().replace(' ', '-')}`;
+            listItem.innerHTML = `
+                <span class="placement">${placements[index]} - </span>
+                <span class="user-name">${user.name}</span> - 
+                <span class="user-score">${user.score}</span> points
+            `;
+            leaderboardList.appendChild(listItem);
+        });
+    }
+
+    // 调用函数更新前三名
+    updateTopThree(leaderboardData);
+});
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get form element
+    var contactForm = document.getElementById('contactForm');
+    // Get modal elements
+    var successMessageModal = document.getElementById('successMessageModal');
+    var closeSuccessModal = document.getElementById('closeSuccessModal');
+
+    // Form submit listener
+    contactForm.onsubmit = function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        // TODO: Add AJAX form submission here
+        // On success, display the modal
+        successMessageModal.style.display = 'block';
+    };
+
+    // Close button for the modal
+    closeSuccessModal.onclick = function() {
+        successMessageModal.style.display = "none";
+    }
+
+    // Clicking outside the modal closes it
+    window.onclick = function(event) {
+        if (event.target == successMessageModal) {
+            successMessageModal.style.display = "none";
+        }
+    }
+});
 
