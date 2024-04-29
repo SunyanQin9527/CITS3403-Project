@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="welcome.css">
+</head>
+
+<body class="about">
+    <nav class="navbar">
+        <a href="homepage.html" class="active">Home</a>
+
+
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Search.." name="search" id="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <h1>Classroom Companions</h1>
+        <h2>'Classroom Companions' is a place where individuals of different backgrounds and ages can freely communicate, share information, and response to other people's questions. 
+        We have dedicated ourselves to build a community where knowledge and experience flow freely since we founded in 2024.</h2>
+    </div>
+
+    <div class="container1">
+        <h3>Fundamental Values</h3>
+        <h2>"Compassion And Innovation", these two values form the basis of [Classroom Companion] and guide us to guarantee that our services are suitable for individuals of all ages and backgrounds. 
+            We ensure that each users can communicate with others in a respectful and understanding environment .</h2>
+    </div>
+
+    <div class="container2">
+        <h3>Meet Our Team</h3>
+        <ul class="team-list">
+            <li class="team-list-item">
+                <p>- **[Name]**, [Position]: [Brief Description or Quote from the member]</p>
+            </li>
+
+            <li class="team-list-item">
+                <p>- **[Name]**, [Position]: [Brief Description or Quote from the member]</p>
+            </li>    
+                    
+            <li class="team-list-item">
+                <p>- **[Name]**, [Position]: [Brief Description or Quote from the member]</p>
+            </li>    
+                    
+            <li class="team-list-item">
+                <p>- **[Name]**, [Position]: [Brief Description or Quote from the member]</p>
+            </li>
+        
+        </ul>
+
+    </div>
+
+
+</body>
+
 
