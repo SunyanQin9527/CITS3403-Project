@@ -98,8 +98,10 @@
 
 
         <aside class="forum-sidebar">
-            <p>Welcome, <a href="profile.html">Username</a></p>
-            <a href="post-question.html" class="btn">New Discussion</a>
+            <a href="post-question.html" class="btn">
+                <h1>New Discussion</h1>
+            </a>
+
         </aside>
     </div>
     
