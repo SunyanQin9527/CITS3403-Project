@@ -1,1 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Main Page</title>
+    <link rel="stylesheet" href="welcome.css">
+</head>
+
+<body class="contact">
+    <!-- Navigation Bar 顶部导航 -->
+    <nav class="navbar">
+        <a href="homepage.html" >Home</a>
+        <a href="forum.html">Forum</a>
+        <a href="profile.html">Profile</a>
+        <a href="contact.html" class="active">Contact</a>
+
+
+        <!-- login，signup button-->
+        <div class="navbar-right">
+            <button id="showLoginModal">Log In</button>
+            <button id="showSignUpModal">Sign Up</button>
+            
+            <!-- Login Modal -->
+            <div id="loginModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeLogin">&times;</span>
+                    <h3 class="login-title">Log In</h3>
+
+
+                <!-- Login表格 -->
+                        <form id="loginForm" action="/submit-login" method="POST">
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+
+                        <button type="button" id="loginButton">Log In</button>
+                        <button type="button" id="forgotPasswordLink" class="forgot-password">Forgot Password?</button>
+
+                <!-- Password reset Modal -->
+                        <div id="passwordResetModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close" id="closePasswordReset">&times;</span>
+                                <h3 class="login-title">Password Reset</h3>
+
+                                    <!-- Password reset表格 -->
+                                    <form id="passwordResetForm" action="/submit-password-reset" method="POST">
+                                    <input type="email" id="resetEmail" name="resetEmail" placeholder="Enter your email address" required>
+                                    <button type="button" id="resetPasswordButton">Send Reset Link</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </form>  
+                </div>
+            </div>
+    
+             <!-- Signup Modal -->
+            <div id="signupModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeSignup">&times;</span>
+                    <h3 class="login-title">Sign Up</h3>
+
+                    <form action="/submit-registration" method="POST">
+                        <input type="text" id="name" name="name" placeholder="Full Name" required>
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <button type="button" id="signupButton">Register</button>
+                    </form>
+                </div>             
+            </div>            
+
+        </div>
+
+
+        
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Search.." name="search" id="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Contact Content Area -->
+    <div class="contact-container">
+
+        <!-- Group Partner Contact Details -->
+        <section class="partner-contact">
+            <h2>Team Member Contact</h2>
+            <p><strong>Name:</strong> Team Members' Names</p>
+            <p><strong>Email:</strong> teammember@example.com</p>
+            <p><strong>Phone:</strong> +1234567890</p>
+            <!-- Add more partners if needed -->
+        </section>
+
+
+        <!-- Contact Form -->
+        <section class="contact-form-section">
+            <h2>Send Us a Message / Leave Us Your Thought</h2>
+            <form id="contactForm" class="contact-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                
+                <button type="submit" id="sendMessageButton">Send Message</button>
+            </form>
+
+            <!-- Success Message Modal -->
+            <div id="successMessageModal" class="modal" style="display:none;">
+                <div class="modal-content">
+                    <span class="close" id="closeSuccessModal">&times;</span>
+                    <h4>Message successfully sent!</h4>
+                </div>
+            </div>
+
+
+        </section>
+    </div>
+
+
+
+
+
+    <script src="scripts.js"></script>
+
+</body>
+</html>
