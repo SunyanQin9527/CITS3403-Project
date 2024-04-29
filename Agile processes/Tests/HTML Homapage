@@ -1,1 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="welcome.css">
+</head>
+
+
+
+<body class="homepage">
+    <!-- Navigation Bar 顶部导航 -->
+    <nav class="navbar">
+        <a href="homepage.html" class="active">Home</a>
+        <a href="forum.html">Forum</a>
+        <a href="profile.html">Profile</a>
+        <a href="contact.html">Contact</a>
+
+        <!-- login，signup button-->
+        <div class="navbar-right">
+            <button id="showLoginModal">Log In</button>
+            <button id="showSignUpModal">Sign Up</button>
+            
+            <!-- Login Modal -->
+            <div id="loginModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeLogin">&times;</span>
+                    <h3 class="login-title">Log In</h3>
+
+
+                <!-- Login表格 -->
+                        <form id="loginForm" action="/submit-login" method="POST">
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+
+                        <button type="button" id="loginButton">Log In</button>
+                        <button type="button" id="forgotPasswordLink" class="forgot-password">Forgot Password?</button>
+
+                <!-- Password reset Modal -->
+                        <div id="passwordResetModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close" id="closePasswordReset">&times;</span>
+                                <h3 class="login-title">Password Reset</h3>
+
+                                    <!-- Password reset表格 -->
+                                    <form id="passwordResetForm" action="/submit-password-reset" method="POST">
+                                    <input type="email" id="resetEmail" name="resetEmail" placeholder="Enter your email address" required>
+                                    <button type="button" id="resetPasswordButton">Send Reset Link</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </form>  
+                </div>
+            </div>
+    
+             <!-- Signup Modal -->
+            <div id="signupModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeSignup">&times;</span>
+                    <h3 class="login-title">Sign Up</h3>
+
+                    <form action="/submit-registration" method="POST">
+                        <input type="text" id="name" name="name" placeholder="Full Name" required>
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <button type="button" id="signupButton">Register</button>
+                    </form>
+                </div>             
+            </div>            
+
+        </div>
+
+
+        
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Search.." name="search" id="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+     <!-- Main Content Area -->
+    <div class="container">
+        <h1>A Platform for Knowledge Sharing - 'Classroom Companions'</h1>
+        <h2> "Engage in Conversations, Exchange Opinions, and Discover Solutions for Your 'Classroom' Issues."</h2>
+        <button id="learnMoreBtn" onclick="window.location.href='about.html';">Learn More About Us</button>
+    </div>
+
+
+    <div class="functionality-container">
+        <h2>Our Features</h2>
+        <p>Discover the tools that make 'Classroom Companions' the best place to engage in educational discussions:</p>
+
+        <ul class="features-list">
+            <li class="feature-list-item">
+                <button class="feature-button" onclick="showFeatureDescription('interactiveForums')">Interactive Forums</button>
+            </li>
+
+            <li class="feature-list-item">
+                <button class="feature-button" onclick="showFeatureDescription('resourceSharing')">Resource Sharing</button>
+            </li>
+
+            <li class="feature-list-item">
+                <button class="feature-button" onclick="showFeatureDescription('attractiveRewards')">Attractive Rewards</button>
+            </li>
+
+        </ul>
+    
+        <!-- The Modal for feature descriptions -->
+        <div id="featureModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeFeatureDescription()">&times;</span>
+                <h2>Feature Description</h2>
+
+                <div id="interactiveForumsDesc" class="feature-description" style="display: none;">
+                    <p>'Classroom Companions' is a place where individuals of different backgrounds and ages can freely communicate, share information, and response to other people's questions.
+                         We have dedicated ourselves to build a community where knowledge and experience flow freely since we founded in 2024.</p>
+                </div>
+
+                <div id="resourceSharingDesc" class="feature-description" style="display: none;">
+                    <p>Resource Sharing allows users to exchange materials and resources...</p>
+                </div>
+
+                <div id="attractiveRewardsDesc" class="feature-description" style="display: none;">
+                    <p>Attractive Rewards incentivize participation through points and rewards...</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="leaderboard-container">
+        <h3>Leaderboard</h3>
+        <p>See who's contributing the most to the community</p>
+        <p>Weekly Rankings Update</p>
+        <ul id="leaderboardList" class="leaderboard"></ul>
+        <button id="viewAllBtn" onclick="location.href='full_leaderboard.html'">View Full Leaderboard</button>
+    </div>
+    
+    
+    
+    <script src="scripts.js"></script>
+
+</body>
+</html>
