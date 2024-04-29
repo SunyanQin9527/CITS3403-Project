@@ -1,1 +1,751 @@
+body, html {
+    background-color: #e1eefb;
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+}
+
+ /*homepage.html*/
+ .homepage .container {
+    text-align: center;
+    background: white;
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+ /*homepage.html*/
+ .homepage .container h1 {
+    font-family: 'Segoe UI', sans-serif; /* Example of a web-safe font */
+    font-size: 40px; /* Example size */
+    color: #1a7ddf; /* Example color */
+    background-color: #ddeffa; /* Light background */
+    padding: 10px 20px; /* Some padding around the text */
+    display: inline-block; /* Necessary for padding and background */
+    text-decoration: none;
+}
+
+
+.homepage .container h2 {
+    font-size: 30px; /* Example size */
+    color: #4CAF50; /* Example color */
+    padding: 10px 20px; /* Some padding around the text */
+    display: inline-block; /* Necessary for padding and background */
+}
+
+
+
+.about .container {
+   text-align: center;
+   background: white;
+   padding: 50px;
+   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+   border-radius: 8px;
+}
+
+
+.about .container1 {
+    text-align: center;
+    background: white;
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    margin: 40px auto;
+ }
+ 
+
+
+ .about .container2 {
+    text-align: center;
+    background: white;
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    margin: 40px auto;
+ }
+
+
+
+.about h1 {
+    font-family: 'Segoe UI', sans-serif; /* Using a web-safe font */
+    font-size: 40px; /* Setting the font size */
+    color: #1a7ddf; /* Defining the text color */
+    margin-bottom: 20px;
+
+}
+
+
+
+.about h2 {
+    color: #45a049;
+ }
+
+ .about h3 {
+    font-family: 'Segoe UI', sans-serif; /* Using a web-safe font */
+    color: #1a7ddf;
+    font-size: 35px;
+ }
+
+
+
+.about a, 
+.about a:visited, 
+.about a:hover, 
+.about a:active {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Optional: ensures link color matches text color, not default blue */
+}
+
+
+
+.about .team-list-item {
+    list-style: none;
+}
+
+
+
+
+
+
+
+/*for all html*/
+.navbar {
+    display: flex;                /* Use flexbox for navbar layout */
+    align-items: center;          /* Center align the items vertically */
+    padding: 0 20px;              /* Add horizontal padding */
+    background-color: #333;       /* Dark background for the navbar */
+}
+
+/* Style the links inside the navigation bar */
+.navbar a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 30px 16px;
+    text-decoration: none;
+}
+
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+
+
+/* Add a color to the active/current link */
+.navbar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+
+.navbar-right {
+    display: flex;                /* Use flexbox for the navbar-right layout */
+    justify-content: flex-end;    /* Align items to the end (right) */
+    align-items: center;          /* Center align items vertically */
+    flex-grow: 1;                 /* Allow this div to grow as needed */
+}
+
+
+/* Styling for the heading */
+.login-title  {
+    color: #44bc23; /* Brand color for heading */;
+    font-size: 30px;
+    margin:8px;
+}
+
+
+#showLoginModal {
+    background-color: #4CAF50; /* Example background color */
+    color: white;              /* Text color */
+    padding: 10px 20px;        /* Padding around the text */
+    border: none;              /* No border */
+    border-radius: 5px;        /* Rounded corners */
+    font-size: 16px;           /* Font size */
+    cursor: pointer;           /* Change mouse cursor on hover */
+    margin-left: 12px;
+    /* Add other styles as needed */
+}
+
+
+#showLoginModal:hover {
+    background-color: #45a049; /* Darker background color on hover */
+    /* Add other hover styles as needed */
+}
+
+
+
+#showSignUpModal {
+    background-color: #4CAF50; /* Example background color */
+    color: white;              /* Text color */
+    padding: 10px 20px;        /* Padding around the text */
+    border: none;              /* No border */
+    border-radius: 5px;        /* Rounded corners */
+    font-size: 16px;           /* Font size */
+    cursor: pointer;           /* Change mouse cursor on hover */
+    margin-left: 12px;
+    /* Add other styles as needed */
+}
+
+
+
+#showSignUpModal:hover {
+    background-color: #45a049; /* Darker background color on hover */
+    /* Add other hover styles as needed */
+}
+
+
+
+.forumpage .forum-content h1  {
+    font-family: 'Segoe UI', sans-serif; /* Example of a web-safe font */
+    font-size: 40px; /* Example size */
+    color: #1a7ddf; /* Example color */
+    background-color: #badff7; /* Light background */
+    padding: 10px 20px; /* Some padding around the text */
+    display: inline-block; /* Necessary for padding and background */
+    border-radius: 6px;
+}
+
+
+
+.forum-container {
+    display: flex;
+    padding: 20px;
+}
+
+
+
+.forum-content {
+    flex-grow: 1;
+}
+
+
+.forum-sidebar {
+    width: 200px; 
+}
+
+
+
+.thread-list {
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+
+
+.thread {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.thread h3 a {
+    color: #55af10;
+    text-decoration: none;
+}
+
+.thread h3 a:hover {
+    text-decoration: underline;
+}
+
+
+.thread-info {
+    font-size: 0.9em;
+    color: #666;
+}
+
+
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #50a211;
+}
+
+
+
+.search-container {
+    flex-grow: 1; /* Allow the search container to grow */
+    display: flex; /* Use flexbox inside the search container */
+    justify-content: center; /* Center the search bar horizontally */
+    margin: 5px;
+}
+
+
+
+.search-container input[type="text"] {
+    width: 500px; /* or 100% for full-width */
+    padding: 10px;
+
+}
+
+
+
+.search-container button[type="submit"] {
+    background-color: #4CAF50; /* Example background color */
+    color: white;              /* Text color */
+    padding: 10px 20px;        /* Padding around the text */
+    border: none;              /* No border */
+    border-radius: 5px;        /* Rounded corners */
+    font-size: 16px;           /* Font size */
+    cursor: pointer;           /* Change mouse cursor on hover */
+    margin-top: 5px;
+}
+
+
+.search-container button[type="submit"]:hover {
+    background-color: rgb(6, 171, 33); /* Changes color on hover */
+}
+
+
+
+
+
+/* Login Form button */
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+
+
+#loginButton {
+    background-color: #33b437; /* Example background color */
+    color: white;              /* Text color */
+    padding: 10px 20px;        /* Padding around the text */
+    border: none;              /* No border */
+    border-radius: 5px;        /* Rounded corners */
+    font-size: 16px;
+    cursor: pointer;           /* Change mouse cursor on hover */
+    margin-right: 15px;
+    margin-top: 10px;
+    /* Add other styles as needed */
+}
+
+#loginButton:hover {
+    background-color: #45a049; /* Changes color on hover */
+}
+
+
+
+
+
+#signupButton {
+    background-color: #33b437; /* Example background color */
+    color: white;              /* Text color */
+    padding: 10px 20px;        /* Padding around the text */
+    border: none;              /* No border */
+    border-radius: 5px;        /* Rounded corners */
+    font-size: 16px;           /* Font size */
+    cursor: pointer;           /* Change mouse cursor on hover */
+
+    margin-top: 10px;
+    /* Add other styles as needed */
+}
+
+
+#signupButton:hover {
+    background-color: #45a049; /* Changes color on hover */
+}
+
+
+
+
+
+#loginForm .forgot-password {
+    background: none; /* Removes background */
+    border: none; /* Removes border */
+    padding: 0; /* Resets padding */
+    color: #297fdc; /* Example link color */
+    font-size: 1em; /* Smaller text */
+    text-decoration: underline; /* Underline to signify it's a link */
+    cursor: pointer; /* Changes cursor to indicate it's clickable */
+    margin-top: 18px;
+}
+
+/* Hover state for the link */
+#loginForm .forgot-password:hover {
+    color: #075fbd; /* Example link color */
+}
+
+
+
+.forum-container .forum-content .thread-list .thread-title {
+    font-size: 20px; /* Example size */
+}
+
+
+
+
+#resetPasswordButton {
+    background-color: #33b437; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Top and bottom padding of 10px, left and right padding of 20px */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners with a radius of 5px */
+    cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+    font-size: 16px; /* Sets the font size */
+    margin-top: 15px;
+}
+
+#resetPasswordButton:hover {
+    background-color: #45a049; /* Darker green background on hover */
+}
+
+
+
+
+
+/* Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 5px; /* Optional: for rounded corners */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* Specific styles for the 'Learn More About Us' button with id='learnMoreBtn' */
+#learnMoreBtn {
+    background-color: #57b95b; /* Green background */
+    color: white; /* White text */
+    padding: 15px 32px; /* Top and bottom padding of 15px, left and right padding of 32px */
+    font-size: 20px; /* Set font-size */
+    cursor: pointer; /* Cursor to indicate it's a clickable button */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Adds a shadow for some depth */
+}
+
+/* Change background color on mouse-over for the specific button */
+#learnMoreBtn:hover {
+    background-color: #3fa142; /* A slightly darker green */
+}
+
+
+
+.functionality-container {
+    margin: 40px auto;
+    text-align: center;
+    background: white;
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    
+}
+
+
+.functionality-container h2 {
+    color: #57b95b;
+    text-align: center;
+    font-size: 30px;
+}
+
+
+/* Styling the container of the list items */
+.features-list {
+    list-style: none; /* Removes default list styling */
+    padding: 0; /* Removes default padding */
+}
+
+
+/* Styling each feature as a button */
+.feature-button {
+    background-color: #57b95b; /* Background color for the buttons */
+    color: white; /* Text color for the buttons */
+    margin: 5px ; /* Center each button and add space between */
+    padding: 15px 10px; /* Padding inside each button */
+    width: 300px; /* Fixed width, adjust as needed */
+    border: 1px solid #ccc; /* Border to distinguish the buttons */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+    cursor: pointer; /* Change cursor to indicate the items are clickable */
+    font-size: 20px;
+}
+
+/* Hover effect for buttons */
+.feature-button:hover {
+    background-color: #3fa142; /* Lighten the button background on hover */
+}
+
+
+
+
+/* General styles for the leaderboard container */
+.leaderboard-container {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Style for the heading */
+.leaderboard-container h3 {
+    color: #57b95b;
+    text-align: center;
+    font-size: 30px;
+}
+
+/* Removing default list styles and padding */
+.leaderboard {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Styling for individual leaderboard entries */
+.leaderboard li {
+    background: #c7dcf1;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+/* Specific styles for the top three */
+.leaderboard li:nth-child(1), /* First place */
+.leaderboard li.first-place {  /* If you add the class through JS */
+    background: #f7ecaf; /* Gold background */
+}
+
+.leaderboard li:nth-child(2), /* Second place */
+.leaderboard li.second-place { /* If you add the class through JS */
+    background: #dcffc4; /* Silver background */
+}
+
+.leaderboard li:nth-child(3), /* Third place */
+.leaderboard li.third-place { /* If you add the class through JS */
+    background: #d9eaff; /* Bronze background */
+}
+
+/* Optional: Add a subtle box-shadow for each list item for a "raised" effect */
+.leaderboard li {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the 'View Full Leaderboard' button */
+#viewAllBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 30px auto;
+    font-size: 20px;
+}
+
+/* Hover effect for the button */
+#viewAllBtn:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+
+.profilepage .profile-header h2{
+    font-size: 40px; /* Example size */
+    color: #4CAF50; /* Example color */
+}
+
+
+
+.profile-header {
+    text-align: center;
+    padding: 20px;
+    padding-top: 60px
+}
+
+
+.user-actions-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 20px; /* Adjust the padding as needed */
+    margin-bottom: 20px;
+}
+
+
+#editProfileBtn,
+#logOutBtn {
+    margin-left: 10px; /* Space between the buttons */
+    padding: 8px 16px; /* Adjust padding to match the design */
+    background-color: #4CAF50; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 4px; /* Rounded corners for buttons */
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+#editProfileBtn:hover,
+#logOutBtn:hover {
+    background-color: #45a049; /* Darker shade for hover effect */
+}
+
+
+
+
+.profile-content {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 100%;
+    background: rgb(237, 245, 252);
+}
+
+
+
+.user-info, .user-stats {
+    margin: 10px;
+    color: #171717e3;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-left: 80px;
+
+}
+
+
+
+
+
+/* Ensure the contact-container is a block element and centers its content */
+.contact-container {
+    max-width: 800px; /* Set a max-width to keep the form reasonable on large screens */
+    margin: 0 auto; /* Auto margins for horizontal centering */
+    padding: 20px;
+    text-align: center; /* Center-align the text */
+    display: block; /* Block display to fill the width */
+}
+
+
+
+
+
+
+
+
+/* Style for the titles */
+.contact-container h2 {
+    color: #57b95b; /* Greenish color for the headings */
+    margin-bottom: 30px; /* Space above and below the headings */
+    font-size: 35px;
+}
+
+/* Style for the content in the contact sections */
+.contact-container section {
+    margin-top: 90px; /* Space between the sections */
+}
+
+/* Additional styling for the form to align with the design */
+.contact-form {
+    margin: 0 auto; /* Center the form */
+    display: block; /* Ensure it is block level for auto margins to work */
+}
+
+
+
+
+/* Style input fields and text area to match */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    margin-top: 10px; /* Spacing above the inputs */
+    margin-bottom: 20px; /* Spacing below the inputs */
+    padding: 10px; /* Padding inside the inputs */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    width: calc(100% - 22px); /* Adjust width for padding and border */
+}
+
+
+
+
+
+/* Style for the form button */
+.contact-form button {
+    background-color: #5cb85c; /* Green background */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding around the text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1em; /* Size of the text */
+}
+
+
+.contact-form button:hover {
+    background-color: #45a049; /* Green background */
+}
+
+
+
+
+.contact h4 {
+    color: #57b95b;
+    font-size: 20px;
+}
+
+
+
+
+
+
 
