@@ -1,0 +1,61 @@
+#title{
+    display: flex;
+    justify-content: center;
+
+}
+
+#signUpForm{
+    background-color:rgb(136, 136, 228);
+
+   
+}
+
+#existingGroup{
+    background-color: rgb(222, 98, 98);
+
+        
+}
+
+.studentName:hover{
+    font-weight: 700;
+
+
+}
+
+.ejectButton{
+    background-color: chartreuse;
+
+
+}
+
+select{
+    color:orange;
+
+
+}
+
+label{
+    color:red;
+}
+
+form:hover{
+    color: green;
+}
+
+#submitBtn{
+    position: relative;
+    right: -10px;
+    top: 20px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+

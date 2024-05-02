@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>People matcher</title>
+    <style>
+        body {
+            background-color: yellow;
+            font-family: "Times New Roman", serif;
+        }
+        .heading {
+            font-size: 24px;
+        }
+        .score {
+            margin: 10px 0;
+        }
+        .question {
+            margin: 10px 0;
+            text-decoration: underline;
+        }
+        .picture-container {
+            margin: 10px 0;
+        }
+        .person-picture {
+            border: 5px solid green;
+            width: 100px;
+            height: 100px;
+        }
+        .person-picture:hover {
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">Who's who: CS edition</h1>
+    <div class="score">Current score = <span id="currentScore">0</span></div>
+    <div class="question">Who is <span id="staffName">?</span>?</div>
+    <div class="picture-container" id="pictureContainer">
+        <!-- Pictures will be loaded here by JavaScript -->
+    </div>
+
+    <script>
+        let currentScore = 0;
+        const staffMembers = [
+            // Populate with actual staff member names and images
+            { name: "Staff Member 1", image: "staffPictureSrc1.jpg" },
+            { name: "Staff Member 2", image: "staffPictureSrc2.jpg" },
+            // ... Add all 6 staff members here
+            { name: "Taylor Swift", image: "taylorSwiftPictureSrc.jpg" }
+        ];
+
+        function chooseRandomElements(arr, numElements) {
+            const shuffledArray = arr.slice();
+            for (let i = shuffledArray.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+            }
+            return shuffledArray.slice(0, numElements);
+        }
+
+        function updateGame() {
+            const chosenPeople = chooseRandomElements(staffMembers, 4);
+            const chosenOne = chosenPeople[Math.floor(Math.random() * chosenPeople.length)];
+
+            document.getElementById('staffName').textContent = chosenOne.name;
+            const pictureContainer = document.getElementById('pictureContainer');
+            pictureContainer.innerHTML = '';
+
+            chosenPeople.forEach(person => {
+                const img = document.createElement('img');
+                img.src = person.image;
+                img.alt = person.name;
+                img.className = 'person-picture';
+                img.addEventListener('click', function() {
+                    if (person.name === chosenOne.name) {
+                        alert('Correct!');
+                        currentScore++;
+                        document.getElementById('currentScore').textContent = currentScore;
+                        updateGame();
+                    } else {
+                        alert('That was incorrect!');
+                        Array.from(document.getElementsByClassName('person-picture')).forEach(pic => {
+                            pic.removeEventListener('click', arguments.callee);
+                        });
+                    }
+                });
+                pictureContainer.appendChild(img);
+            });
+        }
+
+        window.onload = function() {
+            updateGame();
+        }
+    </script>
+</body>
+</html>

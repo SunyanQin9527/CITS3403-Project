@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">  
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel = "stylesheet" href = "static/test.css">
+
+
+
+        <script src="static/test.js"></script>
+        </script>
+    </head> 
+    
+    <body>
+        <div class = "container">
+            <div id = "title">
+                <h1> Group Sign-up </h1>
+            </div>
+
+            <div id = "signupform">
+                <p>Enter your student numbers of people in your group</p>
+                <p>It is not required four people </p>
+                <form action="/submit" method="post">
+                    <label for = "numberOfStudents"> Number Of Students so far</label>
+                    <!-- <input type="number" id = "numberOfStudents" min = 1 max = 4> -->
+                    <select name = "numberOfStudents" id = "numberOfStudents">
+                        <option value = 1>1</option> 
+                        <option value = 2>2</option> 
+                        <option value = 3>3</option> 
+                        <option value = 4>4</option> 
+                    </select>
+                    <br>
+
+                    <label for ="student1"> Sudent1: </label>
+                    <input type = "number" id ="student1">  </input>
+                    
+                    <br>
+                    <label for ="student2"> Sudent2: </label>
+                    <input type = "number" id ="student2">  </input>
+                    
+                    <br>
+                    <label for ="student3"> Sudent3: </label>
+                    <input type = "number" id ="student3">  </input>
+
+                    <br>
+                    <label for ="student4"> Sudent4: </label>
+                    <input type = "number" id ="student4">  </input>
+
+                    <br>
+                    <input class = "btn btn-primary" id = "submitBtn" value="Create" type="submit">
+                    
+                    
+                </form>
+                <br>
+                <br>
+                
+                <button class = "btn btn-danger" onclick="location.href='{{url_for('groups')}}'"> 
+                    <span class="fa fa-trash"></span>Cancel
+                </button>
+                
+            </div>
+        </div>
+    </body> 
+</html>

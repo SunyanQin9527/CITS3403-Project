@@ -1,0 +1,68 @@
+<html>
+    <head>  
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel = "stylesheet" href = "static/test.css">
+
+
+
+        <script src="static/test.js"></script>
+        </script>
+    </head> 
+    
+    <body>
+        <div class = "container">
+            <div id = "title">
+                <h1> Group projects </h1>
+
+            </div>
+
+            <div id = "Signupform">
+
+                
+    
+            <div id = "existingGroup">
+                <h2> Existing group </h2>
+
+
+                <table>
+                    <tr>
+                        <th> Group ID  </th>
+                        <th> Student1 </th>
+                        <th> Student2 </th>
+                        <th> Student3 </th>
+                        <th> Student4 </th>
+                    </tr>
+                    {% for group in groups    %}
+                    <tr>
+                        <td> 0 </td>
+                        {%for student in group.students %}
+                        <td> <span class= "studentName">{{student.name}}</span> ({{student.uwa_id}}) </td>
+                        <!--   -->
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                    <!-- <tr>
+                        <td> 1 </td>
+                        <td> <span class= "studentName">JU</span> (03414734134) </td>
+                        <td> <span class= "studentName">HU</span> (02343273473) </td>
+                        <td> <span class= "studentName">CH</span> (03245268424) </td>
+                        <td> <span class= "studentName">YU</span> (03284603423) </td>
+                    </tr> -->
+
+
+                </table>
+            </div>
+
+            Kick out:
+            <button class = "btn btn-primary studentName ejectButton" onclick="removeStudent"> 
+                <span class="fa fa-trash"></span>Remove student
+            </button>
+
+            <button class = "btn btn-primary studentName ejectButton" onclick="location.href='{{url_for('create')}}'"> 
+                Create new group 
+            </button>
+        </div>
+    </body>
+</html>
