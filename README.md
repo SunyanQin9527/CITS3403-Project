@@ -5,7 +5,7 @@ This is a web-based akari daily game for people to test out their puzzle-solving
 ## Authors
 
 - Mike  - 23201541
-- - 
+- Sunayn Qin - 23208949
 - 
 - - 
 
