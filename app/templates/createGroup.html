@@ -1,0 +1,60 @@
+<html>
+    <head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/test.css">
+    <script src="/static/test.js"></script>
+    </head>
+    <body> 
+      <div class="container">
+        <div id="title">
+            <h1> Group Sign-up </h1>
+        </div>
+
+        <div id="signUpForm">
+
+            <p>enter your details here</p>
+            <form action="/submit" method="post">
+
+                <label for ="numberOfStudents"> Number of students so far</label>
+                <!--<input type="number" id ="numberOfStudents" min=1 max=4></input>-->
+                <select name="numberOfStudents" id="numberOfStudents">
+                    <option value = 1>1</option>
+                    <option value = 2>2</option>
+                    <option value = 3>3</option>
+                    <option value = 4>4</option>
+                </select>
+                <br>
+
+                <label for="student1">Student1:</label>
+                <input type="number" id="student1"> </input>
+
+                <br>
+                <label for="student2">Student2:</label>
+                <input type="number" id="student2"> </input>
+
+                <br>
+                <label for="student3">Student3:</label>
+                <input type="number" id="student3"> </input>
+
+                <br>
+                <label for="student4">Student4:</label>
+                <input type="number" id="student4"> </input>
+
+                <br>                              
+                <input class="btn btn-primary" id="submitBtn" type="submit">
+                
+                
+            </form>
+
+            <button class="btn btn-danger" value = "Create" onclick="location.href='{{ url_for('groups')}}'">
+                <span class="glyphicon glyphicon-search"> </span>Cancel
+            </button>
+        </div>
+
+        
+       
+      </div>
+    </body>
+</html>
