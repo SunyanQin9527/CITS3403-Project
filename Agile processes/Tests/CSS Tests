@@ -10,18 +10,89 @@ body {
 
 /* Specific styles for the forum page */
 .forumpage {
-    background-color: rgb(255, 248, 224); /* Grey background for forum page */
+    background-color: rgb(34, 33, 33); /* Grey background for forum page */
 }
 
 
 .profilepage {
-    background-color: rgb(255, 248, 224); /* White background for contact page */
+    background-color:rgb(34, 33, 33) ; /* White background for contact page */
 }
 
 
 /* Specific styles for the contact page */
 .contact {
-    background-color: black; /* White background for contact page */
+    background-color: rgb(34, 33, 33) ; /* White background for contact page */
+}
+
+
+
+
+
+
+/* SVG图标的样式调整 */
+#discussionform svg {
+    width: 30px; /* 设置图标宽度 */
+    height: 30px; /* 设置图标高度 */
+    margin-left: 10px; /* 在图标和按钮文本之间添加一点空间 */
+    fill: white;
+}
+
+
+#uploadphoto svg {
+    color: #45a049;
+    width: 40px;
+    height: 40px;
+    margin-left: 30px;
+    vertical-align: middle; /* Adjust this value to lower or raise the icon */
+}
+
+
+
+
+.modal-content1 {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 5px; /* Optional: for rounded corners */
+}
+
+
+
+.modal-content1 h1{
+    color: #45a049; /* Green color for headings to match the theme */
+    text-align: center; /* Center the headings */
+    font-size: 30px;
+}
+
+
+.modal-content1 h2 {
+    color: #45a049; /* Green color for headings to match the theme */
+    text-align: center; /* Center the headings */
+}
+
+.modal-content1 input[type="text"],
+.modal-content1 textarea {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Comfortable padding */
+    margin-bottom: 10px; /* Space between inputs */
+    border: 1px solid #ccc; /* Consistent border styling */
+    border-radius: 4px; /* Rounded corners for inputs */
+}
+
+.modal-content1 input[type="submit"] {
+    background-color: #33b437; /* Green background to match the theme */
+    color: white; /* White text */
+    padding: 15px 20px; /* Adequate padding */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Cursor pointer for interactivity */
+
+}
+
+.modal-content1 input[type="submit"]:hover {
+    background-color: #48a44c; /* Darker green on hover for visual feedback */
 }
 
 
@@ -35,6 +106,7 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     border-radius: 8px;
 }
+
 
  /*homepage.html*/
  .homepage .container h1 {
@@ -272,46 +344,48 @@ body {
 }
 
 
-.forum-sidebar {
-    width: 200px; 
-    position: relative;
-    display: flex;
-    justify-content: center; /* Center children horizontally */
-    align-items: center; /* Center children vertically */
-    padding: 20px; /* Add some spacing */
-}
 
 
 
-.btn {
-    padding: 5px 30px;
-    border-radius: 5px;
-    background-color: #44bc23; /* Example background color */
-    white-space: nowrap; /* Prevents text from wrapping */
-    position: absolute; /* or relative to the parent's position */
-    right: 20px; /* Increase or adjust as needed to move the button to the left */
-    top: 20px; /* Adjust as needed for vertical positioning */
-
-}
 
 
-.btn:hover {
+
+.discussion-button {
     background: -webkit-linear-gradient(left, rgb(70, 189, 15), rgb(162, 248, 26));
-}
-
-
-.forumpage .btn h1 {
-    color: rgb(228, 240, 251);
+    color: white; /* White text */
+    border: none; /* No border for a cleaner look */
+    font-size: 25px; /* Font size for the text */
+    display: flex; /* Aligns the text and icon horizontally */
+    align-items: center; /* Centers the items vertically */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 20px;
+    width: 250px; /* Specific width for consistency */
+    height: 80px;
+    margin-top: 40px;
+    margin-right: 40px;
     text-decoration: underline;
-    font-size: 30px;
 }
 
+.discussion-button:hover {
+    background: -webkit-linear-gradient(left, rgb(70, 189, 15), rgb(148, 232, 12));
+}
+
+.discussion-button .discussion-text {
+    margin-right: 8px; /* Space between the text and the icon */
+}
+
+.discussion-button svg {
+    fill: white; /* Icon color to match the text */
+    width: 24px; /* Icon size */
+    height: 24px; /* Icon size */
+}
 
 
 
 
 .thread-list {
-    background-color: hsl(80, 18%, 93%);
+    background-color: hsl(80, 2%, 36%);
     padding: 10px;
     border-radius: 6px;
 }
@@ -319,9 +393,8 @@ body {
 
 .thread {
     background-color: hsl(80, 18%, 93%);
-    margin-bottom: 10px;
     padding: 10px;
-
+    border-radius: 5px; /* Rounded corners */
 }
 
 .thread h3 a {
@@ -720,6 +793,9 @@ input[type="password"] {
     flex-direction: column; /* This will stack the children vertically */
     align-items: center; /* This will center the items horizontally */
     padding: 10px;
+    background: -webkit-linear-gradient(left, #0b79e7, #b2f90e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 
@@ -825,8 +901,6 @@ input[type="password"] {
     color: #57b95b;
     font-size: 20px;
 }
-
-
 
 
 
