@@ -50,6 +50,7 @@
             </div>
         </div>
 
+
         <!-- login，signup button-->
         <div class="navbar-right">
             <button id="showLoginModal">Log In</button>
@@ -149,12 +150,6 @@
         </div>
     </div>
     
-    
-
-
-
-
-
     
         <!-- The Modal for feature descriptions -->
         <div id="featureModal" class="modal">
