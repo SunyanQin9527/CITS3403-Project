@@ -25,7 +25,7 @@
 
         <!-- Discussion Form Modal -->
         <div id="discussionModal" class="modal">
-            <div class="modal-content1">
+            <div class="discuss-modal-content">
                 <span class="close">&times;</span>
                 <h1>Having A Question?</h1>
                 <h2>Post Your New Discussion Query</h2>
@@ -58,9 +58,9 @@
             
             <!-- Login Modal -->
             <div id="loginModal" class="modal">
-                <div class="modal-content1">
+                <div class="modal-content">
                     <span class="close" id="closeLogin">&times;</span>
-                    <h3 class="login-title">Log In</h3>
+                    <h3 class="login-signup-title">Log In</h3>
 
 
                 <!-- Login表格 -->
@@ -75,7 +75,7 @@
                         <div id="passwordResetModal" class="modal">
                             <div class="modal-content">
                                 <span class="close" id="closePasswordReset">&times;</span>
-                                <h3 class="login-title">Password Reset</h3>
+                                <h3 class="login-signup-title">Password Reset</h3>
 
                                     <!-- Password reset表格 -->
                                     <form id="passwordResetForm" action="/submit-password-reset" method="POST">
@@ -93,7 +93,7 @@
             <div id="signupModal" class="modal">
                 <div class="modal-content">
                     <span class="close" id="closeSignup">&times;</span>
-                    <h3 class="login-title">Sign Up</h3>
+                    <h3 class="login-signup-title">Sign Up</h3>
 
                     <form action="/submit-registration" method="POST">
                         <input type="text" id="name" name="name" placeholder="Full Name" required>
@@ -119,37 +119,39 @@
 
 
 
-    <!-- Contact Content Area -->
     <div class="contact-container">
-
         <!-- Group Partner Contact Details -->
-        <section class="partner-contact">
+        <div class="contact-info">
             <h2>Team Member Contact</h2>
             <p><strong>Name:</strong> Team Members' Names</p>
             <p><strong>Email:</strong> teammember@example.com</p>
             <p><strong>Phone:</strong> +1234567890</p>
-            <!-- Add more partners if needed -->
-        </section>
-
-
+        </div>
+    
         <!-- Contact Form -->
-        <section class="contact-form-section">
+        <div class="contact-form">
             <h2>Send Us a Message / Leave Us Your Thought</h2>
-            <form id="contactForm" class="contact-form">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
                 
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required>
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
                 
-                <label for="message">Your Message:</label>
-                <textarea id="message" name="message" required></textarea>
+                <div class="form-group">
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit">Send Message</button>
 
-                
-                <button type="submit" id="sendMessageButton">Send Message</button>
-            </form>
 
-            <!-- Success Message Modal -->
+
+                            <!-- Success Message Modal -->
             <div id="successMessageModal" class="modal" style="display:none;">
                 <div class="modal-content">
                     <span class="close" id="closeSuccessModal">&times;</span>
@@ -157,9 +159,10 @@
                 </div>
             </div>
 
-
-        </section>
+            </form>
+        </div>
     </div>
+    
 
 
 
