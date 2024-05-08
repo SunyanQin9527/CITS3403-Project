@@ -26,7 +26,7 @@
 
         <!-- Discussion Form Modal -->
         <div id="discussionModal" class="modal">
-            <div class="modal-content1">
+            <div class="discuss-modal-content">
                 <span class="close">&times;</span>
                 <h1>Having A Question?</h1>
                 <h2>Post Your New Discussion Query</h2>
@@ -49,7 +49,7 @@
                 </form>
             </div>
         </div>
-
+        
 
         <!-- login，signup button-->
         <div class="navbar-right">
@@ -60,7 +60,7 @@
             <div id="loginModal" class="modal">
                 <div class="modal-content">
                     <span class="close" id="closeLogin">&times;</span>
-                    <h3 class="login-title">Log In</h3>
+                    <h3 class="login-signup-title">Log In</h3>
 
 
                 <!-- Login表格 -->
@@ -75,7 +75,7 @@
                         <div id="passwordResetModal" class="modal">
                             <div class="modal-content">
                                 <span class="close" id="closePasswordReset">&times;</span>
-                                <h3 class="login-title">Password Reset</h3>
+                                <h3 class="login-signup-title">Password Reset</h3>
 
                                     <!-- Password reset表格 -->
                                     <form id="passwordResetForm" action="/submit-password-reset" method="POST">
@@ -114,20 +114,23 @@
                 <button type="submit">Search</button>
             </form>
         </div>
+
     </nav>
 
+
+
+
+
+
      <!-- Main Content Area -->
-    <div class="container">
+    <div class="container1">
         <h1>A Platform for Knowledge Sharing - 'Classroom Companions'</h1>
         <h2> "Engage in Conversations, Exchange Opinions, and Discover Solutions for Your 'Classroom' Issues."</h2>
     </div>
+    
 
 
-
-
-
-
-    <div class="functionality-container">
+    <div class="functionality-container2">
         <h2>Our Features</h2>
         <p>Discover the tools that make 'Classroom Companions' the best place to engage in educational discussions:</p>
         
@@ -151,6 +154,9 @@
     </div>
     
     
+
+
+
         <!-- The Modal for feature descriptions -->
         <div id="featureModal" class="modal">
             <div class="modal-content">
@@ -173,21 +179,8 @@
             </div>
         </div>
 
-    </div>
 
-
-
-    <div class="leaderboard-container">
-        <h3>Leaderboard</h3>
-        <p>See who's contributing the most to the community   (Weekly Rankings Update)</p>
-        <ul id="leaderboardList" class="leaderboard"></ul>
-        <button id="viewAllBtn" onclick="location.href='full_leaderboard.html'">View Full Leaderboard</button>
-    </div>
-    
-    
-
-
-    <div class="container1">
+    <div class="container3">
         <h1>Classroom Companions</h1>
         <h2>'Classroom Companions' is a place where individuals of different backgrounds and ages can freely communicate, share information, and response to other people's questions. 
         We have dedicated ourselves to build a community where knowledge and experience flow freely since we founded in 2024.</h2>
@@ -195,7 +188,7 @@
 
 
 
-    <div class="container2">
+    <div class="container4">
         <h2>Fundamental Values</h2>
         <h3>"Compassion And Innovation", these two values form the basis of [Classroom Companion] and guide us to guarantee that our services are suitable for individuals of all ages and backgrounds. 
             We ensure that each users can communicate with others in a respectful and understanding environment .</h3>
@@ -203,7 +196,7 @@
 
 
 
-    <div class="container3">
+    <div class="container5">
         <h4>Meet Our Team</h4>
         <ul class="team-list">
             <li class="team-list-item">
@@ -225,8 +218,6 @@
         </ul>
 
     </div>
-
-
 
 
 
