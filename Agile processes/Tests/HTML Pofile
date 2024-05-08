@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
     <link rel="stylesheet" href="welcome.css">
 </head>
-
 <body class="profilepage">
-    
+
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <a href="homepage.html">Home</a>
         <a href="forum.html">Forum</a>
@@ -23,9 +22,11 @@
             </svg>
         </button>
 
+
+
         <!-- Discussion Form Modal -->
         <div id="discussionModal" class="modal">
-            <div class="modal-content1">
+            <div class="discuss-modal-content">
                 <span class="close">&times;</span>
                 <h1>Having A Question?</h1>
                 <h2>Post Your New Discussion Query</h2>
@@ -49,41 +50,70 @@
             </div>
         </div>
         
-
-        <div class="search-container">
-            <form action="/search" method="get">
-                <input type="text" placeholder="Search..." name="search" id="search">
-                <button type="submit">Search</button>
-            </form>
-        </div>
     </nav>
 
-    <div class="profile-header">
-        <h2>User Profile</h2>     
+    
+
+
+
+
+
+
+
+    <!-- Profile Information -->
+    <div class="profile-container">
+        <header class="profile-header">
+            <!-- Profile Picture Button -->
+            <img id="profilePicture" class="profile-picture-btn" src="default_avatar.png" >
+            <div>
+                <h1>Welcome, Username</h1>
+                <div class="profile-container">
+                    <!-- Avatar Selection Modal -->
+                    <div id="avatarModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close" id="closeModal">&times;</span>
+                            <h4>Choose Your Avatar</h4>
+                            <div class="avatar-grid">
+                                <img src="profile-pictures/rat.png" class="avatar-option" alt="Avatar 1">
+                                <img src="profile-pictures/ox.png" class="avatar-option" alt="Avatar 2">
+                                <img src="profile-pictures/tiger.png" class="avatar-option" alt="Avatar 3">
+                                <img src="profile-pictures/rabbit.png" class="avatar-option" alt="Avatar 4">
+                                <img src="profile-pictures/dragon.png" class="avatar-option" alt="Avatar 5">
+                                <img src="profile-pictures/snake.png" class="avatar-option" alt="Avatar 6">
+                                <img src="profile-pictures/horse.png" class="avatar-option" alt="Avatar 7">
+                                <img src="profile-pictures/sheep.png" class="avatar-option" alt="Avatar 8">
+                                <img src="profile-pictures/monkey.png" class="avatar-option" alt="Avatar 9">
+                                <img src="profile-pictures/rooster.png" class="avatar-option" alt="Avatar 10">
+                                <img src="profile-pictures/dog.png" class="avatar-option" alt="Avatar 11">
+                                <img src="profile-pictures/pig.png" class="avatar-option" alt="Avatar 12">
+                            </div>
+                        </div>
+                    </div>
+                </div>                                                  
+            </div>
+
+        </header>
+
+        <section class="user-details">
+            <h2>Personal Information</h2>
+            <a href="edit-profile.html" class="edit-profile-btn">Edit Profile</a>
+            <p><strong>User ID:</strong> 12345</p>
+            <p><strong>Age:</strong>19</p>
+
+            <h2>Statistics</h2>
+            <p><strong>Posts:</strong> 150</p>
+            <p><strong>Threads Created:</strong> 25</p>
+            <p><strong>Credit Points:</strong> 300</p>
+            <p><strong>Likes received</strong> 39</p>
+            <p><Strong>Collections</Strong> 12</p>
+
+        </section>
+
+
     </div>
 
-    <img src="profile-picture.png" alt="Profile Picture" class="profile-pic">
-
-
-    <div class="user-actions-container">
-        <button type="button" id="editProfileBtn">Edit Profile</button>
-        <button type="button" id="logOutBtn">Log Out</button>
-    </div>
-
-
-    <div class="profile-content">       
-        <h2>Username</h2>
-        <p><strong>Email:</strong> user@example.com</p>
-        <p><strong>Join Date:</strong> January 1, 2020</p>
-        <h2>Statistics</h2>
-        <p>Posts: 120</p>
-        <p>Replies: 350</p>
-        <p>Likes Received: 780</p>
-        <p>Points: 1200</p>
-
-    </div>
-
-    <script src="script.js"></script>
+    <!-- Scripts and Additional Features -->
+    <script src="scripts.js"></script>
 </body>
 </html>
 
