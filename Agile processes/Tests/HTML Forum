@@ -25,7 +25,7 @@
 
         <!-- Discussion Form Modal -->
         <div id="discussionModal" class="modal">
-            <div class="modal-content1">
+            <div class="discuss-modal-content">
                 <span class="close">&times;</span>
                 <h1>Having A Question?</h1>
                 <h2>Post Your New Discussion Query</h2>
@@ -58,7 +58,7 @@
             <div id="loginModal" class="modal">
                 <div class="modal-content">
                     <span class="close" id="closeLogin">&times;</span>
-                    <h3 class="login-title">Log In</h3> 
+                    <h3 class="login-signup-title">Log In</h3> 
 
                     <form id="loginForm" action="/submit-login" method="POST">
                         <input type="email" id="email" name="email" placeholder="Email Address" required>
@@ -70,7 +70,7 @@
                         <div id="passwordResetModal" class="modal">
                             <div class="modal-content">
                                 <span class="close" id="closePasswordReset">&times;</span>
-                                <h3 class="login-title">Password Reset</h3>
+                                <h3 class="login-signup-title">Password Reset</h3>
                                 <form id="passwordResetForm" action="/submit-password-reset" method="POST">
                                     <input type="email" id="resetEmail" name="resetEmail" placeholder="Enter your email address" required>
                                     <button type="button" id="resetPasswordButton">Send Reset Link</button>
@@ -86,7 +86,7 @@
             <div id="signupModal" class="modal">
                 <div class="modal-content">
                     <span class="close" id="closeSignup">&times;</span>
-                    <h3 class="login-title">Sign Up</h3>
+                    <h3 class="login-signup-title">Sign Up</h3>
 
                     <form action="/submit-registration" method="POST">
                         <input type="text" id="name" name="name" placeholder="Full Name" required>
@@ -107,40 +107,82 @@
                 <button type="submit">Search</button>
             </form>
         </div>
+
     </nav>
 
 
-    
-    <!-- Main Content Area -->
+
+
     <div class="forum-container">
         <div class="forum-content">
-            <!-- This goes in the body where your current h1 tag is -->
-            <a href="homepage.html" class="home-button">
-                <h1>Classroom Companions</h1>
-            </a>
+            <div class="discussion-form-container">
+                <div class="discussion-form-header">
+                    <h2>Having A Question?</h2>
+                    <p>Post Your New Discussion Query</p>
+                </div>
+                <form action="/submit-question" method="POST">
+                    <label for="discussionTitle">Discussion Title:</label>
+                    <input type="text" id="discussionTitle" name="discussionTitle" required>
+            
+                    <label for="discussionQuestion">Your Question:</label>
+                    <textarea id="discussionQuestion" name="discussionQuestion" required></textarea>
+            
+                    <div class="post-question-container">
+                        <button class="post-btn">Post Question</button>
+                        <button id="uploadphoto" style="background: none; border: none; cursor: pointer;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
+                                <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                                <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"/>
+                            </svg>
+                        </button>
+                        
+                    </div>
+                    
+                    
+                </form>
+            </div>
+            
 
-            <!-- List of Threads -->
+
+
+
+
+
+
             <div class="thread-list">
-
                 <div class="thread">
                     <h3 class="thread-title"><a href="thread.html">Thread Title</a></h3>
                     <p class="thread-info">Posted by <a href="user-profile.html">Username</a> - 100 replies</p>
                 </div>
-
+                <!-- Additional threads could be listed here -->
             </div>
+
         </div>
-
-
-        <button id="newDiscussionButton" class="discussion-button">
-            <span class="discussion-text">New Discussion</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-            </svg>
-        </button>
-        
-        
+        <div class="sidebar">
+            <!-- Leaderboard and other sidebar content -->
+            <div class="leaderboard-container">
+                <h3>Leaderboard</h3>
+                <p>See who's contributing the most to the community (Weekly Rankings Update)</p>
+                <ul id="leaderboardList" class="leaderboard">
+                    <li>1st Place - Alice Johnson - 1200 points</li>
+                    <li>2nd Place - Bob Smith - 1100 points</li>
+                    <li>3rd Place - Carol Tan - 1050 points</li>
+                    <li>4th Place - Dave Lee - 1040 points</li>
+                    <li>5th Place - Ellen Ray - 1030 points</li>
+                    <li>6th Place - Frank Poe - 1020 points</li>
+                    <li>7th Place - Greta Sims - 1010 points</li>
+                    <li>8th Place - Harry Nicks - 1000 points</li>
+                    <li>9th Place - Irene Bolt - 990 points</li>
+                    <li>10th Place - Jack Tide - 980 points</li>
+                </ul>
+                <button id="viewAllBtn" onclick="location.href='full_leaderboard.html'">View Full Leaderboard</button>
+            </div>
+            
+            </div>
+            
+        </div>
     </div>
+    
     
     <script src="scripts.js"></script>
 
