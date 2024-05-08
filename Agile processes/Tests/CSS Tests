@@ -10,18 +10,20 @@ body {
 
 /* Specific styles for the forum page */
 .forumpage {
-    background-color: rgb(34, 33, 33); /* Grey background for forum page */
+
+    background-color: rgb(241,242,245); /* Grey background for forum page */
 }
 
 
 .profilepage {
-    background-color:rgb(34, 33, 33) ; /* White background for contact page */
+    background-color:rgb(241, 242, 245) ; /* White background for contact page */
 }
 
 
 /* Specific styles for the contact page */
 .contact {
-    background-color: rgb(34, 33, 33) ; /* White background for contact page */
+    background-color: rgb(241, 242, 245) ; /* White background for contact page */
+
 }
 
 
@@ -29,7 +31,7 @@ body {
 
 
 
-/* SVG图标的样式调整 */
+/* Posting questions Icon SVG*/
 #discussionform svg {
     width: 30px; /* 设置图标宽度 */
     height: 30px; /* 设置图标高度 */
@@ -37,7 +39,7 @@ body {
     fill: white;
 }
 
-
+/* Upload photos Icon SVG*/
 #uploadphoto svg {
     color: #45a049;
     width: 40px;
@@ -49,7 +51,149 @@ body {
 
 
 
-.modal-content1 {
+
+
+
+/* Discussion Form Modal */
+.discuss-modal-content{
+    background-color: #fefefe; /* White background for the modal */
+    margin: 15% auto; /* Centered horizontally, 15% from the top */
+    padding: 20px;
+    border: 1px solid #888; /* Gray border for separation */
+    width: 80%; /* Responsive width, adjustable */
+    border-radius: 5px; /* Rounded corners for a polished look */
+}
+
+/* Discussion Form Modal */
+.discuss-modal-content h1, .discuss-modal-content h2 {
+    color: #45a049; /* Consistent green for headings */
+    text-align: center; /* Center-align all headings */
+}
+
+/* Discussion Form Modal */
+.discuss-modal-content h1 {
+    font-size: 30px; /* Larger font for main heading */
+}
+
+/* Discussion Form Modal */
+.discuss-modal-content input[type="text"], .discuss-modal-content textarea {
+    width: 100%; /* Inputs are full width */
+    padding: 10px; /* Comfortable padding */
+    margin-bottom: 10px; /* Margin below each field */
+    border: 1px solid #ccc; /* Light border for separation */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Discussion Form Modal */
+.discuss-modal-content input[type="submit"] {
+    background-color: #33b437; /* Green background for submit button */
+    color: white; /* White text for contrast */
+    padding: 15px 20px; /* Adequate padding */
+    border: none; /* No border needed */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor for clarity */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+/* Discussion Form Modal */
+.discuss-modal-content input[type="submit"]:hover {
+    background-color: #48a44c; /* Darker green on hover for feedback */
+}
+
+
+
+
+
+
+
+/*Navigation for all html*/
+.navbar {
+    display: flex;                
+    align-items: center;         
+    padding: 0 20px;             
+    background-color: black;       
+}
+
+.navbar a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 30px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the current link */
+.navbar a.active {
+    background-color: #45a049;
+    color: white;
+}
+
+.navbar-right {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;         
+    flex-grow: 1;               
+}
+
+
+
+
+
+
+
+.search-container {
+    flex-grow: 1; /* Allow the search container to grow */
+    display: flex; /* Use flexbox inside the search container */
+    justify-content: center; /* Center the search bar horizontally */
+    margin: 5px;
+}
+
+.search-container input[type="text"] {
+    width: 500px; /* or 100% for full-width */
+    padding: 10px;
+
+}
+
+.search-container button[type="submit"] {
+    background-color: #4CAF50; /* Example background color */
+    color: white;              /* Text color */
+    padding: 10px 20px;        /* Padding around the text */
+    border: none;              /* No border */
+    border-radius: 5px;        /* Rounded corners */
+    font-size: 16px;           /* Font size */
+    cursor: pointer;           /* Change mouse cursor on hover */
+    margin-top: 5px;
+}
+
+.search-container button[type="submit"]:hover {
+    background-color: rgb(6, 171, 33); /* Changes color on hover */
+}
+
+
+
+
+
+
+/* Logini, Signup Modal */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+/* Modal Content */
+.modal-content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
@@ -58,224 +202,20 @@ body {
     border-radius: 5px; /* Optional: for rounded corners */
 }
 
-
-
-.modal-content1 h1{
-    color: #45a049; /* Green color for headings to match the theme */
-    text-align: center; /* Center the headings */
-    font-size: 30px;
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
-
-.modal-content1 h2 {
-    color: #45a049; /* Green color for headings to match the theme */
-    text-align: center; /* Center the headings */
-}
-
-.modal-content1 input[type="text"],
-.modal-content1 textarea {
-    width: 100%; /* Full width inputs */
-    padding: 10px; /* Comfortable padding */
-    margin-bottom: 10px; /* Space between inputs */
-    border: 1px solid #ccc; /* Consistent border styling */
-    border-radius: 4px; /* Rounded corners for inputs */
-}
-
-.modal-content1 input[type="submit"] {
-    background-color: #33b437; /* Green background to match the theme */
-    color: white; /* White text */
-    padding: 15px 20px; /* Adequate padding */
-    border: none; /* No border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Cursor pointer for interactivity */
-
-}
-
-.modal-content1 input[type="submit"]:hover {
-    background-color: #48a44c; /* Darker green on hover for visual feedback */
-}
-
-
-
-
- /*homepage.html*/
- .homepage .container {
-    text-align: center;
-    background: rgb(28, 28, 28);
-    padding: 50px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
-}
-
-
- /*homepage.html*/
- .homepage .container h1 {
-    font-family: 'Segoe UI', sans-serif; /* Example of a web-safe font */
-    font-size: 70px; /* Example size */
-    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    border-radius: 8px;
-    display: inline-block;
-    padding: 10px 20px; /* Some padding around the text */
-    display: inline-block; /* Necessary for padding and background */
-    text-decoration: none;
-}
-
-
-.homepage .container h2 {
-    font-size: 25px; /* Example size */
-    color: #45a049; /* Example color */
-    padding: 10px 20px; /* Some padding around the text */
-    display: inline-block; /* Necessary for padding and background */
-}
-
-
-
-
-
-.homepage .container1 {
-    text-align: center;
-    background: rgb(28, 28, 28);
-    padding: 50px;
-    border-radius: 8px;
-    margin: 40px auto;
-
- }
-
- 
- .homepage .container1 h1 {
-    font-family: 'Segoe UI', sans-serif; /* Using a web-safe font */
-    font-size: 50px; /* Setting the font size */
-    background: -webkit-linear-gradient(left, #ef9e1c, rgb(16, 176, 16), #1a7ddf, rgb(237, 227, 31));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
-
-}
-
-
-.homepage .container1 h2 {
-    font-family: 'Segoe UI', sans-serif; /* Using a web-safe font */
-    font-size: 30px; /* Setting the font size */
-    color: rgb(245, 33, 195);
-    margin-bottom: 20px;
-
-}
-
-
-
-.homepage .container2 {
-    text-align: center;
-    background: rgb(28, 28, 28);
-    padding: 50px;
-    border-radius: 8px;
-    margin: 40px auto;
-
- }
-
-
-.homepage .container2 h2 {
-    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    font-size: 50px;
-
- }
- 
-
-
- .homepage .container2 h3 {
-    font-family: 'Segoe UI', sans-serif; /* Using a web-safe font */
-    font-size: 30px; /* Setting the font size */
-    color: #1a7ddf;
-    margin-bottom: 20px;
-
-}
-
-
- .homepage .container3 {
-    text-align: center;
-    background: rgb(28, 28, 28);
-    padding: 50px;
-    border-radius: 8px;
-    margin: 40px auto;
- }
-
-
-
- .homepage .container3 h4 {
-    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: 'Segoe UI', sans-serif; /* Using a web-safe font */
-    font-size: 50px; /* Setting the font size */
-    margin-bottom: 20px;
-
-}
-
-
-
-.homepage .container3 p {
-    font-family: 'Segoe UI', sans-serif; /* Using a web-safe font */
-    font-size: 30px; /* Setting the font size */
-    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
-
-}
-
-
-
-/*for all html*/
-.navbar {
-    display: flex;                /* Use flexbox for navbar layout */
-    align-items: center;          /* Center align the items vertically */
-    padding: 0 20px;              /* Add horizontal padding */
-    background-color: black;       /* Dark background for the navbar */
-}
-
-/* Style the links inside the navigation bar */
-.navbar a {
-    color: #f2f2f2;
-    text-align: center;
-    padding: 30px 16px;
-    text-decoration: none;
-}
-
-
-.navbar a:hover {
-    background-color: #ddd;
+.close:hover{
     color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-
-
-
-/* Add a color to the active/current link */
-.navbar a.active {
-    background-color: #45a049;
-    color: white;
-}
-
-
-
-.navbar-right {
-    display: flex;                /* Use flexbox for the navbar-right layout */
-    justify-content: flex-end;    /* Align items to the end (right) */
-    align-items: center;          /* Center align items vertically */
-    flex-grow: 1;                 /* Allow this div to grow as needed */
-}
-
-
-/* Styling for the heading */
-.login-title  {
-    color: #44bc23; /* Brand color for heading */;
-    font-size: 30px;
-    margin:8px;
-}
 
 
 #showLoginModal {
@@ -290,7 +230,6 @@ body {
     /* Add other styles as needed */
 }
 
-
 #showLoginModal:hover {
     background-color: #45a049; /* Darker background color on hover */
     /* Add other hover styles as needed */
@@ -298,6 +237,9 @@ body {
 
 
 
+
+
+/*Signup modal*/
 #showSignUpModal {
     background-color: #44bc23; /* Example background color */
     color: white;              /* Text color */
@@ -310,8 +252,6 @@ body {
     /* Add other styles as needed */
 }
 
-
-
 #showSignUpModal:hover {
     background-color: #45a049; /* Darker background color on hover */
     /* Add other hover styles as needed */
@@ -319,143 +259,15 @@ body {
 
 
 
-.forumpage .forum-content h1  {
-    font-family: 'Segoe UI', sans-serif; /* Example of a web-safe font */
-    font-size: 60px; /* Example size */
-    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding: 10px 20px; /* Some padding around the text */
-    display: inline-block; /* Necessary for padding and background */
-    border-radius: 6px;
+
+.login-signup-title{
+    color:#45a049;
+    font-size: 25px;
 }
-
-
-
-.forum-container {
-    display: flex;
-    padding: 20px;
-
-}
-
-
-.forum-content {
-    flex-grow: 1;
-}
-
-
-
-
-
-
-
-
-.discussion-button {
-    background: -webkit-linear-gradient(left, rgb(70, 189, 15), rgb(162, 248, 26));
-    color: white; /* White text */
-    border: none; /* No border for a cleaner look */
-    font-size: 25px; /* Font size for the text */
-    display: flex; /* Aligns the text and icon horizontally */
-    align-items: center; /* Centers the items vertically */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    padding: 20px;
-    width: 250px; /* Specific width for consistency */
-    height: 80px;
-    margin-top: 40px;
-    margin-right: 40px;
-    text-decoration: underline;
-}
-
-.discussion-button:hover {
-    background: -webkit-linear-gradient(left, rgb(70, 189, 15), rgb(148, 232, 12));
-}
-
-.discussion-button .discussion-text {
-    margin-right: 8px; /* Space between the text and the icon */
-}
-
-.discussion-button svg {
-    fill: white; /* Icon color to match the text */
-    width: 24px; /* Icon size */
-    height: 24px; /* Icon size */
-}
-
-
-
-
-.thread-list {
-    background-color: hsl(80, 2%, 36%);
-    padding: 10px;
-    border-radius: 6px;
-}
-
-
-.thread {
-    background-color: hsl(80, 18%, 93%);
-    padding: 10px;
-    border-radius: 5px; /* Rounded corners */
-}
-
-.thread h3 a {
-    color: #55af10;
-    text-decoration: none;
-}
-
-.thread h3 a:hover {
-    text-decoration: underline;
-}
-
-
-.thread-info {
-    font-size: 0.9em;
-    color: #666;
-}
-
-
-
-
-
-
-.search-container {
-    flex-grow: 1; /* Allow the search container to grow */
-    display: flex; /* Use flexbox inside the search container */
-    justify-content: center; /* Center the search bar horizontally */
-    margin: 5px;
-}
-
-
-
-.search-container input[type="text"] {
-    width: 500px; /* or 100% for full-width */
-    padding: 10px;
-
-}
-
-
-
-.search-container button[type="submit"] {
-    background-color: #4CAF50; /* Example background color */
-    color: white;              /* Text color */
-    padding: 10px 20px;        /* Padding around the text */
-    border: none;              /* No border */
-    border-radius: 5px;        /* Rounded corners */
-    font-size: 16px;           /* Font size */
-    cursor: pointer;           /* Change mouse cursor on hover */
-    margin-top: 5px;
-}
-
-
-.search-container button[type="submit"]:hover {
-    background-color: rgb(6, 171, 33); /* Changes color on hover */
-}
-
-
 
 
 
 /* Login Form button */
-
 input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -466,8 +278,6 @@ input[type="password"] {
     box-sizing: border-box;
     border-radius: 4px;
 }
-
-
 
 #loginButton {
     background-color: #33b437; /* Example background color */
@@ -489,7 +299,7 @@ input[type="password"] {
 
 
 
-
+/* Signup Form button */
 #signupButton {
     background-color: #33b437; /* Example background color */
     color: white;              /* Text color */
@@ -498,16 +308,13 @@ input[type="password"] {
     border-radius: 5px;        /* Rounded corners */
     font-size: 16px;           /* Font size */
     cursor: pointer;           /* Change mouse cursor on hover */
-
     margin-top: 10px;
     /* Add other styles as needed */
 }
 
-
 #signupButton:hover {
     background-color: #45a049; /* Changes color on hover */
 }
-
 
 
 
@@ -523,15 +330,9 @@ input[type="password"] {
     margin-top: 18px;
 }
 
-/* Hover state for the link */
+
 #loginForm .forgot-password:hover {
-    color: #075fbd; /* Example link color */
-}
-
-
-
-.forum-container .forum-content .thread-list .thread-title {
-    font-size: 20px; /* Example size */
+    color: #075fbd;
 }
 
 
@@ -556,51 +357,44 @@ input[type="password"] {
 
 
 
-/* Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+ /*homepage.html*/
+ .homepage .container1 {
+    text-align: center;
+    background: rgb(28, 28, 28);
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
 }
 
 
-/* Modal Content */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    border-radius: 5px; /* Optional: for rounded corners */
-}
-
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
+ /*homepage.html Classroom Companions*/
+ .homepage .container1 h1 {
+    font-family: 'Segoe UI', sans-serif; /* Example of a web-safe font */
+    font-size: 70px; /* Example size */
+    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-radius: 8px;
+    display: inline-block;
+    padding: 10px 20px; /* Some padding around the text */
+    display: inline-block; /* Necessary for padding and background */
     text-decoration: none;
-    cursor: pointer;
+}
+
+.homepage .container1 h2 {
+    font-size: 25px; /* Example size */
+    color: #45a049; /* Example color */
+    padding: 10px 20px; /* Some padding around the text */
+    display: inline-block; /* Necessary for padding and background */
 }
 
 
 
 
 
-.functionality-container {
+
+
+.functionality-container2 {
     margin: 40px auto;
     background: rgb(28, 28, 28);
     padding: 50px;
@@ -608,18 +402,16 @@ input[type="password"] {
     text-align: center;
 }
 
-
-
-.functionality-container h2 {
+.functionality-container2 h2 {
     background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 50px;
+    font-size: 35px;
 }
 
-.functionality-container p {
+.functionality-container2 p {
     color: #57b95b;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .features-flexbox {
@@ -634,14 +426,12 @@ input[type="password"] {
     padding: 20px;
     background: rgb(247, 205, 227);
     border-radius: 5px;
-
-    transition: transform 0.3s ease;
 }
 
 .feature-box h3 {
     margin: 0;
     color: #d84bb8;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .feature-box p {
@@ -658,254 +448,500 @@ input[type="password"] {
 
 
 
-/* General styles for the leaderboard container */
-.leaderboard-container {
-    background: rgb(28, 28, 28);
-    padding: 20px;
 
-    border-radius: 8px;
-    margin-top: 20px;
+
+
+
+
+.homepage .container3 {
     text-align: center;
+    background: rgb(28, 28, 28);
+    padding: 50px;
+    border-radius: 8px;
+    margin: 40px auto;
+
+ }
+ 
+ .homepage .container3 h1 {
+    font-family: 'Segoe UI', sans-serif; /* Using a web-safe font */
+    font-size: 35px; /* Setting the font size */
+    background: -webkit-linear-gradient(left, #ef9e1c, rgb(16, 176, 16), #1a7ddf, rgb(237, 227, 31));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
 }
 
-/* Style for the heading */
-.leaderboard-container h3 {
+.homepage .container3 h2 {
+    font-family: 'Segoe UI', sans-serif; /* Using a web-safe font */
+    font-size: 25px; /* Setting the font size */
+    color: rgb(245, 33, 195);
+    margin-bottom: 20px;
+}
+
+
+
+
+ .homepage .container4 {
+    text-align: center;
+    background: rgb(28, 28, 28);
+    padding: 35px;
+    border-radius: 8px;
+    margin: 40px auto;
+ }
+
+ .homepage .container4 h2 {
     background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-family: 'Segoe UI', sans-serif; /* Using a web-safe font */
+    font-size: 35px; /* Setting the font size */
+    margin-bottom: 20px;
+
+}
+
+.homepage .container4 h3 {
+    font-family: 'Segoe UI', sans-serif; /* Using a web-safe font */
+    font-size: 25px; /* Setting the font size */
+    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 25px;
+
+}
+
+
+
+
+
+
+.homepage .container5 {
     text-align: center;
-    font-size: 50px;
+    background: rgb(28, 28, 28);
+    padding: 50px;
+    border-radius: 8px;
+    margin: 40px auto;
+ }
+
+.homepage .container5 h4 {
+    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 35px;
+ }
+ 
+
+
+
+/* Style for the team list */
+.team-list {
+    list-style: none; /* Remove default bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+/* Style for individual list items */
+.team-list-item {
+    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px; /* Padding inside each item */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: Arial, sans-serif; /* Font family */
+    font-size: 20px; /* Font size */
+
 }
 
 
-.leaderboard-container p {
-    color: #57b95b;
-    font-size: 30px;
 
+
+
+.forum-container {
+    display: flex;
+    justify-content: space-between; /* 确保内容和排行榜之间有最大的间距 */
+    align-items: flex-start; /* 顶部对齐 */
+    padding: 20px;
+    min-height: 100vh; /* 确保容器高度填满视窗 */
+}
+
+.forum-content {
+    flex-grow: 1; /* 让主内容区域根据需要自动填充空间 */
+    margin-right: 20px; /* 确保与排行榜之间有空间 */
 }
 
 
 
-/* Removing default list styles and padding */
+
+
+
+.leaderboard-container {
+    flex-shrink: 0; /* 防止排行榜在缩放时大小改变 */
+    width: 250px; /* 调整宽度 */
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    height: 100vh; /* 自适应内容高度 */
+}
+
 .leaderboard {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-/* Styling for individual leaderboard entries */
 .leaderboard li {
     background: #c7dcf1;
     margin: 10px 0;
-    padding: 20px;
+    padding: 10px;
     border-radius: 4px;
 }
 
-/* Specific styles for the top three */
-.leaderboard li:nth-child(1), /* First place */
-.leaderboard li.first-place {  /* If you add the class through JS */
-    background: -webkit-linear-gradient(left, #ff6648, rgb(240, 136, 67), rgb(252, 248, 2),
-     rgb(85, 225, 104), rgb(162, 216, 241), rgb(72, 72, 233), rgb(226, 57, 226));
+
+
+
+.leaderboard li:nth-child(1) {
+    background: #f0fa82;
 }
 
-.leaderboard li:nth-child(2), /* Second place */
-.leaderboard li.second-place { /* If you add the class through JS */
-    background: -webkit-linear-gradient(left, rgb(189, 240, 248), rgb(222, 145, 248), #1efdee);
+.leaderboard li:nth-child(2) {
+    background: hsl(112, 74%, 83%);
 }
 
-.leaderboard li:nth-child(3), /* Third place */
-.leaderboard li.third-place { /* If you add the class through JS */
-    background: -webkit-linear-gradient(left, rgb(179, 245, 195), rgb(231, 249, 188), #bfef96);
+.leaderboard li:nth-child(3) {
+    background: #f2e1c2;
 }
 
-/* Optional: Add a subtle box-shadow for each list item for a "raised" effect */
-.leaderboard li {
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+.leaderboard li:nth-child(n+4) {
+    background: #e2e7f7;
 }
 
-/* Style for the 'View Full Leaderboard' button */
+
+
+
 #viewAllBtn {
     background-color: #4CAF50;
     color: white;
-    padding: 15px 32px;
+    padding: 10px 20px;
+    font-size: 1em;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin: 30px auto;
-    font-size: 20px;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
 }
 
-/* Hover effect for the button */
 #viewAllBtn:hover {
-    background-color: #45a049;
+    background-color: #367c39;
 }
 
 
 
 
 
-
-.profilepage .profile-header h2{
-    font-size: 60px; /* Example size */
-    background: -webkit-linear-gradient(left, #0b79e7, #b2f90e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-
-
-.profile-header {
-    text-align: center;
+ /* forum discussion top form */
+.discussion-form-container {
+    background-color: #fff; 
     padding: 20px;
-    padding-top: 60px
-}
-
-
-.user-actions-container {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px 20px; /* Adjust the padding as needed */
+    border-bottom: 2px solid #ccc; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     margin-bottom: 20px;
 }
 
+.discussion-form-header h2 {
+    color: #4CAF50; 
+    margin-bottom: 10px;
+}
 
-#editProfileBtn,
-#logOutBtn {
-    margin-left: 10px; /* Space between the buttons */
-    padding: 8px 16px; /* Adjust padding to match the design */
-    background-color: #4CAF50; /* Button background color */
-    color: white; /* Button text color */
+.discussion-form-header p {
+    color: black; 
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px; 
+    margin-bottom: 10px; 
+    border: 1px solid #ccc; /
+    border-radius: 4px;
+}
+
+.post-btn {
+    background-color: white; 
+    color: white; 
+    padding: 10px 20px;
     border: none;
-    border-radius: 4px; /* Rounded corners for buttons */
+    border-radius: 5px; 
+    font-size: 16px;
     cursor: pointer;
+    background-color: #45a049;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.post-btn:hover {
+    background-color: #367c39; 
+    color: white; 
+}
+
+
+
+
+
+.thread-list {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    margin-right: 30px; 
+}
+
+.thread {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px; 
+    border-radius: 5px;
+}
+
+.thread h3 a {
+    color: #333; 
     font-size: 20px;
+    font-weight: bold; 
+}
+
+.thread h3 a:hover {
+    color: #555; 
+    text-decoration: underline;
+}
+
+.thread-info {
+    font-size: 0.8em; 
+    color: #666;
 }
 
 
-#editProfileBtn:hover,
-#logOutBtn:hover {
-    background-color: #45a049; /* Darker shade for hover effect */
+
+
+
+
+/* Profile container */
+.profile-container {
+    width: 80%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    box-shadow: none;
+
 }
 
 
-.profile-content {
+.profile-header {
     display: flex;
-    flex-direction: column; /* This will stack the children vertically */
-    align-items: center; /* This will center the items horizontally */
-    padding: 10px;
-    background: -webkit-linear-gradient(left, #0b79e7, #b2f90e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+
 }
 
 
-.profile-pic {
+.profile-picture-btn {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
-    margin-left: 80px;
+    background-color: #d3d3d3; /* 灰色背景 */
+    border-radius: 50%; /* 圆形 */
+    display: inline-block;
+    object-fit: cover; /* 确保图片内容适合圆形 */
+    border: 2px solid #f0f0f0; /* 边框颜色，可根据需要调整 */
+}
 
+.profile-picture-btn:hover {
+    background: #ababab;
 }
 
 
 
 
 
-/* Ensure the contact-container is a block element and centers its content */
+
+
+.profile-header h1 {
+    color: #4bbe51;
+    margin-left: 30px;
+}
+
+
+
+
+/* "Edit Profile" button style */
+.edit-profile-btn {
+    background-color: #4CAF50; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* Removes border */
+    padding: 10px 20px; /* Padding inside the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Changes cursor on hover */
+    text-decoration: none; /* Removes any underline */
+    font-size: 16px;
+
+
+}
+
+.edit-profile-btn:hover {
+    background-color: #45a049; /* Changes color on hover */
+}
+
+
+
+/* Avatar Grid: 控制头像选择布局 */
+.avatar-grid {
+    display: flex; /* 使用flex布局，使头像水平排列 */
+    flex-wrap: wrap; /* 当头像超出容器宽度时自动换行 */
+    gap: 10px; /* 控制头像之间的间隔 */
+    justify-content: center; /* 在容器中居中 */
+    margin: 10px 0; /* 上下间距 */
+}
+
+/* Avatar Option: 控制单个头像样式 */
+.avatar-option {
+    width: 100px; /* 设置头像的宽度 */
+    height: 100px; /* 设置头像的高度 */
+    border-radius: 50%; /* 圆形头像 */
+    border: 2px solid #ddd; /* 给头像添加边框 */
+    cursor: pointer; /* 鼠标悬停时显示为手指图标 */
+}
+
+.avatar-option:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+.user-details, .user-stats, .editable-sections {
+    margin-top: 20px;
+    height: 100vh; /* 自适应内容高度 */
+}
+
+h1, h2 {
+    color: #333;
+}
+
+.user-details p, .user-stats p, .editable-sections p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-header img.profile-pic {
+        margin-bottom: 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar a, .navbar button {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+/* Main container styling */
 .contact-container {
-    max-width: 800px; /* Set a max-width to keep the form reasonable on large screens */
-    margin: 0 auto; /* Auto margins for horizontal centering */
-    padding: 20px;
-    text-align: center; /* Center-align the text */
-    display: block; /* Block display to fill the width */
+    width: 70%; /* Adjust width to fit your design, usually between 50%-80% */
+    max-width: 960px; /* Maximum width to ensure it doesn't get too wide */
+    padding: 40px; /* Padding inside the container for better spacing */
+    background: white; /* White background for visibility */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners for modern appearance */
+
+    /* Centering the container without affecting the entire body */
+    position: absolute; /* Absolute positioning relative to nearest positioned ancestor */
+    top: 50%; /* Position 50% from top of viewport */
+    left: 50%; /* Position 50% from left of viewport */
+    transform: translate(-50%, -50%); /* Shift the element back by its own center */
+
+    display: flex;
+    justify-content: space-between; /* Space between elements inside container */
+    align-items: flex-start; /* Align items at the start to prevent stretch */
+    flex-wrap: wrap; /* Allows wrapping of elements inside the container */
 }
 
 
-.contact-container .partner-contact h2 {
-    background: -webkit-linear-gradient(left, rgb(252, 248, 2), rgb(226, 57, 226));
-     -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;
-     font-size: 50px;
+/* Individual sections within the container */
+.contact-info, .contact-form {
+    flex: 1 1 45%; /* Each takes up roughly half of the container */
+    padding: 20px; /* Padding for content inside each section */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
 }
 
-
-
-.contact-container .partner-contact p {
-    background: -webkit-linear-gradient(left,  #1a7ddf, rgb(245, 33, 195));
-     -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;
-     font-size: 28px;
+.contact-info {
+    border-right: 2px solid #eee; /* Separator between the sections */
 }
 
+/* Responsiveness: Stack elements on smaller screens */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Stack vertically on small screens */
+        align-items: center; /* Center align the items */
+    }
 
-
-/* Style for the titles */
-.contact-container h2 {
-    background: -webkit-linear-gradient(left,  #1a7ddf, rgb(12, 233, 30));
-     -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;
-    margin-bottom: 30px; /* Space above and below the headings */
-    font-size: 35px;
+    .contact-info, .contact-form {
+        flex-basis: 100%; /* Each takes full width of the container */
+        border-right: none; /* Remove the border for the contact info */
+    }
 }
 
-/* Style for the content in the contact sections */
-.contact-container section {
-    margin-top: 90px; /* Space between the sections */
-}
-
-/* Additional styling for the form to align with the design */
-.contact-form {
-    margin: 0 auto; /* Center the form */
-    display: block; /* Ensure it is block level for auto margins to work */
-}
-
-
-
-
-/* Style input fields and text area to match */
+/* Form styling */
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-    margin-top: 10px; /* Spacing above the inputs */
-    margin-bottom: 20px; /* Spacing below the inputs */
-    padding: 10px; /* Padding inside the inputs */
-    border: 1px solid #ddd; /* Light grey border */
-    border-radius: 5px; /* Rounded corners */
-    width: calc(100% - 22px); /* Adjust width for padding and border */
+    width: 100%; /* Full width of their container */
+    padding: 10px; /* Comfortable padding */
+    margin-bottom: 10px; /* Space between fields */
+    border: 1px solid #ccc; /* Subtle border styling */
+    border-radius: 4px; /* Rounded corners */
 }
 
-
-
-
-
-/* Style for the form button */
 .contact-form button {
-    background: -webkit-linear-gradient(left,  #1a7ddf, rgb(10, 192, 212));
-    color: white; /* White text */
-    padding: 10px 15px; /* Padding around the text */
+    width: 100%; /* Full width button */
+    padding: 12px 20px; /* Padding for better clickability */
+    background-color: #3eba44; /* Primary blue */
+    color: white; /* Text color */
     border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 5px; /* Rounded edges */
     cursor: pointer; /* Pointer cursor on hover */
-    font-size: 1em; /* Size of the text */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
-
 
 .contact-form button:hover {
-    background: -webkit-linear-gradient(left,  #90b9e2, rgb(10, 192, 212));
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
-
-
-
-.contact h4 {
-    color: #57b95b;
-    font-size: 20px;
+.modal-content h4 {
+    color:#45a049;
+    font-size: 25px;
+    padding: 10px 20px;
+    text-align: center;
 }
-
-
-
-
-
 
 
 
