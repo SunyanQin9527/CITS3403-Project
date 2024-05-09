@@ -52,14 +52,21 @@
     <!-- Profile Information -->
     <div class="profile-container">
         <header class="profile-header">
-            <!-- Profile Picture Button -->
-            <img id="profilePicture" class="profile-picture-btn" src="default_avatar.png" alt="User Profile Picture">
             
+            <div class="userprofile">
+                <h1>User Profile</h1>
+                <h2>Welcome, User</h2>
+            </div>
+
+            <img id="profilePicture" class="profile-picture-btn" src="default_avatar.png" alt="User Profile Picture">
 
             <div>
+
+
                 <div class="profile-buttons">
                     <a href="edit-profile.html" class="edit-profile-btn">Edit Profile</a>
                     <a href="logout.html" class="logout-btn">Logout</a>
+
                 </div>
 
                 <div class="profile-container">
@@ -84,9 +91,15 @@
                             </div>
                         </div>
                     </div>
+                   
                 </div>    
-            </div>                                             
+            </div>          
+            
+            
         </header>
+
+
+
 
         <section class="user-details">
             <h2>Personal Information</h2>
@@ -106,4 +119,5 @@
     <script src="scripts.js"></script>
 </body>
 </html>
+
 
