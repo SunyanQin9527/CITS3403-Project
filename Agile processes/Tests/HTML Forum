@@ -36,15 +36,13 @@
                     <label for="discussionContent">Your Question:</label>
                     <textarea id="discussionContent" name="discussionContent" rows="4" cols="50" required></textarea>
                     
-                    <input type="submit" value="Post Question">
 
-                    <!-- Icon for uploading photo -->
-                    <button id="uploadphoto" style="background: none; border: none; cursor: pointer;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
-                            <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-                            <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1z"/>
-                        </svg>
-                    </button>
+
+                    <div class="post-question">
+                        <button class="post-btn">Post Question</button>
+                        <input type="file" id="uploadimage" name="uploadimage" accept="image/*">
+                    </div>
+
                 </form>
             </div>
         </div>
@@ -170,4 +168,5 @@
 
 </body>
 </html>
+
 
