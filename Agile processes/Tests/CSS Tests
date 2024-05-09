@@ -371,9 +371,11 @@ input[type="password"] {
  .homepage .container1 h1 {
     font-family: 'Segoe UI', sans-serif; /* Example of a web-safe font */
     font-size: 70px; /* Example size */
-    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
+    background: -webkit-linear-gradient(to right, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
     border-radius: 8px;
     display: inline-block;
     padding: 10px 20px; /* Some padding around the text */
@@ -403,9 +405,11 @@ input[type="password"] {
 }
 
 .functionality-container2 h2 {
-    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
+    background: linear-gradient(to right, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent; /* 提供一个后备颜色 */
     font-size: 35px;
 }
 
@@ -465,9 +469,11 @@ input[type="password"] {
  .homepage .container3 h1 {
     font-family: 'Segoe UI', sans-serif; /* Using a web-safe font */
     font-size: 35px; /* Setting the font size */
-    background: -webkit-linear-gradient(left, #ef9e1c, rgb(16, 176, 16), #1a7ddf, rgb(237, 227, 31));
+    background: linear-gradient(to right, #ef9e1c, rgb(16, 176, 16), #1a7ddf, rgb(237, 227, 31));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent; /* 提供无前缀版本的后备方案 */
     margin-bottom: 20px;
 }
 
@@ -490,24 +496,28 @@ input[type="password"] {
  }
 
  .homepage .container4 h2 {
-    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     font-family: 'Segoe UI', sans-serif; /* Using a web-safe font */
     font-size: 35px; /* Setting the font size */
+    background: linear-gradient(to right, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Standard fallback for browsers that do not support background-clip */
     margin-bottom: 20px;
-
 }
+
 
 .homepage .container4 h3 {
     font-family: 'Segoe UI', sans-serif; /* Using a web-safe font */
     font-size: 25px; /* Setting the font size */
-    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195));
+    background: linear-gradient(to right, #1a7ddf, rgb(245, 33, 195));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent; /* Standard fallback for browsers that do not support background-clip */
     margin-bottom: 25px;
-
 }
+
 
 
 
@@ -522,12 +532,15 @@ input[type="password"] {
     margin: 40px auto;
  }
 
-.homepage .container5 h4 {
-    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 35px;
- }
+ .homepage .container5 h4 {
+    font-size: 35px; /* 设置字体大小 */
+    background: linear-gradient(to right, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50); /* 标准渐变语法 */
+    -webkit-background-clip: text; /* WebKit特定属性 */
+    background-clip: text; /* 标准属性，增加以备未来浏览器更新 */
+    -webkit-text-fill-color: transparent; /* WebKit特定属性 */
+    color: transparent; /* 后备方案，确保所有浏览器的一致性 */
+}
+
  
 
 
@@ -541,16 +554,18 @@ input[type="password"] {
 
 /* Style for individual list items */
 .team-list-item {
-    background: -webkit-linear-gradient(left, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding: 5px; /* Padding inside each item */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    font-family: Arial, sans-serif; /* Font family */
-    font-size: 20px; /* Font size */
-
+    font-family: Arial, sans-serif; /* 使用Web安全字体 */
+    font-size: 20px; /* 设置字体大小 */
+    padding: 5px; /* 列表项内部填充 */
+    border-radius: 5px; /* 圆角边框 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加阴影以增加深度感 */
+    background: linear-gradient(to right, #1a7ddf, rgb(245, 33, 195), rgb(245, 196, 2), #4CAF50); /* 标准渐变语法 */
+    -webkit-background-clip: text; /* 适用于WebKit浏览器的背景剪辑 */
+    background-clip: text; /* 标准背景剪辑属性 */
+    -webkit-text-fill-color: transparent; /* 适用于WebKit的文本填充颜色 */
+    color: transparent; /* 标准后备，确保在不支持的浏览器中文本透明 */
 }
+
 
 
 
@@ -664,7 +679,7 @@ textarea {
     width: 100%;
     padding: 10px; 
     margin-bottom: 10px; 
-    border: 1px solid #ccc; /
+    border: 1px solid #ccc; 
     border-radius: 4px;
 }
 
@@ -942,6 +957,5 @@ h1, h2 {
     padding: 10px 20px;
     text-align: center;
 }
-
 
 
