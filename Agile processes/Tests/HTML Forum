@@ -23,6 +23,8 @@
             </svg>
         </button>
 
+        
+
         <!-- Discussion Form Modal -->
         <div id="discussionModal" class="modal">
             <div class="discuss-modal-content">
@@ -115,39 +117,41 @@
 
     <div class="forum-container">
         <div class="forum-content">
+
             <div class="discussion-form-container">
                 <div class="discussion-form-header">
                     <h2>Having A Question?</h2>
                     <p>Post Your New Discussion Query</p>
                 </div>
-                <form action="/submit-question" method="POST">
+                <form action="/submit-question" method="POST" enctype="multipart/form-data">
                     <label for="discussionTitle">Discussion Title:</label>
                     <input type="text" id="discussionTitle" name="discussionTitle" required>
-            
+                    
                     <label for="discussionQuestion">Your Question:</label>
                     <textarea id="discussionQuestion" name="discussionQuestion" required></textarea>
             
+                    <!-- Reward Points Section -->
+                    <label for="rewardPoints">Reward Points:</label>
+                    <select id="rewardPoints" name="rewardPoints">
+                        <option value="0">No Reward</option>
+                        <option value="50">50 Points</option>
+                        <option value="100">100 Points</option>
+                        <option value="200">200 Points</option>
+                        <option value="500">500 Points</option>
+                    </select>
+            
+
+            
                     <div class="post-question-container">
-                        <button class="post-btn">Post Question</button>
-                        <button id="uploadphoto" style="background: none; border: none; cursor: pointer;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
-                                <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-                                <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"/>
-                            </svg>
-                        </button>
+                        <button class="post-btn">Post Question</button>                   
+                        <input type="file" id="imageUpload" name="imageUpload" accept="image/*" />
                         
                     </div>
-                    
-                    
                 </form>
             </div>
             
-
-
-
-
-
-
+            
+        
 
             <div class="thread-list">
                 <div class="thread">
@@ -157,7 +161,11 @@
                 <!-- Additional threads could be listed here -->
             </div>
 
+            
         </div>
+
+
+
         <div class="sidebar">
             <!-- Leaderboard and other sidebar content -->
             <div class="leaderboard-container">
@@ -177,10 +185,9 @@
                 </ul>
                 <button id="viewAllBtn" onclick="location.href='full_leaderboard.html'">View Full Leaderboard</button>
             </div>
-            
-            </div>
-            
         </div>
+
+
     </div>
     
     
