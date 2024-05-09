@@ -683,17 +683,18 @@ textarea {
     border-radius: 4px;
 }
 
+
+
 .post-btn {
-    background-color: white; 
     color: white; 
-    padding: 10px 20px;
+    padding: 15px;
     border: none;
     border-radius: 5px; 
     font-size: 16px;
     cursor: pointer;
-    background-color: #45a049;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    background-color: #53c159;
+    margin-top: 30px;
+    margin-right: 20px;
 }
 
 .post-btn:hover {
