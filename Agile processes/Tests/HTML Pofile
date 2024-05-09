@@ -22,8 +22,6 @@
             </svg>
         </button>
 
-
-
         <!-- Discussion Form Modal -->
         <div id="discussionModal" class="modal">
             <div class="discuss-modal-content">
@@ -45,28 +43,25 @@
                             <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"/>
                         </svg>
                     </button>
-                    
                 </form>
             </div>
         </div>
         
     </nav>
 
-    
-
-
-
-
-
-
-
     <!-- Profile Information -->
     <div class="profile-container">
         <header class="profile-header">
             <!-- Profile Picture Button -->
-            <img id="profilePicture" class="profile-picture-btn" src="default_avatar.png" >
+            <img id="profilePicture" class="profile-picture-btn" src="default_avatar.png" alt="User Profile Picture">
+            
+
             <div>
-                <h1>Welcome, Username</h1>
+                <div class="profile-buttons">
+                    <a href="edit-profile.html" class="edit-profile-btn">Edit Profile</a>
+                    <a href="logout.html" class="logout-btn">Logout</a>
+                </div>
+
                 <div class="profile-container">
                     <!-- Avatar Selection Modal -->
                     <div id="avatarModal" class="modal">
@@ -89,32 +84,26 @@
                             </div>
                         </div>
                     </div>
-                </div>                                                  
-            </div>
-
+                </div>    
+            </div>                                             
         </header>
 
         <section class="user-details">
             <h2>Personal Information</h2>
-            <a href="edit-profile.html" class="edit-profile-btn">Edit Profile</a>
-            <p><strong>User ID:</strong> 12345</p>
-            <p><strong>Age:</strong>19</p>
+            
+            <p>User ID: {{ user.ID }}</p>
+            <p>Age: {{ user.Age }}</p>
 
             <h2>Statistics</h2>
-            <p><strong>Posts:</strong> 150</p>
-            <p><strong>Threads Created:</strong> 25</p>
-            <p><strong>Credit Points:</strong> 300</p>
-            <p><strong>Likes received:</strong> 39</p>
-            <p><Strong>Collections:</Strong> 12</p>
-
+            <p>Posts: {{ user.posts }}</p>
+            <p>Threads Created: {{ user.threads_created }}</p>
+            <p>Likes Received: {{ user.likes_received }}</p>
+            <p>Credit Points: {{ user.credit_points }}</p>
         </section>
-
-
     </div>
 
     <!-- Scripts and Additional Features -->
     <script src="scripts.js"></script>
 </body>
 </html>
-
 
