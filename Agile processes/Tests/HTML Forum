@@ -15,6 +15,7 @@
         <a href="forum.html" class="active">Forum</a>
         <a href="profile.html">Profile</a>
         <a href="contact.html">Contact</a>
+
         <!-- Button with SVG Icon for Posting a Question -->
         <button id="discussionform" style="background: none; border: none; cursor: pointer;">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -26,9 +27,9 @@
         <!-- Discussion Form Modal -->
         <div id="discussionModal" class="modal">
             <div class="discuss-modal-content">
-                <span class="close">&times;</span>
-                <h1>Having A Question?</h1>
-                <h2>Post Your New Discussion Query</h2>
+                <span class="discuss-close" id="closeDiscussionModal">&times;</span>
+                <h2>Having A Question?</h2>
+                <h3>Post Your New Discussion Query</h3>
                 <form id="newDiscussionForm" action="submit_question.php" method="POST">
                     <label for="discussionTitle">Discussion Title:</label>
                     <input type="text" id="discussionTitle" name="discussionTitle" required>
@@ -36,8 +37,6 @@
                     <label for="discussionContent">Your Question:</label>
                     <textarea id="discussionContent" name="discussionContent" rows="4" cols="50" required></textarea>
                     
-
-
                     <div class="post-question">
                         <button class="post-btn">Post Question</button>
                         <input type="file" id="uploadimage" name="uploadimage" accept="image/*">
@@ -100,6 +99,15 @@
                 <button type="submit">Search</button>
             </form>
         </div>
+
+
+            <!-- Right-aligned container -->
+        <div class="navbar-right">
+            <img src="profile-pictures/QA_logo.jpg" alt="QA Logo" class="navbar-logo">>
+        </div>
+
+
+
     </nav> <!-- End of navbar -->
 
     <div class="forum-container">
@@ -148,25 +156,21 @@
                 <h3>Leaderboard</h3>
                 <p>See who's contributing the most to the community (Weekly Rankings Update)</p>
                 <ul id="leaderboardList" class="leaderboard">
-                    <li>1st Place - Alice Johnson - 1200 points</li>
-                    <li>2nd Place - Bob Smith - 1100 points</li>
-                    <li>3rd Place - Carol Tan - 1050 points</li>
-                    <li>4th Place - Dave Lee - 1040 points</li>
-                    <li>5th Place - Ellen Ray - 1030 points</li>
-                    <li>6th Place - Frank Poe - 1020 points</li>
-                    <li>7th Place - Greta Sims - 1010 points</li>
-                    <li>8th Place - Harry Nicks - 1000 points</li>
-                    <li>9th Place - Irene Bolt - 990 points</li>
-                    <li>10th Place - Jack Tide - 980 points</li>
+
                 </ul>
                 <button id="viewAllBtn" onclick="location.href='full_leaderboard.html'">View Full Leaderboard</button>
             </div>
         </div>
     </div>
 
-    <script src="scripts.js"></script>
+
+    <script src="discuss.js"></script>
+    <script src="login-signup.js"></script>
+    <script src="leaderboard.js"></script>
+
 
 </body>
 </html>
+
 
 
