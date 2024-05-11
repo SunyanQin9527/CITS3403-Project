@@ -25,9 +25,9 @@
         <!-- Discussion Form Modal -->
         <div id="discussionModal" class="modal">
             <div class="discuss-modal-content">
-                <span class="close">&times;</span>
-                <h1>Having A Question?</h1>
-                <h2>Post Your New Discussion Query</h2>
+                <span class="discuss-close" id="closeDiscussionModal">&times;</span>
+                <h2>Having A Question?</h2>
+                <h3>Post Your New Discussion Query</h3>
                 <form id="newDiscussionForm" action="submit_question.php" method="POST">
                     <label for="discussionTitle">Discussion Title:</label>
                     <input type="text" id="discussionTitle" name="discussionTitle" required>
@@ -35,16 +35,20 @@
                     <label for="discussionContent">Your Question:</label>
                     <textarea id="discussionContent" name="discussionContent" rows="4" cols="50" required></textarea>
                     
-                    <input type="submit" value="Post Question">
+                    <div class="post-question">
+                        <button class="post-btn">Post Question</button>
+                        <input type="file" id="uploadimage" name="uploadimage" accept="image/*">
+                    </div>
 
-                    <button id="uploadphoto"  style="background: none; border: none; cursor: pointer;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
-                            <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-                            <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"/>
-                        </svg>
-                    </button>
                 </form>
             </div>
+        </div>
+
+
+
+        <!-- Right-aligned container -->
+        <div class="navbar-right">
+            <img src="profile-pictures/QA_logo.jpg" alt="QA Logo" class="navbar-logo">>
         </div>
         
     </nav>
@@ -52,24 +56,30 @@
     <!-- Profile Information -->
     <div class="profile-container">
         <header class="profile-header">
-            
+
+            <!-- HTML 结构 -->
             <div class="userprofile">
-                <h1>User Profile</h1>
-                <h2>Welcome, User</h2>
+                <h1 id="welcomeText">Welcome, </h1>
+                <a href="edit-profile.html" class="edit-profile-btn">Edit Profile</a>
+                <button id="shopButton">Shop</button>
             </div>
 
             <img id="profilePicture" class="profile-picture-btn" src="default_avatar.png" alt="User Profile Picture">
+            
 
             <div>
 
-
                 <div class="profile-buttons">
-                    <a href="edit-profile.html" class="edit-profile-btn">Edit Profile</a>
                     <a href="logout.html" class="logout-btn">Logout</a>
-
                 </div>
 
-                <div class="profile-container">
+                <!-- Chat 按钮容器 -->
+                <div class="chat-html-container">
+                    <a href="chat.html"  class="chat-btn">Chat</a>
+                </div>
+
+
+                <div class="profile-container1">
                     <!-- Avatar Selection Modal -->
                     <div id="avatarModal" class="modal">
                         <div class="modal-content">
@@ -88,7 +98,9 @@
                                 <img src="profile-pictures/rooster.png" class="avatar-option" alt="Avatar 10">
                                 <img src="profile-pictures/dog.png" class="avatar-option" alt="Avatar 11">
                                 <img src="profile-pictures/pig.png" class="avatar-option" alt="Avatar 12">
+                                <img src="profile-pictures/first_place.jpg" class="avatar-option" alt="Avatar 13">
                             </div>
+
                         </div>
                     </div>
                    
@@ -115,9 +127,14 @@
         </section>
     </div>
 
-    <!-- Scripts and Additional Features -->
-    <script src="scripts.js"></script>
+
+    <script src="discuss.js"></script>
+    <script src="profile-avatar.js"></script>
+    <script src="shop.js"></script>
+
+
 </body>
 </html>
+
 
 
