@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Main Page</title>
+    <link rel="stylesheet" href="welcome.css">
+</head>
+
+<body class="forumpage">
+    <!-- Navigation Bar 顶部导航 -->
+    <nav class="navbar">
+        <a href="homepage.html">Home</a>                    <!-- 跳转 -->
+        <a href="forum.html" class="active">Forum</a>       <!-- 跳转 -->
+        <a href="profile.html">Profile</a>                  <!-- 跳转 -->
+        <a href="contact.html">Contact</a>                  <!-- 跳转 -->
+
+        <!-- Button with SVG Icon for Posting a Question -->
+        <button id="discussionform" style="background: none; border: none; cursor: pointer;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+            </svg>
+        </button>
+
+        <!-- Discussion Form Modal -->
+        <div id="discussionModal" class="modal">
+            <div class="discuss-modal-content">
+                <span class="discuss-close" id="closeDiscussionModal">&times;</span>
+                <h2>Having A Question?</h2>
+                <h3>Post Your New Discussion Query</h3>
+                <form id="newDiscussionForm" action="submit_question.php" method="POST">
+                    <label for="discussionTitle">Discussion Title:</label>
+                    <input type="text" id="discussionTitle" name="discussionTitle" required>
+                    
+                    <label for="discussionContent">Your Question:</label>
+                    <textarea id="discussionContent" name="discussionContent" rows="4" cols="50" required></textarea>
+                    
+                    <div class="post-question">
+                        <button class="post-btn">Post Question</button>
+                        <input type="file" id="uploadimage" name="uploadimage" accept="image/*">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- Navbar Right Section -->
+        <div class="navbar-right">
+            <button id="showLoginModal">Log In</button>
+            <button id="showSignUpModal">Sign Up</button>
+        </div> <!-- End of navbar-right -->
+
+        <!-- Login Modal -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeLogin">&times;</span>
+                <h3 class="login-signup-title">Log In</h3>
+                <form id="loginForm" action="/submit-login" method="POST">
+                    <input type="email" id="loginEmail" name="email" placeholder="Email Address" required>
+                    <input type="password" id="loginPassword" name="password" placeholder="Password" required>
+                    <button type="submit" id="loginButton">Log In</button>
+                    <button type="button" id="forgotPasswordLink" class="forgot-password">Forgot Password?</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Password Reset Modal -->
+        <div id="passwordResetModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closePasswordReset">&times;</span>
+                <h3 class="login-signup-title">Password Reset</h3>
+                <form id="passwordResetForm" action="/submit-password-reset" method="POST">
+                    <input type="email" id="resetEmail" name="resetEmail" placeholder="Enter your email address" required>
+                    <button type="submit" id="resetPasswordButton">Send Reset Link</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sign Up Modal -->
+        <div id="signupModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeSignup">&times;</span>
+                <h3 class="login-signup-title">Sign Up</h3>
+                <form id="signupForm" action="/submit-registration" method="POST">
+                    <input type="text" id="signupName" name="name" placeholder="Full Name" required>
+                    <input type="email" id="signupEmail" name="email" placeholder="Email Address" required>
+                    <input type="password" id="signupPassword" name="password" placeholder="Password" required>
+                    <button type="submit" id="signupButton">Register</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Search Container -->
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Search.." name="search" id="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+
+            <!-- Right-aligned container -->
+        <div class="navbar-right">
+            <img src="profile-pictures/QA_logo.jpg" alt="QA Logo" class="navbar-logo">>
+        </div>
+
+
+
+    </nav> <!-- End of navbar -->
+
+    <div class="forum-container">
+        <div class="forum-content">
+            <!-- Main Discussion Form -->
+            <div class="discussion-form-container">
+                <div class="discussion-form-header">
+                    <h2>Having A Question?</h2>
+                    <p>Post Your New Discussion Query</p>
+                </div>
+                <form action="/submit-question" method="POST" enctype="multipart/form-data">
+                    <label for="forumtitle">Discussion Title:</label>
+                    <input type="text" id="forumtitle" name="forumtitle" required>
+                    
+                    <label for="discussionQuestion">Your Question:</label>
+                    <textarea id="discussionQuestion" name="discussionQuestion" required></textarea>
+            
+                    <!-- Reward Points Section -->
+                    <label for="rewardPoints">Reward Points:</label>
+                    <select id="rewardPoints" name="rewardPoints">
+                        <option value="0">No Reward</option>
+                        <option value="50">50 Points</option>
+                        <option value="100">100 Points</option>
+                        <option value="200">200 Points</option>
+                        <option value="500">500 Points</option>
+                    </select>
+            
+                    <div class="post-question-container">
+                        <button class="post-btn">Post Question</button>
+                        <input type="file" id="imageUpload" name="imageUpload" accept="image/*">
+                    </div>
+                </form>
+            </div>
+
+            <div class="thread-list">
+                <div class="thread">
+                    <h3 class="thread-title"><a href="thread.html">Thread Title</a></h3>
+                    <p class="thread-info">Posted by <a href="user-profile.html">Username</a> - 100 replies</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar with Leaderboard -->
+        <div class="sidebar">
+            <div class="leaderboard-container">
+                <h3>Leaderboard</h3>
+                <p>See who's contributing the most to the community (Weekly Rankings Update)</p>
+                <ul id="leaderboardList" class="leaderboard">
+
+                </ul>
+                <button id="viewAllBtn" onclick="location.href='full_leaderboard.html'">View Full Leaderboard</button>
+            </div>
+        </div>
+
+        
+    </div>
+
+
+    <script src="discuss.js"></script>
+    <script src="login-signup.js"></script>
+    <script src="leaderboard.js"></script>
+
+
+</body>
+</html>
+
