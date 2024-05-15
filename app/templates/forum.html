@@ -11,10 +11,10 @@
 <body class="forumpage">
     <!-- Navigation Bar 顶部导航 -->
     <nav class="navbar">
-        <a href="{{ url_for('homepage') }}">Home</a>
-        <a href="{{ url_for('forum') }}" class="active">Forum</a>
-        <a href="{{ url_for('profile') }}">Profile</a>
-        <a href="{{ url_for('contact') }}">Contact</a>
+        <a href="{{ url_for('main.homepage') }}">Home</a>
+        <a href="{{ url_for('main.forum') }}" class="active">Forum</a>
+        <a href="{{ url_for('main.profile') }}">Profile</a>
+        <a href="{{ url_for('main.contact') }}">Contact</a>
 
         <!-- Button with SVG Icon for Posting a Question -->
         <button id="discussionform" style="background: none; border: none; cursor: pointer;">

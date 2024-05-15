@@ -10,10 +10,10 @@
 
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <a href="{{ url_for('homepage') }}">Home</a>
-        <a href="{{ url_for('forum') }}">Forum</a>
-        <a class="active" href="{{ url_for('profile') }}">Profile</a>
-        <a href="{{ url_for('contact') }}">Contact</a>
+        <a href="{{ url_for('main.homepage') }}">Home</a>
+        <a href="{{ url_for('main.forum') }}">Forum</a>
+        <a class="active" href="{{ url_for('main.profile') }}">Profile</a>
+        <a href="{{ url_for('main.contact') }}">Contact</a>
         <!-- Button with SVG Icon for Posting a Question -->
         <button id="discussionform" style="background: none; border: none; cursor: pointer;">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -61,7 +61,7 @@
             <div class="userprofile">
                 <h1 id="welcomeText">Welcome, </h1>
                 <a href="edit-profile.html" class="edit-profile-btn">Edit Profile</a>
-                <a id="shopButton" href="{{ url_for('shop') }}" class="button">Shop</a>
+                <a id="shopButton" href="{{ url_for('main.shop') }}" class="button">Shop</a>
 
             </div>
 
@@ -76,7 +76,7 @@
 
                 <!-- Chat 按钮容器 -->
                 <div class="chat-html-container">
-                    <a href="{{ url_for('chat') }}"  class="chat-btn">Chat</a>
+                    <a href="{{ url_for('main.chat') }}"  class="chat-btn">Chat</a>
                 </div>
 
 

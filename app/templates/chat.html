@@ -12,8 +12,8 @@
     <!-- Navigation Bar 顶部导航 -->
     <nav class="navbar">
  
-        <a href="{{ url_for('profile') }}">Profile</a>
-        <a href="{{ url_for('contact') }}" class="active">Chat</a>
+        <a href="{{ url_for('main.profile') }}">Profile</a>
+        <a href="{{ url_for('main.contact') }}" class="active">Chat</a>
 
         <div class="search-container">
             <form action="/search" method="get">
