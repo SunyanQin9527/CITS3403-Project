@@ -28,17 +28,21 @@ class User(UserMixin, db.Model):
 
 class Post(db.Model):
     __tablename__ = 'post'  # 明确指定表名
-    post_id = db.Column(db.String(8), primary_key=True)
+    post_id = db.Column(db.Integer, primary_key=True, autoincrement=True)  # 确保设置为自动增长
     title = db.Column(db.String(140))
     body = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.now)
-    user_id = db.Column(db.String(8), db.ForeignKey('user.user_id'))  # 修改外键关系
+    user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))  # 修改外键关系
     answers = db.relationship('Answer', backref='question', lazy='dynamic')
+
+    answers = db.relationship('Answer', backref='post', lazy='dynamic')
 
 class Answer(db.Model):
     __tablename__ = 'answer'  # 明确指定表名
-    answer_id = db.Column(db.String(8), primary_key=True)
+    answer_id = db.Column(db.Integer, primary_key=True, autoincrement=True)  # 使用自增的整数主键
     body = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.now)
-    user_id = db.Column(db.String(8), db.ForeignKey('user.user_id'))  # 修改外键关系
-    post_id = db.Column(db.String(8), db.ForeignKey('post.post_id'))  # 修改外键关系
+    user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))  # 确保外键类型一致
+    post_id = db.Column(db.Integer, db.ForeignKey('post.post_id'))  # 修改外键关系
+
+

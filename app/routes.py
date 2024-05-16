@@ -137,6 +137,7 @@ from werkzeug.urls import url_parse
 from app import db
 from app.models import User
 from app.forms import RegistrationForm, LoginForm
+from app.models import User,Post, Answer
 
 main = Blueprint('main', __name__)
 
@@ -156,10 +157,16 @@ def shop():
 def homepage():
     return render_template('homepage.html', title='Homepage')
 
+# @main.route('/forum')
+# @login_required
+# def forum():
+#     return render_template('forum.html', title='Forum')
+
 @main.route('/forum')
-@login_required
 def forum():
-    return render_template('forum.html', title='Forum')
+    posts = Post.query.all()
+    return render_template('forum.html', posts=posts)
+
 
 @main.route('/chat')
 @login_required
@@ -176,6 +183,12 @@ def profile():
 @login_required
 def contact():
     return render_template('contact.html', title='Contact')
+
+@main.route('/question/<int:question_id>')
+def view_question(question_id):
+    question = Post.query.get_or_404(question_id)  # 获取问题或者返回404错误
+    return render_template('question_detail.html', question=question)
+
 
 @main.route('/login', methods=['GET', 'POST'])
 def login():
@@ -216,3 +229,27 @@ def register():
 
 
 ##下面是创建帖子
+@main.route('/submit-question', methods=['POST'])
+def submit_question():
+    if not current_user.is_authenticated:
+        return redirect(url_for('main.login'))
+    
+    title = request.form['forumtitle']
+    body = request.form['discussionQuestion']
+    new_post = Post(title=title, body=body, user_id=current_user.user_id)
+    db.session.add(new_post)
+    db.session.commit()
+    flash('Your question has been posted.')
+    return redirect(url_for('main.forum'))
+
+@main.route('/submit-answer/<int:question_id>', methods=['POST'])
+def submit_answer(question_id):
+    if not current_user.is_authenticated:
+        return redirect(url_for('main.login'))
+    
+    body = request.form['answerContent']
+    new_answer = Answer(body=body, question_id=question_id, user_id=current_user.user_id)
+    db.session.add(new_answer)
+    db.session.commit()
+    flash('Your answer has been posted.')
+    return redirect(url_for('main.forum'))

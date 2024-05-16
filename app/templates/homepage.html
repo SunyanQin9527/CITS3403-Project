@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,7 @@
 
 <body class="homepage">
     <!-- Navigation Bar 顶部导航 -->
+
     <nav class="navbar">
         <a href="{{ url_for('main.homepage') }}" class="active">Home</a>
         <a href="{{ url_for('main.forum') }}">Forum</a>
@@ -47,24 +48,12 @@
 
         <!-- Login and Signup buttons -->
         <div class="navbar-right">
-            <a href="{{ url_for('main.index') }}" class="btn">Log In</a>
-            <a href="{{ url_for('main.register') }}" class="btn">Sign Up</a>
+            <a href="{{ url_for('main.index') }}" class="btn" id="showLoginModal">Log In</a>
+            <a href="{{ url_for('main.register') }}" class="btn" id="showSignUpModal">Sign Up</a>
         </div> <!-- End of navbar-right -->
 
 
-        <!-- Login Modal -->
-        <div id="loginModal" class="modal">
-            <div class="modal-content">
-                <span class="close" id="closeLogin">&times;</span>
-                <h3 class="login-signup-title">Log In</h3>
-                <form id="loginForm" action="/submit-login" method="POST">
-                    <input type="email" id="loginEmail" name="email" placeholder="Email Address" required>
-                    <input type="password" id="loginPassword" name="password" placeholder="Password" required>
-                    <button type="submit" id="loginButton">Log In</button>
-                    <button type="button" id="forgotPasswordLink" class="forgot-password">Forgot Password?</button>
-                </form>
-            </div>
-        </div>
+
 
         <!-- Password Reset Modal -->
         <div id="passwordResetModal" class="modal">
@@ -162,99 +151,4 @@
     <script src="/static/login-signup.js"></script>
     <script src="/static/discuss.js"></script>
 </body>
-</html> -->
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Homepage</title>
-    <link rel="stylesheet" href="/static/welcome.css">
-</head>
-<body class="homepage">
-    <!-- Navigation Bar 顶部导航 -->
-    <nav class="navbar">
-        <a href="{{ url_for('main.homepage') }}" class="active">Home</a>
-        <a href="{{ url_for('main.forum') }}">Forum</a>
-        <a href="{{ url_for('main.profile') }}">Profile</a>
-        <a href="{{ url_for('main.contact') }}">Contact</a>
-
-        <!-- Login and Signup buttons -->
-        <div class="navbar-right">
-            <a href="{{ url_for('main.login') }}" class="btn">Log In</a>
-            <a href="{{ url_for('main.register',force=1) }}" class="btn">Sign Up</a>
-        </div> <!-- End of navbar-right -->
-        
-        <div class="search-container">
-            <form action="/search" method="get">
-                <input type="text" placeholder="Search.." name="search" id="search">
-                <button type="submit">Search</button>
-            </form>
-        </div>
-
-        <!-- Right-aligned container -->
-        <div class="navbar-right">
-            <img src="profile-pictures/QA_logo.jpg" alt="QA Logo" class="navbar-logo">
-        </div>
-    </nav>
-
-    <!-- Main Content Area -->
-    <div class="container1">
-        <h1>A Platform for Knowledge Sharing - 'Classroom Companions'</h1>
-        <h2>"Engage in Conversations, Exchange Opinions, and Discover Solutions for Your 'Classroom' Issues."</h2>
-    </div>
-
-    <div class="functionality-container2">
-        <h2>Our Features</h2>
-        <p>Discover the tools that make 'Classroom Companions' the best place to engage in educational discussions:</p>
-        <div class="features-flexbox">
-            <div class="feature-box" id="interactiveForums">
-                <h3>Interactive Forums</h3>
-                <p>Engage with the community through lively discussions and collaborative problem-solving.</p>
-            </div>
-            <div class="feature-box" id="resourceSharing">
-                <h3>Resource Sharing</h3>
-                <p>Share and access a wealth of educational resources tailored to enhance learning.</p>
-            </div>
-            <div class="feature-box" id="attractiveRewards">
-                <h3>Attractive Rewards</h3>
-                <p>Questions and answers from users with high points can be made more visible, such as by highlighting them in forum posts or prioritizing them in search results, as a way to increase reach and visibility.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="container3">
-        <h1>Classroom Companions</h1>
-        <h2>'Classroom Companions' is a place where individuals of different backgrounds and ages can freely communicate, share information, and respond to other people's questions. We have dedicated ourselves to building a community where knowledge and experience flow freely since we were founded in 2024.</h2>
-    </div>
-
-    <div class="container4">
-        <h2>Fundamental Values</h2>
-        <h3>"Compassion And Innovation" - these two values form the basis of 'Classroom Companions' and guide us to ensure that our services are suitable for individuals of all ages and backgrounds. We ensure that each user can communicate with others in a respectful and understanding environment."</h3>
-    </div>
-
-    <div class="container5">
-        <h4>Meet Our Team</h4>
-        <ul class="team-list">
-            <li class="team-list-item">
-                <p>- **[Name]**: [Brief Description or Quote from the member]</p>
-            </li>
-            <li class="team-list-item">
-                <p>- **[Name]**: [Brief Description or Quote from the member]</p>
-            </li>    
-            <li class="team-list-item">
-                <p>- **[Name]**: [Brief Description or Quote from the member]</p>
-            </li>    
-            <li class="team-list-item">
-                <p>- **[Name]**: [Brief Description or Quote from the member]</p>
-            </li>
-        </ul>
-    </div>
-
-    <!-- External JavaScript files -->
-    <script src="/static/login-signup.js"></script>
-    <script src="/static/discuss.js"></script>
-</body>
 </html>
-

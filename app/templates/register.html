@@ -3,54 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
-    <style>
-        /* 添加一些简单的样式以美化表单 */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-        h1 {
-            text-align: center;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        label, input {
-            margin-bottom: 10px;
-        }
-        input[type="text"], input[type="email"], input[type="password"] {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        input[type="submit"] {
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            background-color: #28a745;
-            color: white;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #218838;
-        }
-    </style>
+    <link rel="stylesheet" href="/static/welcome.css">
 </head>
-<body>
-    <div class="container">
+<body class="register-page">
+    <div class="register-container">
         <h1>Register</h1>
         <form method="POST" action="{{ url_for('main.register') }}">
             {{ form.hidden_tag() }}
