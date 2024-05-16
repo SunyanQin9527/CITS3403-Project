@@ -2,6 +2,7 @@ from app import db
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
+from sqlalchemy.orm import relationship
 
 class User(UserMixin, db.Model):
     __tablename__ = 'user'
@@ -15,6 +16,7 @@ class User(UserMixin, db.Model):
     threads_created = db.Column(db.Integer, default=0)
     likes_received = db.Column(db.Integer, default=0)
     credit_points = db.Column(db.Integer, default=0)
+    answers = relationship('Answer', back_populates='author')
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -42,6 +44,9 @@ class Answer(db.Model):
     answer_id = db.Column(db.Integer, primary_key=True, autoincrement=True)  # 使用自增的整数主键
     body = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.now)
+    author = relationship('User', back_populates="answers")
+
+
     user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))  # 确保外键类型一致
     post_id = db.Column(db.Integer, db.ForeignKey('post.post_id'))  # 修改外键关系
 

@@ -242,14 +242,16 @@ def submit_question():
     flash('Your question has been posted.')
     return redirect(url_for('main.forum'))
 
-@main.route('/submit-answer/<int:question_id>', methods=['POST'])
-def submit_answer(question_id):
+@main.route('/submit-answer/<int:post_id>', methods=['POST'])
+def submit_answer(post_id):
     if not current_user.is_authenticated:
         return redirect(url_for('main.login'))
     
     body = request.form['answerContent']
-    new_answer = Answer(body=body, question_id=question_id, user_id=current_user.user_id)
+    new_answer = Answer(body=body, post_id=post_id, user_id=current_user.user_id)
     db.session.add(new_answer)
     db.session.commit()
     flash('Your answer has been posted.')
     return redirect(url_for('main.forum'))
+
+

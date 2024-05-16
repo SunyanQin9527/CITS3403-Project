@@ -119,7 +119,7 @@
                     <p>{{ answer.body }} - by {{ answer.author.username }}</p>
                     {% endfor %}
                 </div>
-                <form action="{{ url_for('main.submit_answer', question_id=post.post_id) }}" method="post">
+                <form action="{{ url_for('main.submit_answer', post_id=post.post_id) }}" method="post">
                     <textarea name="answer" required></textarea>
                     <button type="submit">Answer</button>
                 </form>
