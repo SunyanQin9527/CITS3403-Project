@@ -910,7 +910,7 @@ textarea {
 
 
 
-
+/* Thread List Styles */
 .thread-list {
     background-color: #ffffff;
     padding: 20px;
@@ -925,6 +925,12 @@ textarea {
     margin-bottom: 10px; 
     border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.thread-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .thread h3 a {
@@ -955,17 +961,30 @@ textarea {
     resize: vertical;
 }
 
-.answer button {
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: #007bff;
+/* Delete and Answer Button Styles */
+.thread .delete-btn, .thread .answer-btn {
+    margin: 5px 0;
+    padding: 5px 10px;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 0.9em;
 }
 
-.answer button:hover {
+.thread .delete-btn {
+    background-color: #dc3545; /* Red color for delete button */
+}
+
+.thread .delete-btn:hover {
+    background-color: #c82333;
+}
+
+.thread .answer-btn {
+    background-color: #007bff; /* Blue color for answer button */
+}
+
+.thread .answer-btn:hover {
     background-color: #0056b3;
 }
 
@@ -975,7 +994,6 @@ textarea {
         margin-right: 0;
     }
 }
-
 
 
 
