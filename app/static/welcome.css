@@ -1011,20 +1011,18 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     text-decoration: none;
-    color: #007bff;
+    color: #4CAF50;
 }
 
 .pagination a:hover {
-    background-color: #0056b3;
+    background-color: #45a049;
     color: white;
 }
 
 .pagination span {
-    background-color: #007bff;
+    background-color: #4CAF50;
     color: white;
 }
-
-
 
 
 
@@ -1692,4 +1690,7 @@ textarea {
 .page-link:hover {
     background-color: #218838;
 }
+
+
+
 
