@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ question.title }}</title>
+</head>
+
+<body>
+    <h1>{{ question.title }}</h1>
+    <p>{{ question.body }}</p>
+    <p>Posted on {{ question.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+
+    <!-- Answer form section -->
+    <h2>Submit Your Answer</h2>
+    <form action="{{ url_for('main.submit_answer', post_id=question.post_id) }}" method="post">
+        <textarea name="answerContent" required></textarea>
+        <button type="submit">Submit Answer</button>
+    </form>
+
+    <!-- Display existing answers -->
+    <h3>Answers:</h3>
+    {% for answer in question.answers %}
+        <div>
+            <p>{{ answer.body }}</p>
+            <p>Answered by {{ answer.author.username }} on {{ answer.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
