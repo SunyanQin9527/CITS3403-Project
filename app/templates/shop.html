@@ -9,8 +9,8 @@
 <body class="shop">
     <!-- Navigation Bar 顶部导航 -->
     <nav class="navbar">
-        <a href="{{ url_for('profile') }}">Profile</a>
-        <a href="{{ url_for('shop') }}" class="active">Shop</a>
+        <a href="{{ url_for('main.profile') }}">Profile</a>
+        <a href="{{ url_for('main.shop') }}" class="active">Shop</a>
 
         <div class="search-container">
             <form action="/search" method="get">

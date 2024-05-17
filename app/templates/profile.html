@@ -10,10 +10,10 @@
 
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <a href="{{ url_for('homepage') }}">Home</a>
-        <a href="{{ url_for('forum') }}">Forum</a>
-        <a class="active" href="{{ url_for('profile') }}">Profile</a>
-        <a href="{{ url_for('contact') }}">Contact</a>
+        <a href="{{ url_for('main.homepage') }}">Home</a>
+        <a href="{{ url_for('main.forum') }}">Forum</a>
+        <a class="active" href="{{ url_for('main.profile') }}">Profile</a>
+        <a href="{{ url_for('main.contact') }}">Contact</a>
         <!-- Button with SVG Icon for Posting a Question -->
         <button id="discussionform" style="background: none; border: none; cursor: pointer;">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -48,7 +48,7 @@
 
         <!-- Right-aligned container -->
         <div class="navbar-right">
-            <img src="profile-pictures/QA_logo.jpg" alt="QA Logo" class="navbar-logo">>
+            <img src="static/profile-pictures/QA_logo.jpg" alt="QA Logo" class="navbar-logo">>
         </div>
         
     </nav>
@@ -59,50 +59,48 @@
 
             <!-- HTML 结构 -->
             <div class="userprofile">
-                <h1 id="welcomeText">Welcome, </h1>
+                <h1 id="welcomeText">Welcome, {{ current_user.username }}!</h1>
                 <a href="edit-profile.html" class="edit-profile-btn">Edit Profile</a>
-                <a id="shopButton" href="{{ url_for('shop') }}" class="button">Shop</a>
+                <a id="shopButton" href="{{ url_for('main.shop') }}" class="button">Shop</a>
 
             </div>
 
-            <img id="profilePicture" class="profile-picture-btn" src="default_avatar.png" alt="User Profile Picture">
+            <img id="profilePicture" class="profile-picture-btn" src="{{ current_user.avatar  }}" alt="User Profile Picture">
+
+            
+
             
 
             <div>
 
                 <div class="profile-buttons">
-                    <a href="logout.html" class="logout-btn">Logout</a>
+                    <a href="{{ url_for('main.logout') }}" class="logout-btn">Logout</a>
                 </div>
 
                 <!-- Chat 按钮容器 -->
                 <div class="chat-html-container">
-                    <a href="{{ url_for('chat') }}"  class="chat-btn">Chat</a>
+                    <a href="{{ url_for('main.chat') }}"  class="chat-btn">Chat</a>
                 </div>
-
+                
 
                 <div class="profile-container1">
                     <!-- Avatar Selection Modal -->
                     <div id="avatarModal" class="modal">
-                        <div class="modal-content">
-                            <span class="close" id="closeModal">&times;</span>
-                            <h4>Choose Your Avatar</h4>
-                            <div class="avatar-grid">
-                                <img src="profile-pictures/rat.png" class="avatar-option" alt="Avatar 1">
-                                <img src="profile-pictures/ox.png" class="avatar-option" alt="Avatar 2">
-                                <img src="profile-pictures/tiger.png" class="avatar-option" alt="Avatar 3">
-                                <img src="profile-pictures/rabbit.png" class="avatar-option" alt="Avatar 4">
-                                <img src="profile-pictures/dragon.png" class="avatar-option" alt="Avatar 5">
-                                <img src="profile-pictures/snake.png" class="avatar-option" alt="Avatar 6">
-                                <img src="profile-pictures/horse.png" class="avatar-option" alt="Avatar 7">
-                                <img src="profile-pictures/sheep.png" class="avatar-option" alt="Avatar 8">
-                                <img src="profile-pictures/monkey.png" class="avatar-option" alt="Avatar 9">
-                                <img src="profile-pictures/rooster.png" class="avatar-option" alt="Avatar 10">
-                                <img src="profile-pictures/dog.png" class="avatar-option" alt="Avatar 11">
-                                <img src="profile-pictures/pig.png" class="avatar-option" alt="Avatar 12">
-                                <img src="profile-pictures/first_place.jpg" class="avatar-option" alt="Avatar 13">
+                        <form action="{{ url_for('main.update_avatar') }}" method="POST">
+                            <div class="modal-content">
+                                <span id="closeModal" class="close">&times;</span>
+                                <h4>Choose Your Avatar</h4>
+                                <div class="avatar-grid">
+                                    {% for avatar in avatars %}
+                                    <label for="avatar{{ loop.index }}">
+                                        <input type="radio" id="avatar{{ loop.index }}" name="avatar" value="{{ avatar.path }}" {{ 'checked' if current_user.avatar == avatar.path else '' }}>
+                                        <img src="{{ avatar.path }}" class="avatar-option" alt="Avatar {{ loop.index }}">
+                                    </label>
+                                    {% endfor %}
+                                </div>
+                                <button type="submit" class="update-avatar-btn">Update Avatar</button>
                             </div>
-
-                        </div>
+                        </form>
                     </div>
                    
                 </div>    
@@ -129,8 +127,8 @@
     </div>
 
 
-    <script src="discuss.js"></script>
-    <script src="profile-avatar.js"></script>
+    <script src="/static/discuss.js"></script>
+    <script src="/static/profile-avatar.js"></script>
     
 
 

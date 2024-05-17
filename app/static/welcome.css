@@ -211,6 +211,179 @@ body {
 
 
 
+
+.login-page {
+    font-family: Arial, sans-serif;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #555;
+}
+
+.login-container input[type="text"],
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.login-container input[type="submit"] {
+    background-color: #33b437;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.login-container input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+
+
+
+
+
+
+
+
+/* Styling for the registration page */
+.register-page {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.register-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.register-container h1 {
+    text-align: center;
+}
+
+.register-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-container label, 
+.register-container input {
+    margin-bottom: 10px;
+}
+
+.register-container input[type="text"], 
+.register-container input[type="email"], 
+.register-container input[type="password"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.register-container input[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+}
+
+.register-container input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+
+
+
+
+
+
+
+
+
+/* Login Button */
+#loginButton {
+    background-color: #33b437;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#loginButton:hover {
+    background-color: #45a049;
+}
+
+/* Forgot Password Link */
+.login-content .forgot-password {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #297fdc;
+    font-size: 1em;
+    text-decoration: underline;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    margin-top: 18px;
+}
+
+.login-content .forgot-password:hover {
+    color: #075fbd;
+}
+
+
 /* Logini, Signup Modal */
 .modal {
     display: none; 
@@ -979,74 +1152,64 @@ textarea {
 /* Main container styling */
 .contact-container {
     width: 70%;
-    max-width: 960px; 
+    max-width: 960px;
     padding: 40px;
-    background: white; 
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-
-
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
-
+    margin: 40px auto; /* Center horizontally with margin */
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
+    margin-top: 120px;
 }
-
-
 
 .contact-info, .contact-form {
     flex: 1 1 45%;
     padding: 20px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 .contact-info {
     border-right: 2px solid #eee;
 }
 
+.contact-info p {
+    margin: 10px 0;
+}
 
-
-
-
+.contact-info strong {
+    display: inline-block;
+    width: 70px;
+}
 
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-    width: 100%; 
-    padding: 10px; 
-    margin-bottom: 10px; 
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px; 
+    border-radius: 4px;
 }
-
-
-
 
 .contact-form button {
     width: 100%;
-    padding: 12px 20px; 
-    background-color: #3eba44; 
-    color: white; 
+    padding: 12px 20px;
+    background-color: #3eba44;
+    color: white;
     border: none;
-    border-radius: 5px; 
+    border-radius: 5px;
     cursor: pointer;
 }
 
 .contact-form button:hover {
-    background-color: #339f38; 
+    background-color: #339f38;
 }
 
-
-
-
-
 .contact-modal {
-    display: none; 
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -1054,49 +1217,40 @@ textarea {
     width: 100%;
     height: 100%;
     overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Add background overlay */
 }
-
 
 .contact-message-modal {
     background-color: white;
     margin: 10% auto;
     padding: 20px;
     width: 50%;
-    border-radius: 10px; 
+    max-width: 800px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;  
+    position: relative;
 }
-
-
-
 
 .contact-message-modal h4 {
-    color: #4CAF50; 
-    text-align: center; 
+    color: #4CAF50;
+    text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: 24px; 
+    font-size: 24px;
 }
-
-
 
 .contact-close {
     position: absolute;
-    top: 10px;  
-    right: 10px;  
+    top: 10px;
+    right: 10px;
     color: #aaa;
     font-size: 24px;
     cursor: pointer;
 }
 
-
 .contact-close:hover {
     color: #706d6d;
 }
-
-
-
-
 
 
 

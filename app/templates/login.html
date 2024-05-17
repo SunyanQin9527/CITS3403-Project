@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/welcome.css">
+
+    <style>
+        .register-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .register-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <h1>Login</h1>
+
+        {%with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul>
+                    {% for message in messages%}
+                        <li>{{message }}</li>
+                    {% endfor %}
+                </ul>
+
+                {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="{{ url_for('main.login') }}">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.email.label }}<br>
+                {{ form.email(size=32) }}<br>
+            </p>
+            <p>
+                {{ form.password.label }}<br>
+                {{ form.password(size=32) }}<br>
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
+
+        <form action="{{ url_for('main.register') }}" method="get">
+            <p>Don't have an account?
+            <button type="submit" class="register-btn">Register here</button>
+        </form>
+
+    </div>
+</body>
+</html>
