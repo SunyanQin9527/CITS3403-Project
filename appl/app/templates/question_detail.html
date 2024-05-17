@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ question.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='welcome.css') }}">
+</head>
+<body class="question-page">
+    <div class="container">
+        <div class="question-card">
+            <h1>{{ question.title }}</h1>
+            <p>{{ question.body }}</p>
+            <p class="timestamp">Posted on {{ question.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+        </div>
+        <div class="answer-form-section">
+            <h2>Submit Your Answer</h2>
+            <form action="{{ url_for('main.submit_answer', post_id=question.post_id) }}" method="post">
+                <textarea name="answerContent" required></textarea>
+                <button type="submit" class="submit-btn">Submit Answer</button>
+            </form>
+        </div>
+        <div class="answers-section">
+            <h3>Answers:</h3>
+            {% for answer in question.answers %}
+            <div class="answer-card">
+                <p>{{ answer.body }}</p>
+                <p class="timestamp">Answered by {{ answer.author.username }} on {{ answer.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

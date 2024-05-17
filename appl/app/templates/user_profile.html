@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ user.username }}'s Profile</title>
+</head>
+<body>
+    <h1>{{ user.username }}</h1>
+    <p>Email: {{ user.email }}</p>
+    <p>Joined on: {{ user.member_since.strftime('%Y-%m-%d %H:%M:%S') if user.member_since else 'Unknown' }}</p>
+</body>
+</html>
+
