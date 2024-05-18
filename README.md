@@ -35,7 +35,8 @@
 - Personal Information: Displays user's ID, age, and other basic information.
 - Statistics: Shows user's post count, threads created, likes received, etc.
 - Action Buttons: Includes "Edit Profile" and "Shop" buttons, colored green and yellow respectively.
-- Shop: The SHOP has different values of the avatar, you can use their own points to buy.
+- Logout: Users can logout and then back to the homepage.
+- Shop: The SHOP has different values of the avatar, users can use their own points to buy.
 
 ### Contact Page Design
 - Team Member Contact Information: Shows team member names, email addresses, and phone numbers.
