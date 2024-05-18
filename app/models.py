@@ -1,7 +1,8 @@
 from app import db
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
-from datetime import datetime
+from datetime import datetime, date
+from sqlalchemy.orm import relationship
 
 class User(UserMixin, db.Model):
     __tablename__ = 'user'
@@ -16,7 +17,9 @@ class User(UserMixin, db.Model):
     likes_received = db.Column(db.Integer, default=0)
     credit_points = db.Column(db.Integer, default=0)
     avatar = db.Column(db.String(128), default='/static/profile-pictures/default_avatar.png')
-
+    about_me = db.Column(db.String(500), default='')  # 新增字段
+    age = db.Column(db.String(120), default='Please set your age')  # 修改类型为字符串以存储默认消息
+    
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
@@ -51,3 +54,16 @@ class Avatar(db.Model):
 
     def __repr__(self):
         return '<Avatar filename={}>'.format(self.filename)
+
+
+
+
+class CheckIn(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))
+    checkin_date = db.Column(db.Date, default=date.today)
+    user = relationship('User', backref='checkins')
+
+    @staticmethod
+    def has_checked_in_today(user_id):
+        return CheckIn.query.filter_by(user_id=user_id, checkin_date=date.today()).first() is not None

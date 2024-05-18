@@ -4,8 +4,8 @@ from flask import Blueprint, render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user, login_required
 
 from app import db
-from app.models import User,Avatar
-from app.forms import RegistrationForm, LoginForm
+from app.models import User,Avatar,CheckIn
+from app.forms import RegistrationForm, LoginForm,EditProfileForm
 
 main = Blueprint('main', __name__)
 
@@ -33,13 +33,28 @@ def forum():
 def chat():
     return render_template('chat.html')
 
+#加好友
+@main.route('/search_user', methods=['POST'])
+def search_user():
+    search_term = request.form['searchTerm']
+    users = User.query.filter((User.username.like(f'%{search_term}%')) | (User.email.like(f'%{search_term}%'))).all()
+    return render_template('search_results.html', users=users)
+
 @main.route('/profile')
 @login_required
 def profile():
-    user = {"ID": "12345", "Age": "30", "posts": 10, "threads_created": 5, "likes_received": 15, "credit_points": 100}
+    user = {
+        "ID": current_user.user_id,
+        "Age": current_user.age if current_user.age else 'Please set your age',
+        "posts": current_user.posts.count(),  # 假设 posts 是关系，使用 count() 获取数量
+        "threads_created": current_user.threads_created,
+        "likes_received": current_user.likes_received,
+        "credit_points": current_user.credit_points
+    }
     avatars = Avatar.query.all()  # 确保这一行正确无误
+    has_checked_in_today = CheckIn.has_checked_in_today(current_user.user_id)
     print(avatars)
-    return render_template('profile.html', user=current_user, avatars=avatars)
+    return render_template('profile.html', user=user, avatars=avatars,has_checked_in_today=has_checked_in_today)
 
 # 头像
 @main.route('/update-avatar', methods=['POST'])
@@ -53,11 +68,42 @@ def update_avatar():
         current_user.avatar = avatar_url
         db.session.commit()
         flash(f'Your avatar has been updated.', 'success')
-        print(f'Updated avatar URLllllllllls: {current_user.avatar}') 
+        
     else:
         flash(f'Please select an avatar.', 'error')
     
     return redirect(url_for('main.profile'))
+
+#更改用户信息
+@main.route('/edit-profile', methods=['GET', 'POST'])
+@login_required
+def edit_profile():
+    form = EditProfileForm(obj=current_user) 
+    if request.method == 'POST':
+        about_me = request.form['about_me']
+        current_user.about_me = about_me
+        current_user.age = form.age.data
+        db.session.commit()
+        flash('Your changes have been saved.')
+        return redirect(url_for('main.profile'))
+    elif request.method == 'GET':
+        form.age.data = current_user.age
+    return render_template('edit-profile.html', form=form)
+
+#签到
+@main.route('/check-in', methods=['POST'])
+@login_required
+def check_in():
+    if CheckIn.has_checked_in_today(current_user.user_id):
+        flash('You have already checked in today.')
+    else:
+        new_checkin = CheckIn(user_id=current_user.user_id)
+        current_user.credit_points += 200  # 每次签到加200积分
+        db.session.add(new_checkin)
+        db.session.commit()
+        flash('Check-in successful! You earned 200 credit points.')
+    return redirect(url_for('main.profile'))
+
 
 @main.route('/contact')
 @login_required

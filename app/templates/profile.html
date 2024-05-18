@@ -60,13 +60,25 @@
             <!-- HTML 结构 -->
             <div class="userprofile">
                 <h1 id="welcomeText">Welcome, {{ current_user.username }}!</h1>
-                <a href="edit-profile.html" class="edit-profile-btn">Edit Profile</a>
+                <a href="{{ url_for('main.edit_profile') }}" class="edit-profile-btn">Edit Profile</a>
                 <a id="shopButton" href="{{ url_for('main.shop') }}" class="button">Shop</a>
+                <button id="openCheckInModal" class="btn">Check In</button>
+                {%with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul>
+                    {% for message in messages%}
+                        <li>{{message }}</li>
+                    {% endfor %}
+                </ul>
 
+                {% endif %}
+                {% endwith %}
+
+                
             </div>
 
             <img id="profilePicture" class="profile-picture-btn" src="{{ current_user.avatar  }}" alt="User Profile Picture">
-
+            
             
 
             
@@ -117,6 +129,7 @@
             
             <p>User ID: {{ user.ID }}</p>
             <p>Age: {{ user.Age }}</p>
+            <p>About Me: {{ current_user.about_me }}</p>
 
             <h2>Statistics</h2>
             <p>Posts: {{ user.posts }}</p>
@@ -124,6 +137,22 @@
             <p>Likes Received: {{ user.likes_received }}</p>
             <p>Credit Points: {{ user.credit_points }}</p>
         </section>
+
+        <div id="checkInModal" class="modal">
+            <div class="modal-content">
+                <span id="closeCheckInModal" class="close">&times;</span>
+                <h2>Daily Check-In</h2>
+                <p>You have {{ current_user.credit_points }} credit points.</p>
+                {% if has_checked_in_today %}
+                    <p>You have already checked in today.</p>
+                {% else %}
+                    <form action="{{ url_for('main.check_in') }}" method="post">
+                        <button type="submit">Check In Now</button>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+
     </div>
 
 

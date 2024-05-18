@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="/static/welcome.css">
+</head>
+<body>
+    <h1>Edit Profile</h1>
+    <form action="{{ url_for('main.edit_profile') }}" method="POST">
+        {{ form.hidden_tag() }}
+        <label for="about_me">About Me:</label>
+        {{ form.about_me(rows=4, cols=50) }}
+        
+        <label for="age">Age:</label>
+        {{ form.age() }}   
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+</html>
