@@ -3,27 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ question.title }}</title>
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Link to your CSS file -->
 </head>
 
-<body>
-    <h1>{{ question.title }}</h1>
-    <p>{{ question.body }}</p>
-    <p>Posted on {{ question.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+<body class="forum-page-body">
+    <h1 class="question-title">{{ question.title }}</h1>
+    <p class="question-body">{{ question.body }}</p>
+    <p class="question-timestamp">Posted on {{ question.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</p>
 
     <!-- Answer form section -->
-    <h2>Submit Your Answer</h2>
-    <form action="{{ url_for('main.submit_answer', post_id=question.post_id) }}" method="post">
-        <textarea name="answerContent" required></textarea>
-        <button type="submit">Submit Answer</button>
-    </form>
+    <div class="answer-form">
+        <h2 class="answer-form-title">Submit Your Answer</h2>
+        <form action="{{ url_for('main.submit_answer', post_id=question.post_id) }}" method="post">
+            <textarea name="answerContent" class="answer-form-textarea" required></textarea>
+            <button type="submit" class="answer-form-button">Submit Answer</button>
+        </form>
+    </div>
 
     <!-- Display existing answers -->
-    <h3>Answers:</h3>
-    {% for answer in question.answers %}
-        <div>
-            <p>{{ answer.body }}</p>
-            <p>Answered by {{ answer.author.username }} on {{ answer.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</p>
-        </div>
-    {% endfor %}
+    <div class="answers-list">
+        <h3 class="answers-list-title">Answers:</h3>
+        {% for answer in question.answers %}
+            <div class="answer-item">
+                <p>{{ answer.body }}</p>
+                <p class="answer-author-timestamp">Answered by {{ answer.author.username }} on {{ answer.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+            </div>
+        {% endfor %}
+    </div>
 </body>
 </html>

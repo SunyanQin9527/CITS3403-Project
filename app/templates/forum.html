@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forum Main Page</title>
-    <link rel="stylesheet" href="/static/welcome.css">
+
+    <link rel="stylesheet" href="/static/forum-theme.css">
+    <link rel="stylesheet" href="/static/forum-styles.css">
 </head>
 
 <body class="forumpage">
@@ -33,6 +35,9 @@
         <div class="navbar-right">
             <img src="{{ url_for('static', filename='profile-pictures/QA_logo.jpg') }}" alt="QA Logo" class="navbar-logo">
         </div>
+
+        <!-- Toggle Mode Button -->
+        <button id="theme-toggle" class="toggle-btn">Switch Mode</button>
     </nav>
 
     <!-- Discussion Form Modal -->
@@ -101,14 +106,13 @@
                     </div>
                     <p class="thread-info">Posted by <a href="{{ url_for('main.view_user', user_id=post.user_id) }}">{{ post.author.username }}</a> - {{ post.answers.count() }} replies</p>
                     <div class="answer">
-                        {% for answer in post.answers %}
+                        {% for answer in post.answers[:3] %}
                         <p>{{ answer.body }} - by <a href="{{ url_for('main.view_user', user_id=answer.user_id) }}">{{ answer.author.username }}</a></p>
                         {% endfor %}
+                        {% if post.answers.count() > 3 %}
+                        <p><a href="{{ url_for('main.view_question', question_id=post.post_id) }}">View all {{ post.answers.count() }} replies</a></p>
+                        {% endif %}
                     </div>
-                    <form action="{{ url_for('main.submit_answer', post_id=post.post_id) }}" method="post">
-                        <textarea name="answer" required></textarea>
-                        <button type="submit" class="answer-btn">Answer</button>
-                    </form>
                 </div>
                 {% endfor %}
 
@@ -133,7 +137,6 @@
                     {% endif %}
                 </div>
             </div>
-
         </div>
 
         <!-- Sidebar with Leaderboard -->
@@ -147,12 +150,11 @@
                 <button id="viewAllBtn" onclick="location.href='full_leaderboard.html'">View Full Leaderboard</button>
             </div>
         </div>
-    
     </div>
 
     <script src="/static/discuss.js"></script>
     <script src="/static/login-signup.js"></script>
     <script src="/static/leaderboard.js"></script>
-
+    <script src="/static/forum-theme.js"></script>
 </body>
 </html>

@@ -30,17 +30,19 @@ def homepage():
     return render_template('homepage.html', title='Homepage')
 
 
-@main.route('/forum')
+
+@main.route('/forum', methods=['GET'])
 def forum():
     page = request.args.get('page', 1, type=int)
     search_query = request.args.get('search', '')
+    theme = request.args.get('theme', 'light')
 
     if search_query:
         posts = Post.query.filter(Post.title.contains(search_query)).order_by(Post.timestamp.desc()).paginate(page=page, per_page=3)
     else:
         posts = Post.query.order_by(Post.timestamp.desc()).paginate(page=page, per_page=3)
 
-    return render_template('forum.html', posts=posts, search_query=search_query)
+    return render_template('forum.html', posts=posts, search_query=search_query, theme=theme)
 
 
 
@@ -127,23 +129,27 @@ def submit_question():
     
     title = request.form['forumtitle']
     body = request.form['discussionQuestion']
+    theme = request.form.get('theme', 'light')
+
     new_post = Post(title=title, body=body, user_id=current_user.user_id)
     db.session.add(new_post)
     db.session.commit()
     flash('Your question has been posted.')
-    return redirect(url_for('main.forum'))
+    return redirect(url_for('main.forum', theme=theme))
 
 @main.route('/submit-answer/<int:post_id>', methods=['POST'])
 def submit_answer(post_id):
     if not current_user.is_authenticated:
         return redirect(url_for('main.login'))
     
-    body = request.form['answerContent']
+    body = request.form['answer']
+    theme = request.form.get('theme', 'light')
+
     new_answer = Answer(body=body, post_id=post_id, user_id=current_user.user_id)
     db.session.add(new_answer)
     db.session.commit()
     flash('Your answer has been posted.')
-    return redirect(url_for('main.forum'))
+    return redirect(url_for('main.forum', theme=theme))
 
 
 #接下来是发送信息和查看用户
