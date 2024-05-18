@@ -20,6 +20,11 @@
             </p>
             <p>{{ form.submit() }}</p>
         </form>
+
+        <!-- Add the Forgot Password Button -->
+        <div class="navbar-right">
+            <button onclick="location.href='{{ url_for('main.request_password_reset') }}'">Forgot Password?</button>
+        </div>
     </div>
 </body>
 </html>
