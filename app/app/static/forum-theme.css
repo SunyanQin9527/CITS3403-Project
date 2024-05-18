@@ -1,0 +1,31 @@
+:root {
+    --forum-bg-color: #ffffff;
+    --forum-text-color: #000000;
+    --forum-link-color: #3858dc;
+    --forum-button-bg-color: #3858dc;
+    --forum-button-text-color: #ffffff;
+    --forum-container-bg-color: #f1f2f5;
+    --forum-content-bg-color: #ffffff;
+    --forum-thread-bg-color: #f9f9f9;
+    --forum-leaderboard-bg-color: #ffffff;
+    --forum-leaderboard-item-bg-color: #c7dcf1;
+    --forum-input-bg-color: #ffffff;
+    --forum-input-text-color: #000000;
+    --forum-button-bg-hover-color:#082bb6;
+}
+
+.dark-mode {
+    --forum-bg-color: #121212;
+    --forum-text-color: #ffffff;
+    --forum-link-color: #bb86fc;
+    --forum-button-bg-color: #bb86fc;
+    --forum-button-text-color: #121212;
+    --forum-container-bg-color: #1e1e1e;
+    --forum-content-bg-color: #2e2e2e;
+    --forum-thread-bg-color: #3e3e3e;
+    --forum-leaderboard-bg-color: #2e2e2e;
+    --forum-leaderboard-item-bg-color: #4e4e4e;
+    --forum-input-bg-color: #3e3e3e;
+    --forum-input-text-color: #ffffff;
+    --forum-button-bg-hover-color:#8f4ae4;
+}
