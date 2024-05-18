@@ -1,6 +1,6 @@
 ## Authors
 
-- Mike  - 23201541
+- Pengyu Lu  - 23201541
 - Sunayn Qin - 23208949
 - Leyi Chen - 23442577
 - Bowen Guo - 23152491
