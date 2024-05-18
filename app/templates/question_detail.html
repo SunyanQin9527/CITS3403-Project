@@ -2,33 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ question.title }}</title>
-    <link rel="stylesheet" href="/static/styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='welcome.css') }}">
 </head>
-
-<body class="forum-page-body">
-    <h1 class="question-title">{{ question.title }}</h1>
-    <p class="question-body">{{ question.body }}</p>
-    <p class="question-timestamp">Posted on {{ question.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</p>
-
-    <!-- Answer form section -->
-    <div class="answer-form">
-        <h2 class="answer-form-title">Submit Your Answer</h2>
-        <form action="{{ url_for('main.submit_answer', post_id=question.post_id) }}" method="post">
-            <textarea name="answerContent" class="answer-form-textarea" required></textarea>
-            <button type="submit" class="answer-form-button">Submit Answer</button>
-        </form>
-    </div>
-
-    <!-- Display existing answers -->
-    <div class="answers-list">
-        <h3 class="answers-list-title">Answers:</h3>
-        {% for answer in question.answers %}
-            <div class="answer-item">
+<body class="question-page">
+    <div class="container">
+        <div class="question-card">
+            <h1>{{ question.title }}</h1>
+            <p>{{ question.body }}</p>
+            <p class="timestamp">Posted on {{ question.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+        </div>
+        <div class="answer-form-section">
+            <h2>Submit Your Answer</h2>
+            <form action="{{ url_for('main.submit_answer', post_id=question.post_id) }}" method="post">
+                <textarea name="answerContent" required></textarea>
+                <button type="submit" class="submit-btn">Submit Answer</button>
+            </form>
+        </div>
+        <div class="answers-section">
+            <h3>Answers:</h3>
+            {% for answer in question.answers %}
+            <div class="answer-card">
                 <p>{{ answer.body }}</p>
-                <p class="answer-author-timestamp">Answered by {{ answer.author.username }} on {{ answer.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                <p class="timestamp">Answered by {{ answer.author.username }} on {{ answer.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</p>
             </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 </body>
 </html>

@@ -43,17 +43,43 @@
                     </div>
 
                 </form>
-
             </div>
         </div>
 
         <!-- Login and Signup buttons -->
         <div class="navbar-right">
-            <a href="{{ url_for('main.index') }}" class="btn" id="showLoginModal">Log In</a>
+            <a href="{{ url_for('main.login') }}" class="btn" id="showLoginModal">Log In</a>
             <a href="{{ url_for('main.register') }}" class="btn" id="showSignUpModal">Sign Up</a>
         </div> <!-- End of navbar-right -->
 
 
+
+
+        <!-- Password Reset Modal -->
+        <div id="passwordResetModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closePasswordReset">&times;</span>
+                <h3 class="login-signup-title">Password Reset</h3>
+                <form id="passwordResetForm" action="/submit-password-reset" method="POST">
+                    <input type="email" id="resetEmail" name="resetEmail" placeholder="Enter your email address" required>
+                    <button type="submit" id="resetPasswordButton">Send Reset Link</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sign Up Modal -->
+        <div id="signupModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeSignup">&times;</span>
+                <h3 class="login-signup-title">Sign Up</h3>
+                <form id="signupForm" action="/submit-registration" method="POST">
+                    <input type="text" id="signupName" name="name" placeholder="Full Name" required>
+                    <input type="email" id="signupEmail" name="email" placeholder="Email Address" required>
+                    <input type="password" id="signupPassword" name="password" placeholder="Password" required>
+                    <button type="submit" id="signupButton">Register</button>
+                </form>
+            </div>
+        </div>
 
         <div class="search-container">
             <form action="/search" method="get">
@@ -64,9 +90,8 @@
 
         <!-- Right-aligned container -->
         <div class="navbar-right">
-            <img src="{{ url_for('static', filename='profile-pictures/QA_logo.jpg') }}" alt="QA Logo" class="navbar-logo">
+            <img src="static/profile-pictures/QA_logo.jpg" alt="QA Logo" class="navbar-logo">
         </div>
-
     </nav>
 
     <!-- Main Content Area -->
@@ -80,12 +105,12 @@
         <p>Discover the tools that make 'Classroom Companions' the best place to engage in educational discussions:</p>
         <div class="features-flexbox">
             <div class="feature-box" id="interactiveForums">
-                <h3>Interactive Forums</h3>
-                <p>Engage with the community through lively discussions and collaborative problem-solving.</p>
+                <h3>Diverse Discussion Boards</h3>
+                <p>We offer a variety of boards that cover areas such as education, technology, arts, and lifestyle. Each board has its own specific topics, making it easy for members to find content and connect with like-minded individuals.</p>
             </div>
             <div class="feature-box" id="resourceSharing">
-                <h3>Resource Sharing</h3>
-                <p>Share and access a wealth of educational resources tailored to enhance learning.</p>
+                <h3>Expert Q&A</h3>
+                <p>We regularly invite experts from different fields to provide professional answers and guidance to our members. This is a great opportunity to interact directly with industry experts and gain authoritative advice.</p>
             </div>
             <div class="feature-box" id="attractiveRewards">
                 <h3>Attractive Rewards</h3>
@@ -126,4 +151,5 @@
     <script src="/static/login-signup.js"></script>
     <script src="/static/discuss.js"></script>
 </body>
-</html>
+</html> 
+

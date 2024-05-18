@@ -4,10 +4,10 @@ let totalPages;
 
 function loadProducts() {
     const container = document.querySelector('.products');
-    for (let i = 33; i <= 67; i++) {
+    for (let i = 33; i <= 62; i++) {
         const html = `
             <div class='product-item'>
-                <img src='/static/profile-pictures/shop${i}.jpg' alt='Item ${i}'>
+                <img src='profile-pictures/shop${i}.jpg' alt='Item ${i}'>
                 <h3>Item ${i}</h3>
                 <p>300 Points</p>
                 <button class='shop-button'>Buy</button>

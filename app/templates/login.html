@@ -4,10 +4,38 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="/static/welcome.css">
+
+    <style>
+        .register-btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .register-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
 </head>
 <body class="login-page">
     <div class="login-container">
         <h1>Login</h1>
+
+        {%with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul>
+                    {% for message in messages%}
+                        <li>{{message }}</li>
+                    {% endfor %}
+                </ul>
+
+                {% endif %}
+        {% endwith %}
+
         <form method="POST" action="{{ url_for('main.login') }}">
             {{ form.hidden_tag() }}
             <p>
@@ -20,6 +48,17 @@
             </p>
             <p>{{ form.submit() }}</p>
         </form>
+
+        <form action="{{ url_for('main.register') }}" method="get">
+            <p>Don't have an account?
+            <button type="submit" class="register-btn">Register here</button>
+        </form>
+
+        <!-- Add the Forgot Password Button -->
+       <div class="navbar-right">
+            <button onclick="location.href='{{ url_for('main.request_password_reset') }}'">Forgot Password?</button>
+        </div>
+
     </div>
 </body>
 </html>

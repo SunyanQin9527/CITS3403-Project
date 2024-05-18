@@ -48,7 +48,7 @@
 
         <!-- Right-aligned container -->
         <div class="navbar-right">
-            <img src="{{ url_for('static', filename='profile-pictures/QA_logo.jpg') }}" alt="QA Logo" class="navbar-logo">
+            <img src="static/profile-pictures/QA_logo.jpg" alt="QA Logo" class="navbar-logo">>
         </div>
         
     </nav>
@@ -59,52 +59,60 @@
 
             <!-- HTML 结构 -->
             <div class="userprofile">
-                <h1 id="welcomeText">Welcome, </h1>
-                <a href="edit-profile.html" class="edit-profile-btn">Edit Profile</a>
+                <h1 id="welcomeText">Welcome, {{ current_user.username }}!</h1>
+                <a href="{{ url_for('main.edit_profile') }}" class="edit-profile-btn">Edit Profile</a>
                 <a id="shopButton" href="{{ url_for('main.shop') }}" class="button">Shop</a>
+                <button id="openCheckInModal" class="btn">Check In</button>
+                {%with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul>
+                    {% for message in messages%}
+                        <li>{{message }}</li>
+                    {% endfor %}
+                </ul>
 
+                {% endif %}
+                {% endwith %}
+
+                
             </div>
 
-            <img id="profilePicture" class="profile-picture-btn" src="default_avatar.png" alt="User Profile Picture">
+            <img id="profilePicture" class="profile-picture-btn" src="{{ current_user.avatar  }}" alt="User Profile Picture">
+            
+            
+
             
 
             <div>
 
                 <div class="profile-buttons">
-                    <a href="logout.html" class="logout-btn">Logout</a>
+                    <a href="{{ url_for('main.logout') }}" class="logout-btn">Logout</a>
                 </div>
 
                 <!-- Chat 按钮容器 -->
                 <div class="chat-html-container">
                     <a href="{{ url_for('main.chat') }}"  class="chat-btn">Chat</a>
                 </div>
-
+                
 
                 <div class="profile-container1">
                     <!-- Avatar Selection Modal -->
                     <div id="avatarModal" class="modal">
-                        <div class="modal-content">
-                            <span class="close" id="closeModal">&times;</span>
-                            <h4>Choose Your Avatar</h4>
-                            <div class="avatar-grid">
-                                <img src="{{ url_for('static', filename='profile-pictures/rat.png') }}" class="avatar-option" alt="Avatar 1">
-                                <img src="{{ url_for('static', filename='profile-pictures/ox.png') }}" class="avatar-option" alt="Avatar 2">
-                                <img src="{{ url_for('static', filename='profile-pictures/tiger.png') }}" class="avatar-option" alt="Avatar 3">
-                                <img src="{{ url_for('static', filename='profile-pictures/rabbit.png') }}" class="avatar-option" alt="Avatar 4">
-                                <img src="{{ url_for('static', filename='profile-pictures/dragon.png') }}" class="avatar-option" alt="Avatar 5">
-                                <img src="{{ url_for('static', filename='profile-pictures/snake.png') }}" class="avatar-option" alt="Avatar 6">
-                                <img src="{{ url_for('static', filename='profile-pictures/horse.png') }}" class="avatar-option" alt="Avatar 7">
-                                <img src="{{ url_for('static', filename='profile-pictures/sheep.png') }}" class="avatar-option" alt="Avatar 8">
-                                <img src="{{ url_for('static', filename='profile-pictures/monkey.png') }}" class="avatar-option" alt="Avatar 9">
-                                <img src="{{ url_for('static', filename='profile-pictures/rooster.png') }}" class="avatar-option" alt="Avatar 10">
-                                <img src="{{ url_for('static', filename='profile-pictures/dog.png') }}" class="avatar-option" alt="Avatar 11">
-                                <img src="{{ url_for('static', filename='profile-pictures/pig.png') }}" class="avatar-option" alt="Avatar 12">
-                                <img src="{{ url_for('static', filename='profile-pictures/first_place.jpg') }}" class="avatar-option" alt="Avatar 13">
-                                <img src="{{ url_for('static', filename='profile-pictures/second_place.jpg') }}" class="avatar-option" alt="Avatar 14">
-                                <img src="{{ url_for('static', filename='profile-pictures/third_place.jpg') }}" class="avatar-option" alt="Avatar 15">
+                        <form action="{{ url_for('main.update_avatar') }}" method="POST">
+                            <div class="modal-content">
+                                <span id="closeModal" class="close">&times;</span>
+                                <h4>Choose Your Avatar</h4>
+                                <div class="avatar-grid">
+                                    {% for avatar in avatars %}
+                                    <label for="avatar{{ loop.index }}">
+                                        <input type="radio" id="avatar{{ loop.index }}" name="avatar" value="{{ avatar.path }}" {{ 'checked' if current_user.avatar == avatar.path else '' }}>
+                                        <img src="{{ avatar.path }}" class="avatar-option" alt="Avatar {{ loop.index }}">
+                                    </label>
+                                    {% endfor %}
+                                </div>
+                                <button type="submit" class="update-avatar-btn">Update Avatar</button>
                             </div>
-
-                        </div>
+                        </form>
                     </div>
                    
                 </div>    
@@ -121,6 +129,7 @@
             
             <p>User ID: {{ user.ID }}</p>
             <p>Age: {{ user.Age }}</p>
+            <p>About Me: {{ current_user.about_me }}</p>
 
             <h2>Statistics</h2>
             <p>Posts: {{ user.posts }}</p>
@@ -128,6 +137,22 @@
             <p>Likes Received: {{ user.likes_received }}</p>
             <p>Credit Points: {{ user.credit_points }}</p>
         </section>
+
+        <div id="checkInModal" class="modal">
+            <div class="modal-content">
+                <span id="closeCheckInModal" class="close">&times;</span>
+                <h2>Daily Check-In</h2>
+                <p>You have {{ current_user.credit_points }} credit points.</p>
+                {% if has_checked_in_today %}
+                    <p>You have already checked in today.</p>
+                {% else %}
+                    <form action="{{ url_for('main.check_in') }}" method="post">
+                        <button type="submit">Check In Now</button>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+
     </div>
 
 
@@ -138,4 +163,6 @@
 
 </body>
 </html>
+
+
 

@@ -848,7 +848,65 @@ input[type="password"] {
 
 
 
+.btn-shop {
+    background-color: #FFEB3B;
+    color: black;
+}
 
+
+.edit-profile-container {
+    max-width: 600px; /* Reduce the width */
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-profile-header {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.edit-profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Added gap for better spacing */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding is included in total width */
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #4CAF49;
+}
 
 
 
@@ -1432,3 +1490,79 @@ input[type="password"] {
 
 
 
+
+
+body.question-page {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 30px auto; 
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.question-card, .answer-card, .answer-form-section {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+.question-title {
+    font-size: 40px; 
+    font-weight: bold;
+}
+
+.question-card h1, .answer-form-section h2, .answers-section h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.timestamp {
+    font-size: 14px;
+    color: #999;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.submit-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.answers-section h3 {
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.answer-card {
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}

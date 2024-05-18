@@ -35,22 +35,31 @@
         <div class="chat-sidebar">
             <!-- 登录用户头像 -->
             <div class="sidebar-icon active">
-                <img src="profile-pictures/first_place.jpg" alt="User Avatar" id="userAvatar" class="avatar">
+                <img src="{{ current_user.avatar  }}" alt="User Avatar" id="userAvatar" class="avatar">
             </div>
 
             <!-- 弹窗容器 -->
             <div id="chat-avatarModal" class="avatarmodal">
                 <div class="avatarmodal-content">
                     <span class="close">&times;</span>
-                    <img src="profile-pictures/first_place.jpg" alt="Full Avatar">
+                    <img src="{{ current_user.avatar  }}" alt="Full Avatar">
                 </div>
             </div>
             
 
             <!-- Ensure the class name and path are accurate -->
             <div class="add-friend-icon">
-                <img src="profile-pictures/add_friends.png" alt="Add Friend Icon">
+                <img src="/static/profile-pictures/add_friends.png" alt="Add Friend Icon">
             </div>
+
+            <!-- 搜索用户的表单 -->
+            <div class="search-user-container">
+                <form action="{{ url_for('main.search_user') }}" method="post">
+                    <input type="text" placeholder="Enter username or email" name="searchTerm" required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
 
             <!-- Modal for Adding Friend -->
             <div id="addFriendModal" class="add-friend-modal">
