@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="/static/welcome.css">
+</head>
+
+<body class="chat">
+    <!-- Navigation Bar 顶部导航 -->
+    <nav class="navbar">
+ 
+        <a href="{{ url_for('main.profile') }}">Profile</a>
+        <a href="{{ url_for('main.contact') }}" class="active">Chat</a>
+
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Search.." name="search" id="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class="navbar-right">
+            <img src="profile-pictures/QA_logo.jpg" alt="QA Logo" class="navbar-logo">>
+        </div>
+
+    </nav>
+
+
+
+    <div class="chat-container">
+        <!-- 左侧边栏 -->
+        <div class="chat-sidebar">
+            <!-- 登录用户头像 -->
+            <div class="sidebar-icon active">
+                <img src="{{ current_user.avatar  }}" alt="User Avatar" id="userAvatar" class="avatar">
+            </div>
+
+            <!-- 弹窗容器 -->
+            <div id="chat-avatarModal" class="avatarmodal">
+                <div class="avatarmodal-content">
+                    <span class="close">&times;</span>
+                    <img src="{{ current_user.avatar  }}" alt="Full Avatar">
+                </div>
+            </div>
+            
+
+            <!-- Ensure the class name and path are accurate -->
+            <div class="add-friend-icon">
+                <img src="/static/profile-pictures/add_friends.png" alt="Add Friend Icon">
+            </div>
+
+            <!-- 搜索用户的表单 -->
+            <div class="search-user-container">
+                <form action="{{ url_for('main.search_user') }}" method="post">
+                    <input type="text" placeholder="Enter username or email" name="searchTerm" required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
+
+            <!-- Modal for Adding Friend -->
+            <div id="addFriendModal" class="add-friend-modal">
+                <div class="add-friend-modal-content">
+                    <span class="addFriendclose" id="closeAddFriend">&times;</span>
+                    <h3>Add Friend</h3>
+                    <form id="addFriendForm">
+                        <label for="userId">User ID:</label>
+                        <input type="text" id="userId" name="userId" placeholder="Enter User ID" required>
+                        <button type="submit" class="add-friend-btn">Add Friend</button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+        <!-- 聊天列表 -->
+        <div class="chat-list">
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+
+            <ul class="chat-items">
+                <li class="chat-item">
+                    <div class="chat-details">
+                        <div class="chat-name">File Transfer</div>
+                        <div class="chat-preview">[Photo]</div>
+                    </div>
+                    <div class="chat-meta">
+                        <span>05/27/23</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+        <!-- 聊天框 -->
+        <div class="chat-area">
+            <div class="chat-background">
+                <img src="profile-pictures/.jpg" alt="Chat Background">
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+    <!-- 引用外部 JavaScript 文件 -->
+    <script src="/static/chat.js"></script>
+    <script src="/static/dd-friends.js"></script>
+
+</body>
+
+</html>
