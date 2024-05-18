@@ -7,6 +7,11 @@
 
 ## Design
 
+### Login & signup page
+- An incorrect user name or password will be displayed.
+- Username or email already exists will be displayed.
+- Password must be at least 5 characters long.
+
 ### Navigation Bar Design
 - Position: Top of the page.
 - Content: Includes links like Home, Forum, Profile, Contact, etc.
