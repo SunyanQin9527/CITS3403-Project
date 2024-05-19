@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="/static/welcome.css">
+</head>
+
+<body class="shop">
+    <!-- Navigation Bar 顶部导航 -->
+    <nav class="navbar">
+        <a href="{{ url_for('main.profile') }}">Profile</a>
+        <a href="{{ url_for('main.shop') }}" class="active">Shop</a>
+
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Search.." name="search" id="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+
+        <div class="navbar-right">
+            <img src="profile-pictures/QA_logo.jpg" alt="QA Logo" class="navbar-logo">>
+        </div>
+
+
+    </nav>
+
+    <div class="shop-container">
+        <h1>Avatars</h1>
+
+        <div class="products">
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop1.jpg') }}" alt="Item 1">
+                <h3>Item 1</h3>
+                <p>100 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop2.jpg') }}" alt="Item 2">
+                <h3>Item 2</h3>
+                <p>200 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop3.jpg') }}" alt="Item 3">
+                <h3>Item 3</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop4.jpg') }}" alt="Item 4">
+                <h3>Item 4</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop5.jpg') }}" alt="Item 5">
+                <h3>Item 5</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop6.jpg') }}" alt="Item 6">
+                <h3>Item 6</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop7.jpg') }}" alt="Item 7">
+                <h3>Item 7</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop8.jpg') }}" alt="Item 8">
+                <h3>Item 8</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop9.jpg') }}" alt="Item 9">
+                <h3>Item 9</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop10.jpg') }}" alt="Item 10">
+                <h3>Item 10</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop11.jpg') }}" alt="Item 11">
+                <h3>Item 11</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop12.jpg') }}" alt="Item 12">
+                <h3>Item 12</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop13.jpg') }}" alt="Item 13">
+                <h3>Item 13</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop14.jpg') }}" alt="Item 14">
+                <h3>Item 14</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop15.jpg') }}" alt="Item 15">
+                <h3>Item 15</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop16.jpg') }}" alt="Item 16">
+                <h3>Item 16</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop17.jpg') }}" alt="Item 17">
+                <h3>Item 17</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop18.jpg') }}" alt="Item 18">
+                <h3>Item 18</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop19.jpg') }}" alt="Item 19">
+                <h3>Item 19</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop20.jpg') }}" alt="Item 20">
+                <h3>Item 20</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop21.jpg') }}" alt="Item 21">
+                <h3>Item 21</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop22.jpg') }}" alt="Item 22">
+                <h3>Item 22</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop23.jpg') }}" alt="Item 23">
+                <h3>Item 23</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop24.jpg') }}" alt="Item 24">
+                <h3>Item 24</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop25.jpg') }}" alt="Item 25">
+                <h3>Item 25</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop26.jpg') }}" alt="Item 26">
+                <h3>Item 26</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop27.jpg') }}" alt="Item 27">
+                <h3>Item 27</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop28.jpg') }}" alt="Item 28">
+                <h3>Item 28</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop29.jpg') }}" alt="Item 29">
+                <h3>Item 29</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop30.jpg') }}" alt="Item 30">
+                <h3>Item 30</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop31.jpg') }}" alt="Item 31">
+                <h3>Item 31</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            <div class="product-item">
+                <img src="{{ url_for('static', filename='profile-pictures/shop32.jpg') }}" alt="Item 32">
+                <h3>Item 32</h3>
+                <p>300 Points</p>
+                <button class="shop-button">Buy</button>
+            </div>
+            
+
+        </div>
+
+
+        <div class="shop-container">
+            <!-- Existing shop items -->
+            <div class="pagination">
+                <button class="page-link" onclick="goToPage(1)">1</button>
+                <button class="page-link" onclick="goToPage(2)">2</button>
+                <button class="page-link" onclick="goToPage(3)">3</button>
+                <button class="page-link" onclick="goToPage(4)">4</button>
+                <button class="page-link" onclick="goToPage(5)">5</button>
+                <button class="page-link" onclick="goToPage(6)">6</button>
+                <button class="page-link" onclick="goToPage(7)">7</button>
+                <button class="page-link" onclick="goToPage(8)">8</button>
+                <button class="page-link" onclick="goToPage(9)">9</button>
+
+                <button class="page-link" onclick="goToPreviousPage()">Previous</button>
+                <button class="page-link" onclick="goToNextPage()">Next</button>
+            </div>
+        </div>
+        
+
+
+    </div>
+    
+    
+    <script src="/static/pasgination.js"></script>
+
+
+
+</body>
+</html>
+
+
+
+
+

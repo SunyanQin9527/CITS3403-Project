@@ -2,22 +2,6 @@ let currentPage = 1;
 let itemsPerPage = 12;
 let totalPages;
 
-function loadProducts() {
-    const container = document.querySelector('.products');
-    for (let i = 33; i <= 62; i++) {
-        const html = `
-            <div class='product-item'>
-                <img src='profile-pictures/shop${i}.jpg' alt='Item ${i}'>
-                <h3>Item ${i}</h3>
-                <p>300 Points</p>
-                <button class='shop-button'>Buy</button>
-            </div>
-        `;
-        container.innerHTML += html;
-    }
-    initPagination();
-}
-
 function initPagination() {
     const items = document.querySelectorAll('.product-item');
     totalPages = Math.ceil(items.length / itemsPerPage);
@@ -52,8 +36,10 @@ function goToPreviousPage() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', loadProducts);
+document.addEventListener('DOMContentLoaded', function() {
+    initPagination();
+});
+
 window.goToNextPage = goToNextPage;
 window.goToPage = goToPage;
 window.goToPreviousPage = goToPreviousPage;
-

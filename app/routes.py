@@ -1,10 +1,9 @@
 
 from urllib.parse import urlparse
-from flask import Blueprint, render_template, flash, redirect, url_for, request
+from flask import Blueprint, jsonify, render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user, login_required
-
 from app import db
-from app.models import User,Avatar,CheckIn
+from app.models import User,Avatar,CheckIn,FriendRequest,Product
 from app.forms import RegistrationForm, LoginForm,EditProfileForm
 
 main = Blueprint('main', __name__)
@@ -16,11 +15,33 @@ def homepage():
     return render_template('homepage.html', title='Homepage')
 
 
+
 @main.route('/shop')
 @login_required
 def shop():
-    return render_template('shop.html')
+    products = Product.query.all()
+    return render_template('shop.html', products=products)
 
+#买头像
+@main.route('/buy-product', methods=['POST'])
+@login_required
+def buy_product():
+    product_id = request.form.get('product_id')
+    product = Product.query.get(product_id)
+    
+    if not product:
+        flash(f"Product not found.", "error")
+        return redirect(url_for('main.shop'))
+
+    if current_user.credit_points >= product.price:
+        current_user.credit_points -= product.price
+        current_user.avatar = product.image_url  # 设定为默认头像，或根据业务逻辑调整
+        db.session.commit()
+        flash(f"Purchase successful! Product image now available as an avatar option.", "success")
+    else:
+        flash(f"You do not have enough credit_points to buy this product.", "error")
+
+    return redirect(url_for('main.shop'))
 
 
 @main.route('/forum')
@@ -28,10 +49,13 @@ def shop():
 def forum():
     return render_template('forum.html', title='Forum')
 
+
+
 @main.route('/chat')
 @login_required
 def chat():
     return render_template('chat.html')
+
 
 #加好友
 @main.route('/search_user', methods=['POST'])
@@ -39,6 +63,23 @@ def search_user():
     search_term = request.form['searchTerm']
     users = User.query.filter((User.username.like(f'%{search_term}%')) | (User.email.like(f'%{search_term}%'))).all()
     return render_template('search_results.html', users=users)
+
+@main.route('/add_friend', methods=['POST'])
+@login_required
+def add_friend():
+    user_id = request.form['userId']
+    if user_id and user_id.isdigit():
+        new_friend = FriendRequest(from_user_id=current_user.user_id, to_user_id=int(user_id))
+        db.session.add(new_friend)
+        db.session.commit()
+        return jsonify({'message': 'Friend request sent', 'status': 'success'})
+    else:
+        return jsonify({'message': 'Invalid user ID', 'status': 'error'})
+
+
+
+
+
 
 @main.route('/profile')
 @login_required

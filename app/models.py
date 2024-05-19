@@ -67,3 +67,17 @@ class CheckIn(db.Model):
     @staticmethod
     def has_checked_in_today(user_id):
         return CheckIn.query.filter_by(user_id=user_id, checkin_date=date.today()).first() is not None
+
+
+class FriendRequest(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    from_user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))  # 修改外键指向正确的字段
+    to_user_id = db.Column(db.Integer, db.ForeignKey('user.user_id'))  # 修改外键指向正确的字段
+    accepted = db.Column(db.Boolean, default=False)
+
+
+class Product(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    image_url = db.Column(db.String(255), nullable=False)
+    price = db.Column(db.Integer, nullable=False)
