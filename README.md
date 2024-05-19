@@ -173,6 +173,58 @@ add_products()
 
 Follow these steps to set up and launch your application successfully.
 
+app/
+├── templates/
+│   ├── chat.html
+│   ├── contact.html
+│   ├── edit-profile.html
+│   ├── forum.html
+│   ├── homepage.html
+│   ├── login.html
+│   ├── profile.html
+│   ├── question_detail.html
+│   ├── register.html
+│   ├── reset_password_request.html
+│   ├── reset_password2.html
+│   ├── search_results.html
+│   ├── shop.html
+│   └── user_profile.html
+├── static/
+│   ├── profile-pictures/
+│   │   ├── add_friends.png
+│   │   └── QA_logo.jpg
+│   ├── add-friends.js
+│   ├── chat.js
+│   ├── contact-message.js
+│   ├── discuss.js
+│   ├── forum-style.css
+│   ├── forum-theme.css
+│   ├── homepage-theme.css
+│   ├── homepage-theme.js
+│   ├── leaderboard.js
+│   ├── login-signup.js
+│   ├── pagination.js
+│   ├── profile-avatar.js
+│   ├── userProfileModal.js
+│   └── welcome.css
+├── __init__.py
+├── app.db
+├── config.py
+├── email.py
+├── forms.py
+├── models.py
+├── routes.py
+├── env/
+│   └── __pycache__/
+├── migrations/
+│   └── __pycache__/
+└── versions/
+    └── __pycache__/
+    ├── 0bad6709ecae.py
+    ├── 6a132688b5f0.py
+    ├── 31b79f455126_add_members.py
+    ├── 038fd2598155_add_autoincrement.py
+    └── 45a9b1487bae.py
 
 
 
