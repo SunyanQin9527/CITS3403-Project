@@ -7,7 +7,6 @@ Attendance: All members (no absences)
 
 
 1.
-
 Meeting Date: April 1, 2024
 Time: 14:00 - 17:30
 Location: [EZONENTH: 102C] Meeting Room
@@ -27,10 +26,9 @@ Assigned tasks to each member and created an initial project schedule.
 
 
 2.
-
 Meeting Date: April 8, 2024
 Time: 13:00 - 16:30
-Location: [EZONENTH: 102C] Meeting Room
+Location: [EZONENTH: 202B] Meeting Room
 
 Agenda:
 
@@ -51,14 +49,37 @@ Finalized the basic design for the frontend UI and assigned specific UI componen
 3.
 Meeting Date: April 15, 2024
 Time: 15:00 - 18:30
-Location: [EZONENTH: 102C] Meeting Room
+Location: [EZONENTH: 215A] Meeting Room
 
 Agenda:
-
 
 Finish four pages design (homepage, forum, profile and contact)
 
 Minutes:
 
 Completed the initial implementation of the 4 htmls
+
+
+
+
+
+
+4.
+Meeting Date: April 22, 2024
+Time: 14:00 - 17:30
+Location: EZONENTH Second Floor
+
+Agenda:
+
+Project Integration
+Frontend-Backend Integration
+Bug Fixing
+
+
+Minutes:
+
+Identified and fixed several bugs in the frontend-backend interaction.
+Planned the next phase of work, including the implemantation of flask
+
+
 
