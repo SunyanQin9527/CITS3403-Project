@@ -83,3 +83,69 @@ Planned the next phase of work, including the implemantation of flask
 
 
 
+
+
+
+5.
+
+Meeting Date: May 14, 2024
+Time: 17:30 - 23:30
+Location: [EZONENTH: 102] Meeting Room
+
+Agenda:
+
+Project Deployment
+
+
+Minutes:
+
+Successfully deployed the project to the production environment.
+
+
+
+
+
+
+6.
+
+Meeting Date: May 16, 2024
+Time: 17:30 - 34:30
+Location: [EZONENTH: 203] Meeting Room
+
+Agenda:
+
+resolve existing problems
+
+
+Minutes:
+still have one problem leaving
+
+
+
+
+
+
+7.
+
+Meeting Date: May 17, 2024
+Time: 17:30 - 23:30
+Location: [EZONENTH: 203] Meeting Room
+
+Agenda:
+
+resolve existing problems
+
+
+
+
+8.
+
+Meeting Date: May 18, 2024
+Time: 17:30 - 11:30am
+Location: [EZONENTH: 203] Meeting Room
+
+
+Agenda:
+
+finishing up the rest 
+
