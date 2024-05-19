@@ -1,0 +1,143 @@
+Steps to Launch the Application
+1.Download the App Folder from GitHub to Your Desktop
+
+2.Navigate to your GitHub repository and download the app folder to your Desktop. Open Visual Studio and Launch the Terminal
+
+
+3.Change Directory to the App Folder on Your Desktop. In the terminal, navigate to the app folder on your Desktop. code as bellow:
+
+cd C:\Users\...\Desktop\app-folder-name
+
+
+4.Create and Activate a Virtual Environment
+Create a virtual environment:   python -m venv venv
+Activate the virtual environment:   venv\Scripts\activate
+
+
+5.Create a requirements.txt file with the following content:
+
+alembic==1.13.1
+blinker==1.8.2
+click==8.1.7
+colorama==0.4.6
+dnspython==2.6.1
+email_validator==2.1.1
+Flask==3.0.3
+Flask-Login==0.6.3
+Flask-Mail==0.9.1
+Flask-Migrate==4.0.7
+Flask-SQLAlchemy==3.1.1
+Flask-WTF==1.2.1
+greenlet==3.0.3
+idna==3.7
+itsdangerous==2.0.1
+Jinja2==3.1.4
+Mako==1.3.3
+MarkupSafe==2.1.5
+SQLAlchemy==2.0.30
+typing_extensions==4.11.0
+Werkzeug==3.0.3
+WTForms==3.1.2
+
+
+
+
+6.Install the packages listed in requirements.txt:
+
+pip install -r requirements.txt
+
+
+
+7.Initialize the database:    flask db init
+
+Create the first migration:   flask db migrate -m "Initial migration"
+
+Apply the migration:   flask db upgrade
+
+If you encounter any errors, you can downgrade the migration:    flask db downgrade
+
+
+
+
+8.Open the Flask shell:  flask shell
+
+
+
+9.Run the following code to import the default 12 zodiac avatars:
+
+
+from your_app import db
+from your_app.models import Avatar 
+
+animals = ['rat', 'ox', 'tiger', 'rabbit', 'dragon', 'snake', 'horse', 'sheep', 'monkey', 'rooster', 'dog', 'pig']
+
+for animal in animals:
+    filename = f'{animal}.png'
+    path = f'/static/profile-pictures/{filename}'
+    if not Avatar.query.filter_by(filename=filename).first():
+        avatar = Avatar(filename=filename, path=path)
+        db.session.add(avatar)
+
+db.session.commit()
+
+
+
+
+
+
+10. In the Flask shell, run the following code to import product data:
+
+from app import db
+from app.models import Product
+
+def calculate_price(index):
+    if index == 1:
+        return 100
+    elif index == 2:
+        return 200
+    elif 3 <= index <= 10:
+        return 300
+    else:
+        return 300 + ((index - 11) // 10) * 300
+
+def add_products():
+    db.session.query(Product).delete()
+
+    for i in range(1, 67):
+        name = f'Product {i}'
+        image_url = f'/static/profile-pictures/shop{i}.jpg'
+        price = calculate_price(i)
+        product = Product(name=name, image_url=image_url, price=price)
+        db.session.add(product)
+
+    db.session.commit()
+
+add_products()
+
+
+
+11.Finally, run the application: flask run
+
+
+
+Follow these steps to set up and launch your application successfully.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
