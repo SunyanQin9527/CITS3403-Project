@@ -1,0 +1,64 @@
+Group Meeting Notes
+
+Group Name: CITS3403 Project Team
+Meeting Duration: From April 2024, each meeting lasts over 3 hours
+Attendance: All members (no absences)
+
+
+
+1.
+
+Meeting Date: April 1, 2024
+Time: 14:00 - 17:30
+Location: [EZONENTH: 102C] Meeting Room
+
+Agenda:
+
+Project Requirements Analysis
+Technology Stack Discussion
+
+
+Minutes:
+
+Completed detailed analysis of project requirements.
+Assigned tasks to each member and created an initial project schedule.
+
+
+
+
+2.
+
+Meeting Date: April 8, 2024
+Time: 13:00 - 16:30
+Location: [EZONENTH: 102C] Meeting Room
+
+Agenda:
+
+Project Progress Report
+HTML Design
+
+
+Minutes:
+
+Members reported their task completions and discussed encountered issues.
+Designed the logical diagram for the whole project
+Finalized the basic design for the frontend UI and assigned specific UI components for development.1.
+
+
+
+
+
+3.
+Meeting Date: April 15, 2024
+Time: 15:00 - 18:30
+Location: [EZONENTH: 102C] Meeting Room
+
+Agenda:
+
+
+Finish four pages design (homepage, forum, profile and contact)
+
+Minutes:
+
+Completed the initial implementation of the 4 htmls
+
