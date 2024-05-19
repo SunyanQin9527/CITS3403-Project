@@ -113,3 +113,19 @@ class Message(db.Model):
 
     def __repr__(self):
         return f'<Message {self.body[:20]}>'
+
+
+
+
+class FriendRequest(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    from_user_id = db.Column(db.Integer, db.ForeignKey('user.user_id')) # 修改外键指向正确的字段
+    to_user_id = db.Column(db.Integer, db.ForeignKey('user.user_id')) # 修改外键指向正确的字段
+    accepted = db.Column(db.Boolean, default=False)
+
+
+class Product(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    image_url = db.Column(db.String(255), nullable=False)
+    price = db.Column(db.Integer, nullable=False)

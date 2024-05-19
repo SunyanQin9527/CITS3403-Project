@@ -7,7 +7,7 @@
 </head>
 
 <body class="homepage">
-    <!-- Navigation Bar 顶部导航 -->
+
 
     <nav class="navbar">
         <a href="{{ url_for('main.homepage') }}" class="active">Home</a>
@@ -15,36 +15,6 @@
         <a href="{{ url_for('main.profile') }}">Profile</a>
         <a href="{{ url_for('main.contact') }}">Contact</a>
         
-
-        <!-- Button with SVG Icon for Posting a Question -->
-        <button id="discussionform" style="background: none; border: none; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-            </svg>
-        </button>
-
-        <!-- Discussion Form Modal -->
-        <div id="discussionModal" class="modal">
-            <div class="discuss-modal-content">
-                <span class="discuss-close" id="closeDiscussionModal">&times;</span>
-                <h2>Having A Question?</h2>
-                <h3>Post Your New Discussion Query</h3>
-                <form id="newDiscussionForm" action="submit_question.php" method="POST">
-                    <label for="discussionTitle">Discussion Title:</label>
-                    <input type="text" id="discussionTitle" name="discussionTitle" required>
-                    
-                    <label for="discussionContent">Your Question:</label>
-                    <textarea id="discussionContent" name="discussionContent" rows="4" cols="50" required></textarea>
-                    
-                    <div class="post-question">
-                        <button class="post-btn">Post Question</button>
-                        <input type="file" id="uploadimage" name="uploadimage" accept="image/*">
-                    </div>
-
-                </form>
-            </div>
-        </div>
 
         <!-- Login and Signup buttons -->
         <div class="navbar-right">
@@ -54,32 +24,6 @@
 
 
 
-
-        <!-- Password Reset Modal -->
-        <div id="passwordResetModal" class="modal">
-            <div class="modal-content">
-                <span class="close" id="closePasswordReset">&times;</span>
-                <h3 class="login-signup-title">Password Reset</h3>
-                <form id="passwordResetForm" action="/submit-password-reset" method="POST">
-                    <input type="email" id="resetEmail" name="resetEmail" placeholder="Enter your email address" required>
-                    <button type="submit" id="resetPasswordButton">Send Reset Link</button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Sign Up Modal -->
-        <div id="signupModal" class="modal">
-            <div class="modal-content">
-                <span class="close" id="closeSignup">&times;</span>
-                <h3 class="login-signup-title">Sign Up</h3>
-                <form id="signupForm" action="/submit-registration" method="POST">
-                    <input type="text" id="signupName" name="name" placeholder="Full Name" required>
-                    <input type="email" id="signupEmail" name="email" placeholder="Email Address" required>
-                    <input type="password" id="signupPassword" name="password" placeholder="Password" required>
-                    <button type="submit" id="signupButton">Register</button>
-                </form>
-            </div>
-        </div>
 
         <div class="search-container">
             <form action="/search" method="get">
@@ -133,16 +77,16 @@
         <h4>Meet Our Team</h4>
         <ul class="team-list">
             <li class="team-list-item">
-                <p>- **[Name]**: [Brief Description or Quote from the member]</p>
+                <p>Leyi Chen: 23442577</p>
             </li>
             <li class="team-list-item">
-                <p>- **[Name]**: [Brief Description or Quote from the member]</p>
+                <p>Bowen Guo: 23152493</p>
             </li>    
             <li class="team-list-item">
-                <p>- **[Name]**: [Brief Description or Quote from the member]</p>
+                <p>Pengyu Lu: 23201541</p>
             </li>    
             <li class="team-list-item">
-                <p>- **[Name]**: [Brief Description or Quote from the member]</p>
+                <p>Sunyan Qin: 23208949</p>
             </li>
         </ul>
     </div>
@@ -152,4 +96,3 @@
     <script src="/static/discuss.js"></script>
 </body>
 </html> 
-

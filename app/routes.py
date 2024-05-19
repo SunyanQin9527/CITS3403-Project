@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, flash, redirect, url_for, request
+from flask import Blueprint, render_template, flash, redirect, url_for, request, jsonify
 from flask_login import current_user, login_user, logout_user, login_required
 
 from app import db, mail
@@ -8,7 +8,6 @@ from app.forms import RegistrationForm, LoginForm, EditProfileForm
 from app.models import User, Post, Answer, Avatar, CheckIn, Message
 
 
-#重置密码
 
 from app.forms import  ResetPasswordForm
 from flask import current_app as app
@@ -66,7 +65,7 @@ def chat():
 
 
 
-#加好友
+
 @main.route('/search_user', methods=['POST'])
 def search_user():
     search_term = request.form['searchTerm']
@@ -82,12 +81,12 @@ def profile():
     user = {
         "ID": current_user.user_id,
         "Age": current_user.age if current_user.age else 'Please set your age',
-        "posts": current_user.posts.count(),  # 假设 posts 是关系，使用 count() 获取数量
+        "posts": current_user.posts.count(),  
         "threads_created": current_user.threads_created,
         "likes_received": current_user.likes_received,
         "credit_points": current_user.credit_points
     }
-    avatars = Avatar.query.all()  # 确保这一行正确无误
+    avatars = Avatar.query.all() 
     has_checked_in_today = CheckIn.has_checked_in_today(current_user.user_id)
     print(avatars)
     return render_template('profile.html', user=user, avatars=avatars,has_checked_in_today=has_checked_in_today)
@@ -95,7 +94,7 @@ def profile():
 
 
 
-# 头像
+# Avatars
 @main.route('/update-avatar', methods=['POST'])
 def update_avatar():
     
@@ -119,7 +118,7 @@ def update_avatar():
 
 
 
-#更改用户信息
+
 @main.route('/edit-profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
@@ -135,7 +134,10 @@ def edit_profile():
         form.age.data = current_user.age
     return render_template('edit-profile.html', form=form)
 
-#签到
+
+
+
+
 @main.route('/check-in', methods=['POST'])
 @login_required
 def check_in():
@@ -143,7 +145,7 @@ def check_in():
         flash('You have already checked in today.')
     else:
         new_checkin = CheckIn(user_id=current_user.user_id)
-        current_user.credit_points += 200  # 每次签到加200积分
+        current_user.credit_points += 200  
         db.session.add(new_checkin)
         db.session.commit()
         flash('Check-in successful! You earned 200 credit points.')
@@ -184,7 +186,7 @@ def contact():
 
 @main.route('/question/<int:question_id>')
 def view_question(question_id):
-    question = Post.query.get_or_404(question_id)  # 获取问题或者返回404错误
+    question = Post.query.get_or_404(question_id)  
     return render_template('question_detail.html', question=question)
 
 
@@ -195,7 +197,7 @@ def view_question(question_id):
 @main.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('main.homepage'))  # 修改重定向目标为 'main.homepage'
+        return redirect(url_for('main.homepage'))  
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
@@ -236,28 +238,28 @@ def register():
     form = RegistrationForm()
 
 
-    error_messages = []  # 创建一个列表来收集错误消息
+    error_messages = [] 
 
     if form.validate_on_submit():
         
-        # 检查用户名是否已存在
+
         if User.query.filter_by(username=form.username.data).first():
             
             error_messages.append('Username already exists')
 
-        # 检查邮箱是否已被注册
+
         if User.query.filter_by(email=form.email.data).first():
             error_messages.append('Email already registered')
 
-        # 验证两次密码是否一致
+
         if form.password.data != form.confirm_password.data:
             error_messages.append('Passwords do not match')
 
-        # 验证密码长度
+
         if len(form.password.data) < 5:
             error_messages.append('Password must be at least 5 characters long')
 
-        # 如果有错误消息，flash它们，然后重定向到注册页面
+
         if error_messages:
             for message in error_messages:
                 flash(f'{message}', 'error')
@@ -312,7 +314,7 @@ def submit_answer(post_id):
 
 
 
-#接下来是发送信息和查看用户
+
 
 @main.route('/send-message/<int:recipient_id>', methods=['POST'])
 def send_message(recipient_id):
@@ -335,7 +337,6 @@ def view_user(user_id):
 
 
 
-#下面是重置密码
 @main.route('/reset_password_request', methods=['GET', 'POST'])
 def request_password_reset():
     if current_user.is_authenticated:
@@ -348,6 +349,10 @@ def request_password_reset():
         flash('An email has been sent with instructions to reset your password.', 'info')
         return redirect(url_for('main.login'))
     return render_template('reset_password_request.html', title='Reset Password', form=form)
+
+
+
+    
 
 @main.route('/reset_password/<token>', methods=['GET', 'POST'])
 def reset_password(token):
@@ -364,3 +369,7 @@ def reset_password(token):
         flash('Your password has been reset.', 'success')
         return redirect(url_for('main.login'))
     return render_template('reset_password2.html', form=form)
+
+
+
+

@@ -16,12 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
         avatarModal.style.display = 'none';  // 此处应改为 'none'
     });
 
-    // Close modal when clicking outside the modal content
-    window.addEventListener('click', (event) => {
-        if (event.target === avatarModal) {
-            avatarModal.style.display = 'none';  // 此处应改为 'none'
-        }
-    });
     
     // Open check-in modal on button click
     openCheckInModal.addEventListener('click', () => {

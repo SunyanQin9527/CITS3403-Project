@@ -31,38 +31,11 @@ body {
 
 
 
-#discussionform svg {
-    width: 30px;
-    height: 30px;
-    margin-left: 10px;
-    fill: white;
-}
 
-/* Upload photos Icon SVG*/
-#uploadphoto svg {
-    color: #3ebe44;
-    width: 40px;
-    height: 40px;
-    margin-left: 20px;
-    margin-right: 5px;
-    vertical-align: middle; 
-}
-
-#uploadphoto:hover svg {
-    color: #35ab3b; 
-}
-
-
-
-
-.navbar-right {
-    display: flex;
-    align-items: center;
-}
 
 .navbar-logo {
     height: 50px; 
-    margin-right: 20px;  
+    margin-left: 20px;  
     border-radius: 50px;
 }
 
@@ -280,7 +253,6 @@ body {
 
 
 
-
 /* Styling for the registration page */
 .register-page {
     font-family: Arial, sans-serif;
@@ -344,87 +316,6 @@ body {
 
 
 
-/* Login Button */
-#loginButton {
-    background-color: #33b437;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 10px;
-}
-
-#loginButton:hover {
-    background-color: #45a049;
-}
-
-/* Forgot Password Link */
-.login-content .forgot-password {
-    background: none;
-    border: none;
-    padding: 0;
-    color: #297fdc;
-    font-size: 1em;
-    text-decoration: underline;
-    cursor: pointer;
-    display: block;
-    text-align: center;
-    margin-top: 18px;
-}
-
-.login-content .forgot-password:hover {
-    color: #075fbd;
-}
-
-
-/* Logini, Signup Modal */
-.modal {
-    display: none; 
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto;
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
-}
-
-/* Modal Content */
-.modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: 15% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; 
-    border-radius: 5px;
-}
-
-
-.close {
-    position: absolute;
-    color: #aaa;
-    float: right;
-    font-size: 32px;
-    font-weight: bold;
-}
-
-
-.close:hover{
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-
-
-
 #showLoginModal {
     background-color: #44bc23; 
     color: white;          
@@ -465,96 +356,7 @@ body {
 
 
 
-.login-signup-title{
-    color:#45a049;
-    font-size: 25px;
-}
 
-
-
-/* Login Form button */
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    border-radius: 4px;
-}
-
-#loginButton {
-    background-color: #33b437; 
-    color: white;          
-    padding: 10px 20px;     
-    border: none;             
-    border-radius: 5px;      
-    font-size: 16px;
-    cursor: pointer;          
-    margin-right: 15px;
-    margin-top: 10px;
-}
-
-#loginButton:hover {
-    background-color: #45a049;
-}
-
-
-
-
-/* Signup Form button */
-#signupButton {
-    background-color: #33b437;
-    color: white;         
-    padding: 10px 20px;
-    border: none;           
-    border-radius: 5px;       
-    font-size: 16px;         
-    cursor: pointer;          
-    margin-top: 10px;
-}
-
-#signupButton:hover {
-    background-color: #45a049; 
-}
-
-
-
-
-#loginForm .forgot-password {
-    background: none;
-    border: none; 
-    padding: 0;
-    color: #297fdc;
-    font-size: 1em;
-    text-decoration: underline;
-    cursor: pointer;
-    margin-top: 18px;
-}
-
-
-#loginForm .forgot-password:hover {
-    color: #075fbd;
-}
-
-
-
-
-#resetPasswordButton {
-    background-color: #33b437; 
-    color: white; 
-    padding: 10px 20px;
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    font-size: 16px;
-    margin-top: 15px;
-}
-
-#resetPasswordButton:hover {
-    background-color: #45a049; 
-}
 
 
 
@@ -595,8 +397,6 @@ input[type="password"] {
     padding: 10px 20px;
     display: inline-block; 
 }
-
-
 
 
 
@@ -740,7 +540,6 @@ input[type="password"] {
 
 
 
-
 .team-list {
     list-style: none;
     padding: 0;
@@ -819,13 +618,6 @@ input[type="password"] {
 
 
 
-.profile-buttons {
-    display: flex;
-    justify-content: flex-end; 
-    gap: 10px; 
-    width: 100%; 
-}
-
 
 
 
@@ -855,7 +647,7 @@ input[type="password"] {
 
 
 .edit-profile-container {
-    max-width: 600px; /* Reduce the width */
+    max-width: 600px; 
     margin: 50px auto;
     padding: 20px;
     background-color: #ffffff;
@@ -872,8 +664,14 @@ input[type="password"] {
 .edit-profile-form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Added gap for better spacing */
+    gap: 15px; 
 }
+
+
+
+
+
+
 
 .form-group {
     display: flex;
@@ -952,14 +750,13 @@ input[type="password"] {
 
 
 
+
+
 .chat-html-container {
     display: flex;
     justify-content: right; 
     margin-top: 20px; 
 }
-
-
-
 
 /* Chat 按钮样式 */
 .chat-btn {
@@ -977,6 +774,105 @@ input[type="password"] {
     background-color: #e9189c;
 }
 
+
+
+
+
+
+
+
+#checkInButton {
+    background-color: #ef4ab2;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none; 
+}
+
+
+
+
+
+#openCheckInModal {
+    background-color: #f69042;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+    text-decoration: none; 
+    font-family: Arial, sans-serif;
+    margin-right: 50px;
+
+}
+
+#openCheckInModal:hover {
+    background-color: #f77a1b;
+
+}
+
+
+
+
+
+#checkInModal h2 {
+    color: #f540c7;
+    font-family: Arial, sans-serif;
+}
+
+#checkInModal p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #555;
+}
+
+
+
+
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    border-radius: 5px;
+}
+
+
+.close {
+    position: absolute;
+    color: #aaa;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+.close:hover{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 
 
@@ -1006,24 +902,44 @@ input[type="password"] {
 
 
 
+.update-avatar-btn {
+    padding: 12px 20px;
+    background-color: #3eba44;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 
-
-
-
-
-.user-details, .user-stats, .editable-sections {
-    margin-top: 20px;
-    height: 100vh; 
 }
 
 
 
-.user-details p, .user-stats p, .editable-sections p {
-    font-size: 16px;
-    color: #666;
-    line-height: 1.5;
+
+
+
+
+.user-details {
+    background-color: #fff; 
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%; 
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-family: 'Arial', sans-serif; 
 }
 
+.user-details h2 {
+    color: #333; 
+    border-bottom: 2px solid #70db74;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.user-details p {
+    color: #666; 
+    font-size: 16px; 
+    margin-bottom: 10px; 
+}
 
 
 
@@ -1160,7 +1076,6 @@ input[type="password"] {
 
 
 
-
 .sidebar-icon {
     width: 50px;
     height: 50px;
@@ -1264,20 +1179,6 @@ input[type="password"] {
 
 
 
-.close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    color: #aaa;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.close:hover {
-    color: #000;
-}
-
-
 
 
 
@@ -1290,7 +1191,6 @@ input[type="password"] {
     border-right: 1px solid #ccc;
     padding: 10px;
 }
-
 
 
 
@@ -1566,3 +1466,131 @@ textarea {
     border-radius: 4px;
     background-color: #f9f9f9;
 }
+
+
+
+
+
+
+
+
+/* Base styling for the page's body */
+.page-body {
+    font-family: 'Arial', sans-serif;
+    background-color: #c2dcfe;
+    margin: 0;
+    padding: 0; 
+    color: #333;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+
+.forum-profile-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+
+.profile-header-username {
+    background-color: #0056b3;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+.profile-detail-text {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+#reset-password-page {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  #reset-password-container {
+    background: white;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px; /* Increase the max-width to make the container larger */
+    text-align: center;
+  }
+  
+  #reset-password-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  #reset-password-form {
+    width: 100%;
+  }
+  
+  #reset-password-email-field {
+    margin: 0 0 20px; /* Adjusted margin to add more space */
+    text-align: left;
+  }
+  
+  #reset-password-email-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 16px; /* Increase font size for better readability */
+  }
+  
+  #reset-password-email-field input[type="email"] {
+    width: 100%;
+    padding: 15px; /* Increase padding for larger input field */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Increase font size for better readability */
+  }
+  
+  #reset-password-submit-field {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  #reset-password-submit-field input[type="submit"] {
+    background-color: #5c67f2;
+    color: white;
+    border: none;
+    padding: 15px 20px; /* Adjusted padding */
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #reset-password-submit-field input[type="submit"]:hover {
+    background-color: #4a54e1;
+  }

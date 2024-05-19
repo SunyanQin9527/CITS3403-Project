@@ -16,14 +16,14 @@
         <a href="{{ url_for('main.contact') }}" class="active">Chat</a>
 
         <div class="search-container">
-            <form action="/search" method="get">
-                <input type="text" placeholder="Search.." name="search" id="search">
+            <form action="{{ url_for('main.search_user') }}" method="post">
+                <input type="text" placeholder="Enter username or email." name="searchTerm"required>
                 <button type="submit">Search</button>
             </form>
         </div>
 
         <div class="navbar-right">
-            <img src="profile-pictures/QA_logo.jpg" alt="QA Logo" class="navbar-logo">>
+            <img src="static/profile-pictures/QA_logo.jpg" alt="QA Logo" class="navbar-logo">>
         </div>
 
     </nav>
@@ -48,32 +48,26 @@
             
 
             <!-- Ensure the class name and path are accurate -->
-            <div class="add-friend-icon">
-                <img src="/static/profile-pictures/add_friends.png" alt="Add Friend Icon">
-            </div>
-
-            <!-- 搜索用户的表单 -->
-            <div class="search-user-container">
-                <form action="{{ url_for('main.search_user') }}" method="post">
-                    <input type="text" placeholder="Enter username or email" name="searchTerm" required>
-                    <button type="submit">Search</button>
-                </form>
-            </div>
-
-
-            <!-- Modal for Adding Friend -->
+            
+            <img src="/static/profile-pictures/add_friends.png" alt="Add Friend Icon"id="openAddFriendModal" class="add-friend-icon">
             <div id="addFriendModal" class="add-friend-modal">
                 <div class="add-friend-modal-content">
                     <span class="addFriendclose" id="closeAddFriend">&times;</span>
                     <h3>Add Friend</h3>
-                    <form id="addFriendForm">
+                    <form id="addFriendForm" action="{{ url_for('main.add_friend') }}" method="post">
                         <label for="userId">User ID:</label>
                         <input type="text" id="userId" name="userId" placeholder="Enter User ID" required>
                         <button type="submit" class="add-friend-btn">Add Friend</button>
-
                     </form>
                 </div>
             </div>
+            
+
+            
+
+
+            
+            
 
         </div>
 
@@ -117,9 +111,35 @@
 
 
     <!-- 引用外部 JavaScript 文件 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addFriendForm = document.getElementById('addFriendForm');
+    
+            addFriendForm.onsubmit = function(event) {
+                event.preventDefault();
+                const userId = document.getElementById('userId').value;
+    
+                fetch('{{ url_for("main.add_friend") }}', {
+                    method: 'POST',
+                    body: JSON.stringify({ userId: userId }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(response => response.json())
+                .then(data => {
+                    alert(data.message);  // 使用弹窗显示后端返回的消息
+                }).catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred: ' + error.message);
+                });
+            };
+        });
+    </script>
+    
+    
     <script src="/static/chat.js"></script>
-    <script src="/static/dd-friends.js"></script>
-
+    <script src="/static/add-friends.js"></script>
+    
 </body>
 
 </html>
