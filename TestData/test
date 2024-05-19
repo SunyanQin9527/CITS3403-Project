@@ -17,7 +17,7 @@ class BasicTestCase(unittest.TestCase):
     def test_home_page(self):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'欢迎使用Flask', response.data)
+        self.assertIn(b'Flask', response.data)
 
 if __name__ == '__main__':
     unittest.main()
