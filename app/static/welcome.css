@@ -1594,3 +1594,19 @@ textarea {
   #reset-password-submit-field input[type="submit"]:hover {
     background-color: #4a54e1;
   }
+
+
+
+
+.register-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.register-btn:hover {
+    background-color: #0056b3;
+}

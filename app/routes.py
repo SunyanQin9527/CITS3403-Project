@@ -5,7 +5,7 @@ from app import db, mail
 # from urllib.parse import urlparse
 
 from app.forms import RegistrationForm, LoginForm, EditProfileForm
-from app.models import User, Post, Answer, Avatar, CheckIn, Message
+from app.models import User, Post, Answer, Avatar, CheckIn, Message,Product
 
 
 
@@ -52,9 +52,28 @@ def forum():
 @main.route('/shop')
 @login_required
 def shop():
-    return render_template('shop.html')
+    products = Product.query.all()
+    return render_template('shop.html',products=products)
 
+@main.route('/buy-product', methods=['POST'])
+@login_required
+def buy_product():
+    product_id = request.form.get('product_id')
+    product = Product.query.get(product_id)
+    
+    if not product:
+        flash(f"Product not found.", "error")
+        return redirect(url_for('main.shop'))
 
+    if current_user.credit_points >= product.price:
+        current_user.credit_points -= product.price
+        current_user.avatar = product.image_url  
+        db.session.commit()
+        flash(f"Purchase successful! Product image now available as an avatar option.", "success")
+    else:
+        flash(f"You do not have enough credit_points to buy this product.", "error")
+
+    return redirect(url_for('main.shop'))
 
 
 @main.route('/chat')
@@ -72,7 +91,17 @@ def search_user():
     users = User.query.filter((User.username.like(f'%{search_term}%')) | (User.email.like(f'%{search_term}%'))).all()
     return render_template('search_results.html', users=users)
 
-
+@main.route('/add_friend', methods=['POST'])
+@login_required
+def add_friend():
+    user_id = request.form['userId']
+    if user_id and user_id.isdigit():
+        new_friend = FriendRequest(from_user_id=current_user.user_id, to_user_id=int(user_id))
+        db.session.add(new_friend)
+        db.session.commit()
+        return jsonify({'message': 'Friend request sent', 'status': 'success'})
+    else:
+        return jsonify({'message': 'Invalid user ID', 'status': 'error'})
 
 
 @main.route('/profile')

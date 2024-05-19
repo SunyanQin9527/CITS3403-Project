@@ -13,14 +13,15 @@
             {{ form.hidden_tag() }}
             <div class="form-group">
                 <label for="about_me">About Me:</label>
-                {{ form.about_me(rows=4, cols=50, class="form-control") }}
+                {{ form.about_me(id="about_me", rows=4, cols=50, class="form-control") }}
             </div>
             <div class="form-group">
                 <label for="age">Age:</label>
-                {{ form.age(class="form-control") }}
+                {{ form.age(id="age", class="form-control") }}
             </div>
             <button type="submit" class="btn btn-primary">Save Changes</button>
         </form>
     </div>
 </body>
 </html>
+
