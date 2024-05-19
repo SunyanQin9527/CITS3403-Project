@@ -1,0 +1,105 @@
+<!-- The operation of importing data from the Flask shell !!! !!! 
+from app import db
+from app.models import Product
+
+def calculate_price(index):
+    if index == 1:
+        return 100
+    elif index == 2:
+        return 200
+    elif 3 <= index <= 10:
+        return 300
+    else:
+        return 300 + ((index - 11) // 10) * 300
+
+def add_products():
+    db.session.query(Product).delete()
+
+    for i in range(1, 67):
+        name = f'Product {i}'
+        image_url = f'/static/profile-pictures/shop{i}.jpg'
+        price = calculate_price(i)
+        product = Product(name=name, image_url=image_url, price=price)
+        db.session.add(product)
+
+    db.session.commit()
+
+
+add_products() 
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="/static/welcome.css">
+</head>
+<body class="shop">
+    <nav class="navbar">
+        <a href="{{ url_for('main.profile') }}">Profile</a>
+        <a href="{{ url_for('main.shop') }}" class="active">Shop</a>
+
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input type="text" placeholder="Search.." name="search" id="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+
+        <div class="navbar-right">
+            <img src="/static/profile-pictures/QA_logo.jpg" alt="QA Logo" class="navbar-logo">>
+        </div>
+
+
+    </nav>
+    <div class="shop-container">
+        <h1>Available Products</h1>
+        {%with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul>
+                    {% for message in messages%}
+                        <li>{{message }}</li>
+                    {% endfor %}
+                </ul>
+
+                {% endif %}
+                {% endwith %}
+        <div class="products">
+            {% for product in products %}
+            <div class="product-item">
+                <img src="{{ product.image_url }}" alt="{{ product.name }}">
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.price }} Points</p>
+                <form action="{{ url_for('main.buy_product') }}" method="POST">
+                    <input type="hidden" name="product_id" value="{{ product.id }}">
+                    <button type="submit" class="shop-button">Buy</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="shop-container">
+            <!-- Existing shop items -->
+            <div class="pagination">
+                <button class="page-link" onclick="goToPage(1)">1</button>
+                <button class="page-link" onclick="goToPage(2)">2</button>
+                <button class="page-link" onclick="goToPage(3)">3</button>
+                <button class="page-link" onclick="goToPage(4)">4</button>
+                <button class="page-link" onclick="goToPage(5)">5</button>
+                <button class="page-link" onclick="goToPage(6)">6</button>
+                <button class="page-link" onclick="goToPage(7)">7</button>
+                <button class="page-link" onclick="goToPage(8)">8</button>
+                <button class="page-link" onclick="goToPage(9)">9</button>
+
+                <button class="page-link" onclick="goToPreviousPage()">Previous</button>
+                <button class="page-link" onclick="goToNextPage()">Next</button>
+            </div>
+        </div>
+    </div>
+    <script src="/static/pasgination.js"></script>
+</body>
+</html>
+

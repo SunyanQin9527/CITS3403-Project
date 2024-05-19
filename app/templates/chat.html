@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="/static/welcome.css">
+</head>
+
+<body class="chat">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="{{ url_for('main.profile') }}">Profile</a>
+        <a href="{{ url_for('main.contact') }}" class="active">Chat</a>
+
+        <div class="search-container">
+            <form action="{{ url_for('main.search_user') }}" method="post">
+                <input type="text" placeholder="Enter username or email." name="searchTerm" required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class="navbar-right">
+            <img src="static/profile-pictures/QA_logo.jpg" alt="QA Logo" class="navbar-logo">
+        </div>
+    </nav>
+
+    <div class="chat-container">
+        <!-- Sidebar -->
+        <div class="chat-sidebar">
+            <!-- Logged in user avatar -->
+            <div class="sidebar-icon active">
+                <img src="{{ current_user.avatar }}" alt="User Avatar" id="userAvatar" class="avatar">
+            </div>
+
+            <!-- Avatar modal -->
+            <div id="chat-avatarModal" class="avatarmodal">
+                <div class="avatarmodal-content">
+                    <span class="close">&times;</span>
+                    <img src="{{ current_user.avatar }}" alt="Full Avatar">
+                </div>
+            </div>
+
+            <!-- Add friend icon and modal -->
+            <img src="/static/profile-pictures/add_friends.png" alt="Add Friend Icon" id="openAddFriendModal" class="add-friend-icon">
+            <div id="addFriendModal" class="add-friend-modal">
+                <div class="add-friend-modal-content">
+                    <span class="addFriendclose" id="closeAddFriend">&times;</span>
+                    <h3>Add Friend</h3>
+                    <form id="addFriendForm" action="{{ url_for('main.add_friend') }}" method="post">
+                        <label for="userId">User ID:</label>
+                        <input type="text" id="userId" name="userId" placeholder="Enter User ID" required>
+                        <button type="submit" class="add-friend-btn">Add Friend</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat list -->
+        <div class="chat-list">
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+            <ul class="chat-items">
+                <li class="chat-item">
+                    <div class="chat-details">
+                        <div class="chat-name">File Transfer</div>
+                        <div class="chat-preview">[Photo]</div>
+                    </div>
+                    <div class="chat-meta">
+                        <span>05/27/23</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Chat area -->
+        <div class="chat-area">
+            <div class="chat-background">
+                <img src="profile-pictures/.jpg" alt="Chat Background">
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addFriendForm = document.getElementById('addFriendForm');
+    
+            addFriendForm.onsubmit = function(event) {
+                event.preventDefault();
+                const userId = document.getElementById('userId').value;
+    
+                fetch('{{ url_for("main.add_friend") }}', {
+                    method: 'POST',
+                    body: JSON.stringify({ userId: userId }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                }).catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred: ' + error.message);
+                });
+            };
+        });
+    </script>
+    
+    <script src="/static/chat.js"></script>
+    <script src="/static/add-friends.js"></script>
+    
+</body>
+
+</html>

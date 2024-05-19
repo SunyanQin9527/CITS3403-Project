@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ user.username }}'s Profile</title>
+    <link rel="stylesheet" href="/static/welcome.css">
+</head>
+<body class="page-body">
+    <div class="forum-profile-container">
+        <h1 class="profile-username">{{ user.username }}</h1>
+        <p class="profile-detail">Email: {{ user.email }}</p>
+        <p class="profile-detail">Joined on: {{ user.member_since.strftime('%Y-%m-%d %H:%M:%S') if user.member_since else 'Unknown' }}</p>
+    </div>
+</body>
+</html>

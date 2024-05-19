@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/static/welcome.css">
+</head>
+<body class="profilepage">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="{{ url_for('main.homepage') }}">Home</a>
+        <a href="{{ url_for('main.forum') }}">Forum</a>
+        <a class="active" href="{{ url_for('main.profile') }}">Profile</a>
+        <a href="{{ url_for('main.contact') }}">Contact</a>
+
+
+        <!-- Right-aligned container -->
+        <div class="navbar-right">
+            <button id="openCheckInModal">Check In</button>
+            <img src="static/profile-pictures/QA_logo.jpg" alt="QA Logo" class="navbar-logo">>
+        </div>
+        
+    </nav>
+
+    <!-- Profile Information -->
+    <div class="profile-container">
+        <header class="profile-header">
+
+            <div class="userprofile">
+                <h1 id="welcomeText">Welcome, {{ current_user.username }}!</h1>
+                <a href="{{ url_for('main.edit_profile') }}" class="edit-profile-btn">Edit Profile</a>
+                <a id="shopButton" href="{{ url_for('main.shop') }}" class="button">Shop</a>
+
+                {%with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul>
+                    {% for message in messages%}
+                        <li>{{message }}</li>
+                    {% endfor %}
+                </ul>
+
+                {% endif %}
+                {% endwith %}
+
+                
+            </div>
+
+            <img id="profilePicture" class="profile-picture-btn" src="{{ current_user.avatar  }}" alt="User Profile Picture">
+            
+            
+            <div>
+
+                <div class="profile-buttons">
+                    <a href="{{ url_for('main.logout') }}" class="logout-btn">Logout</a>
+                </div>
+
+                <div class="chat-html-container">
+                    <a href="{{ url_for('main.chat') }}"  class="chat-btn">Chat</a>
+                </div>
+                
+
+
+                <div class="profile-container1">
+
+                    <div id="avatarModal" class="modal">
+                        <form action="{{ url_for('main.update_avatar') }}" method="POST">
+                            <div class="modal-content">
+                                <span id="closeModal" class="close">&times;</span>
+                                <h4>Choose Your Avatar</h4>
+                                <div class="avatar-grid">
+                                    {% for avatar in avatars %}
+                                    <label for="avatar{{ loop.index }}">
+                                        <input type="radio" id="avatar{{ loop.index }}" name="avatar" value="{{ avatar.path }}" {{ 'checked' if current_user.avatar == avatar.path else '' }}>
+                                        <img src="{{ avatar.path }}" class="avatar-option" alt="Avatar {{ loop.index }}">
+                                    </label>
+                                    {% endfor %}
+                                </div>
+                                <button type="submit" class="update-avatar-btn">Update Avatar</button>
+                            </div>
+                        </form>
+                    </div>
+                   
+                </div>    
+            </div>          
+            
+            
+        </header>
+
+
+
+
+        <section class="user-details">
+            <h2>Personal Information</h2>
+            
+            <p>User ID: {{ user.ID }}</p>
+            <p>Age: {{ user.Age }}</p>
+            <p>About Me: {{ current_user.about_me }}</p>
+
+            <h2>Statistics</h2>
+            <p>Posts: {{ user.posts }}</p>
+            <p>Threads Created: {{ user.threads_created }}</p>
+            <p>Likes Received: {{ user.likes_received }}</p>
+            <p>Credit Points: {{ user.credit_points }}</p>
+        </section>
+
+        <div id="checkInModal" class="modal">
+            <div class="modal-content">
+                <span id="closeCheckInModal" class="close">&times;</span>
+                <h2>Daily Check-In</h2>
+                <p>You have {{ current_user.credit_points }} credit points.</p>
+                {% if has_checked_in_today %}
+                    <p>You have already checked in today.</p>
+                {% else %}
+                    <form action="{{ url_for('main.check_in') }}" method="post">
+                        <button type="submit" id="checkInButton">Check In Now</button>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="/static/discuss.js"></script>
+    <script src="/static/profile-avatar.js"></script>
+    
+
+
+</body>
+</html>
