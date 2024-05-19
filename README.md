@@ -52,6 +52,10 @@
 
 
 
+
+instructions for how to launch the application.
+
+
 Steps to Launch the Application
 
 1.Download the App Folder from GitHub to Your Desktop
